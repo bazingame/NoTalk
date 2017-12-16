@@ -1,5 +1,5 @@
 #loginAnchor{
-    -fx-background-image: url("../../../../resources/images/themes/ColdNight/background.png");
+    -fx-background-image: url("../../../../resources/images/Themes/ColdNight/background.png");
     -fx-background-size: cover ;
     /*-fx-background-color: red;*/
 }
@@ -45,21 +45,147 @@
     /*-fx-background-image: url("../../../../resources/images/Menu/settingSelected.png");*/
     -fx-background-size: cover;
 }
-
-.background {
-    -fx-background-color: #1d1d1d;
+#TalkSearchPane{
+    -fx-background-color: #EEEFF3;
+}
+#talkSearch{
+    /*-fx-background-color: red;*/
+    -fx-background-image: url("../../../../resources/images/Talk/search.png");
+    -fx-background-size: cover;
+}
+#HeadTemp{
+    /*-fx-background-image: url("../../../../resources/images/Menu/tempHead.png");*/
+    /*-fx-background-size: cover;*/
 }
 
-.label {
-    -fx-font-size: 11pt;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-text-fill: white;
-    -fx-opacity: 0.6;
+.talk-left-head-img{
+    -fx-image: url("../../../../resources/images/Menu/tempHead.png");
 }
+
+
+/*聊天界面左板块*/
+.talk-left-pane{
+    -fx-background-color: #EEEFF3;
+}
+
+/*聊天界面右板块*/
+.talk-right-pane{
+    -fx-background-color: #E9EEF4;
+}
+/*输入框*/
+.talk-content{
+    -fx-background-color: white;
+}
+
+/*聊天输入框上的工具栏*/
+.talk-tools{
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: #D1D6DB;
+}
+
+/*发送按钮*/
+#talkSend{
+    -fx-background-color: #18B4ED;
+}
+/*输入窗口工具*/
+#face-tools{
+    -fx-background-image: url("../../../../resources/images/Talktools/face.png");
+    -fx-background-size: cover;
+}
+#pic-tools{
+    -fx-background-image: url("../../../../resources/images/Talktools/pic.png");
+    -fx-background-size: cover;
+}
+#record-tools{
+    -fx-background-image: url("../../../../resources/images/Talktools/record.png");
+    -fx-background-size: cover;
+}
+#voice-tools{
+    -fx-background-image: url("../../../../resources/images/Talktools/voice.png");
+    -fx-background-size: cover;
+}
+#file-tools{
+    -fx-background-image: url("../../../../resources/images/Talktools/file.png");
+    -fx-background-size: cover;
+}
+
+/*输入文本框*/
+#talk-content-text-area{
+    -fx-border-width: 2 2 2 2;
+    -fx-border-style: solid;
+    -fx-border-color: white;
+    -fx-font-size: 16px;
+}
+
+/*联系人列表右侧显示*/
+#contacts-right-main{
+    -fx-background-image: url("../../../../resources/images/Others/msg.png");
+    -fx-background-size: cover;
+}
+
+/*联系人左侧折叠列表*/
+#contacts-main{
+    -fx-border-width: 5px;
+    /*-fx-background-color:#EEEFF3;*/
+    -fx-border-color:red;
+    -fx-progress-color: green;
+    -fx-color-label-visible: false;
+    -fx-background-color: blue;
+}
+
+
+.label{
+    -fx-font-family: "Microsoft YaHei UI";
+}
+.label-talk-view {
+    -fx-font-size: 18pt;
+    -fx-opacity:0.9;
+}
+.label-talk-view-time {
+
+    -fx-font-size: 13pt;
+    -fx-opacity:0.5;
+}
+.label-talk-view-content {
+    -fx-font-size: 14pt;
+    -fx-opacity:0.5;
+}
+.label-talk-back{
+    -fx-font-size: 40pt;
+}
+.label-talk-right-name{
+    -fx-font-size: 20pt;
+    -fx-opacity:0.9;
+}
+
+.talk-pane{
+    -fx-border-width: 0.05 0 0.05 0;
+    -fx-border-color: gray;
+}
+
+.talk-content-right-pane{
+    /*-fx-background-color: red;*/
+    -fx-background-image: url("../../../../resources/images/Operate/info.png");
+    -fx-background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .label-bright {
     -fx-font-size: 11pt;
-    -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: white;
     -fx-opacity: 1;
 }
@@ -71,14 +197,14 @@
     -fx-opacity: 1;
 }
 
-.table-view {
-    -fx-base: #1d1d1d;
-    -fx-control-inner-background: #1d1d1d;
-    -fx-background-color: #1d1d1d;
-    -fx-table-cell-border-color: transparent;
-    -fx-table-header-border-color: transparent;
-    -fx-padding: 5;
-}
+/*.table-view {*/
+    /*-fx-base: #1d1d1d;*/
+    /*-fx-control-inner-background: #1d1d1d;*/
+    /*-fx-background-color: #1d1d1d;*/
+    /*-fx-table-cell-border-color: transparent;*/
+    /*-fx-table-header-border-color: transparent;*/
+    /*-fx-padding: 5;*/
+/*}*/
 
 .table-view .column-header-background {
     -fx-background-color: transparent;
@@ -108,9 +234,10 @@
     -fx-background-color: -fx-focus-color;
 }
 
+/*SplitPane中间的分割线样式设置*/
 .split-pane:horizontal > .split-pane-divider {
-    -fx-border-color: rgba(255,255,255,0);
-    -fx-background-color: rgba(255,255,255,0);
+    -fx-border-color: #E9EEF4;
+    -fx-background-color: #E9EEF4;
 }
 
 .split-pane {
@@ -118,76 +245,94 @@
 }
 
 .menu-bar {
-    -fx-background-color: derive(#1d1d1d,20%);
+    -fx-background-color: rgba(255,255,255,0);
 }
 
-.context-menu {
-    -fx-background-color: derive(#1d1d1d,50%);
-}
+/*.context-menu {*/
+    /*-fx-background-color: derive(#1d1d1d,50%);*/
+/*}*/
 
 .menu-bar .label {
-    -fx-font-size: 14pt;
-    -fx-font-family: "Segoe UI Light";
-    -fx-text-fill: white;
-    -fx-opacity: 0.9;
+    /*-fx-font-size: 14pt;*/
+    /*-fx-font-family: "Segoe UI Light";*/
+    /*-fx-text-fill: white;*/
+    /*-fx-opacity: 0.9;*/
 }
 
-.menu .left-container {
-    -fx-background-color: black;
-}
+/*.menu .left-container {*/
+    /*-fx-background-color: black;*/
+/*}*/
 
 .text-field {
     -fx-font-size: 12pt;
-    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-family: "Microsoft YaHei UI";
 }
 
 
-/*
- * Metro style Push Button
- * Author: Pedro Duque Vieira
- * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
- */
-.button {
-    -fx-padding: 5 22 5 22;
-    -fx-border-color: #e2e2e2;
-    -fx-border-width: 2;
-    -fx-background-radius: 0;
-    -fx-background-color: #1d1d1d;
-    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-    -fx-font-size: 11pt;
-    -fx-text-fill: #d8d8d8;
-    -fx-background-insets: 0 0 0 0, 0, 1, 2;
-}
 
-.button:hover {
-    -fx-background-color: #3a3a3a;
-}
 
-.button:pressed, .button:default:hover:pressed {
-    -fx-background-color: white;
-    -fx-text-fill: #1d1d1d;
-}
 
-.button:focused {
-    -fx-border-color: white, white;
-    -fx-border-width: 1, 1;
-    /*-fx-border-style: solid, segments(1, 1);*/
-    -fx-border-radius: 0, 0;
-    -fx-border-insets: 1 1 1 1, 0;
-}
 
-.button:disabled, .button:default:disabled {
-    -fx-opacity: 0.4;
-    -fx-background-color: #1d1d1d;
-    -fx-text-fill: white;
-}
 
-.button:default {
-    -fx-background-color: -fx-focus-color;
-    -fx-text-fill: #ffffff;
-}
 
-.button:default:hover {
-    -fx-background-color: derive(-fx-focus-color,30%);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+/*!**/
+ /** Metro style Push Button*/
+ /** Author: Pedro Duque Vieira*/
+ /** http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/*/
+ /**!*/
+/*.button {*/
+    /*-fx-padding: 5 22 5 22;*/
+    /*-fx-border-color: #e2e2e2;*/
+    /*-fx-border-width: 2;*/
+    /*-fx-background-radius: 0;*/
+    /*-fx-background-color: #1d1d1d;*/
+    /*-fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;*/
+    /*-fx-font-size: 11pt;*/
+    /*-fx-text-fill: #d8d8d8;*/
+    /*-fx-background-insets: 0 0 0 0, 0, 1, 2;*/
+/*}*/
+
+/*.button:hover {*/
+    /*-fx-background-color: #3a3a3a;*/
+/*}*/
+
+/*.button:pressed, .button:default:hover:pressed {*/
+    /*-fx-background-color: white;*/
+    /*-fx-text-fill: #1d1d1d;*/
+/*}*/
+
+/*.button:focused {*/
+    /*-fx-border-color: white, white;*/
+    /*-fx-border-width: 1, 1;*/
+    /*!*-fx-border-style: solid, segments(1, 1);*!*/
+    /*-fx-border-radius: 0, 0;*/
+    /*-fx-border-insets: 1 1 1 1, 0;*/
+/*}*/
+
+/*.button:disabled, .button:default:disabled {*/
+    /*-fx-opacity: 0.4;*/
+    /*-fx-background-color: #1d1d1d;*/
+    /*-fx-text-fill: white;*/
+/*}*/
+
+/*.button:default {*/
+    /*-fx-background-color: -fx-focus-color;*/
+    /*-fx-text-fill: #ffffff;*/
+/*}*/
+
+/*.button:default:hover {*/
+    /*-fx-background-color: derive(-fx-focus-color,30%);*/
+/*}*/
 

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.notalk.view.MainContent">
+  <children>
+    <SplitPane dividerPositions="0.403" focusTraversable="true" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+        <AnchorPane maxWidth="400.0" minHeight="0.0" minWidth="350.0" prefHeight="699.0" prefWidth="301.0" styleClass="talk-left-pane">
+          <children>
+            <VBox prefHeight="699.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <HBox fx:id="TalkSearchPane" prefHeight="50.0" prefWidth="200.0">
+                  <children>
+                    <Pane fx:id="talkSearch" disable="false" prefHeight="50.0" prefWidth="50.0" visible="true" />
+                    <TextField minHeight="34.0" prefHeight="100.0" prefWidth="300.0" promptText="搜索">
+                      <HBox.margin>
+                        <Insets bottom="8.0" top="8.0" />
+                      </HBox.margin>
+                    </TextField>
+                  </children>
+                  <padding>
+                    <Insets fx:id="x1" />
+                  </padding>
+                </HBox>
+                <HBox maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="200.0" styleClass="talk-pane">
+                  <children>
+                    <HBox maxHeight="30.0" prefHeight="30.0" prefWidth="300.0">
+                      <children>
+                        <Label prefHeight="29.0" prefWidth="237.0" styleClass="label-talk-view" text="Snoopy史努比">
+                          <HBox.margin>
+                            <Insets left="30.0" />
+                          </HBox.margin>
+                        </Label>
+                        <Label disable="false" prefHeight="25.0" prefWidth="34.0" styleClass="label-talk-view-time" text="12:20" textAlignment="RIGHT" wrapText="false">
+                          <HBox.margin>
+                            <Insets fx:id="x1" />
+                          </HBox.margin>
+                        </Label>
+                      </children>
+                      <padding>
+                        <Insets top="15.0" />
+                      </padding>
+                    </HBox>
+                  </children>
+                </HBox>
+                <TitledPane id="contacts-main" alignment="BOTTOM_LEFT" animated="false" disable="false" style="" text="无标题" textAlignment="LEFT" textOverrun="ELLIPSIS" visible="true" wrapText="false">
+                  <content>
+                    <AnchorPane id="contacts-main" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <VBox prefHeight="180.0" prefWidth="395.0" style="-fx-background-color:white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <children>
+                            <HBox maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="400.0" styleClass="talk-pane">
+                              <children>
+                                <HBox maxHeight="30.0" prefHeight="30.0" prefWidth="300.0">
+                                  <children>
+                                    <Label prefHeight="29.0" prefWidth="237.0" styleClass="label-talk-view" text="Snoopy史努比">
+                                      <HBox.margin>
+                                        <Insets left="30.0" />
+                                      </HBox.margin>
+                                    </Label>
+                                    <Label disable="false" prefHeight="25.0" prefWidth="34.0" styleClass="label-talk-view-time" text="12:20" textAlignment="RIGHT" wrapText="false">
+                                      <HBox.margin>
+                                        <Insets fx:id="x1" />
+                                      </HBox.margin>
+                                    </Label>
+                                  </children>
+                                  <padding>
+                                    <Insets top="15.0" />
+                                  </padding>
+                                </HBox>
+                              </children>
+                            </HBox>
+                            <HBox maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="400.0" styleClass="talk-pane">
+                              <children>
+                                <HBox maxHeight="30.0" prefHeight="30.0" prefWidth="300.0">
+                                  <children>
+                                    <Label prefHeight="29.0" prefWidth="237.0" styleClass="label-talk-view" text="Snoopy史努比">
+                                      <HBox.margin>
+                                        <Insets left="30.0" />
+                                      </HBox.margin>
+                                    </Label>
+                                    <Label disable="false" prefHeight="25.0" prefWidth="34.0" styleClass="label-talk-view-time" text="12:20" textAlignment="RIGHT" wrapText="false">
+                                      <HBox.margin>
+                                        <Insets fx:id="x1" />
+                                      </HBox.margin>
+                                    </Label>
+                                  </children>
+                                  <padding>
+                                    <Insets top="15.0" />
+                                  </padding>
+                                </HBox>
+                              </children>
+                            </HBox>
+                          </children>
+                        </VBox>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                  <font>
+                    <Font name="Microsoft YaHei UI" size="18.0" />
+                  </font>
+                  <VBox.margin>
+                    <Insets fx:id="x1" />
+                  </VBox.margin>
+                </TitledPane>
+              </children>
+            </VBox>
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="379.0">
+          <children>
+            <BorderPane prefHeight="699.0" prefWidth="594.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <center>
+                <Pane id="contacts-right-main" maxHeight="213.0" maxWidth="224.0" minHeight="213.0" minWidth="224.0" prefHeight="213.0" prefWidth="224.0" />
+              </center>
+            </BorderPane>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </children>
+  <stylesheets>
+    <URL value="@Main.css" />
+  </stylesheets>
+</AnchorPane>
