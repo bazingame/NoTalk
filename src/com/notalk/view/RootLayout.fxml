@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.notalk.view.RootLayout">
+  <children>
+    <SplitPane disable="true" dividerPositions="0.074" focusTraversable="true" orientation="HORIZONTAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+        <AnchorPane fx:id="RootLayoutLeft" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <children>
+            <VBox prefHeight="398.0" prefWidth="65.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <Pane maxHeight="71.0" maxWidth="71.0" minHeight="71.0" minWidth="71.0" padding="$x1" prefHeight="71.0" prefWidth="71.0" VBox.margin="$x1" VBox.vgrow="SOMETIMES">
+                  <children>
+                    <Pane id="RootLayoutLeftHead" fx:id="RootLayoutLeftButton0" layoutX="10.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" prefHeight="50.0" prefWidth="50.0">
+                      <padding>
+                        <Insets fx:id="x1" />
+                      </padding>
+                    </Pane>
+                  </children>
+                </Pane>
+                <Pane fx:id="RootLayoutLeftButtonMsg" disable="false" focusTraversable="false" maxHeight="71.0" maxWidth="71.0" minHeight="71.0" minWidth="71.0" prefHeight="71.0" prefWidth="71.0" visible="true" />
+                <Pane fx:id="RootLayoutLeftButtonPeople" maxHeight="71.0" maxWidth="71.0" minHeight="71.0" minWidth="71.0" prefHeight="71.0" prefWidth="71.0" />
+                <Pane fx:id="RootLayoutLeftButtonFunction" maxHeight="71.0" maxWidth="71.0" minHeight="71.0" minWidth="71.0" prefHeight="71.0" prefWidth="71.0" />
+                <Pane fx:id="RootLayoutLeftButtonSetting" disable="false" focusTraversable="false" maxHeight="71.0" maxWidth="71.0" minHeight="71.0" minWidth="71.0" mouseTransparent="false" prefHeight="71.0" prefWidth="71.0" snapToPixel="true" VBox.vgrow="ALWAYS">
+                  <VBox.margin>
+                    <Insets bottom="20.0" top="340.0" />
+                  </VBox.margin>
+                </Pane>
+              </children>
+            </VBox>
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+      </items>
+    </SplitPane>
+  </children>
+  <stylesheets>
+    <URL value="@Main.css" />
+  </stylesheets>
+</AnchorPane>
