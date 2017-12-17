@@ -102,14 +102,13 @@ public class RootLayoutController {
             contactsLoader.setLocation(MainApp.class.getResource("view/MainContentContacts.fxml"));
             MainContentContacts = (AnchorPane) contactsLoader.load();
 
-            //TODO::Function
-//            loader.setLocation(MainApp.class.getResource("view/MainContentFunction.fxml"));
-//            MainContentFunction = (AnchorPane) loader.load();
+            FXMLLoader functionLoader = new FXMLLoader();
+            functionLoader.setLocation(MainApp.class.getResource("view/MainContentFunction.fxml"));
+            MainContentFunction = (AnchorPane) functionLoader.load();
 
-
-            //TODO::Setting
-//            loader.setLocation(MainApp.class.getResource("view/MainContentSetting.fxml"));
-//            MainContentSetting = (AnchorPane) loader.load();
+            FXMLLoader settingLoader = new FXMLLoader();
+            settingLoader.setLocation(MainApp.class.getResource("view/MainContentSetting.fxml"));
+            MainContentSetting = (AnchorPane) settingLoader.load();
 
         }catch (IOException e) {
             e.printStackTrace();
