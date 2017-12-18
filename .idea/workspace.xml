@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/notalk/view/MinorContentSettingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentSettingController.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentSettingController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/RootLayoutController.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/RootLayoutController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentSetting.fxml" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentSetting.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/Main.css" afterPath="$PROJECT_DIR$/src/com/notalk/view/Main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MainContentSetting.fxml" afterPath="$PROJECT_DIR$/src/com/notalk/view/MainContentSetting.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MainContentSettingController.java" afterPath="$PROJECT_DIR$/src/com/notalk/view/MainContentSettingController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MinorContentSetting.fxml" afterPath="$PROJECT_DIR$/src/com/notalk/view/MinorContentSetting.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java" afterPath="$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MinorContentSettingController.java" afterPath="$PROJECT_DIR$/src/com/notalk/view/MinorContentSettingController.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,8 +78,8 @@
       <file leaf-file-name="RootLayoutController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1884">
-              <caret line="106" column="12" lean-forward="false" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
+            <state relative-caret-position="237">
+              <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1346#1347#0" expanded="true" />
@@ -112,8 +106,8 @@
       <file leaf-file-name="MinorContentSettingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MinorContentSettingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+            <state relative-caret-position="405">
+              <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,26 +115,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pane.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Program Files/Java/jdk/javafx-src.zip!/javafx/scene/layout/Pane.java">
+      <file leaf-file-name="RootLayout.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayout.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="133" column="32" lean-forward="true" selection-start-line="133" selection-start-column="32" selection-end-line="133" selection-end-column="32" />
-              <folding>
-                <element signature="e#4298#4299#0" expanded="true" />
-                <element signature="e#4340#4341#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="78">
+              <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+              <folding />
             </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MinorContentSetting.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MinorContentSetting.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+            <state relative-caret-position="272">
+              <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
               <folding>
-                <marker date="1513567815398" expanded="true" signature="9352:9366" ph="..." />
+                <element signature="n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" expanded="false" />
+                <element signature="n#VBox#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" expanded="false" />
+                <marker date="1513578489265" expanded="true" signature="13255:13441" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="13370:13399" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="13370:13419" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="13488:14479" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="13631:14463" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="13652:14447" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="13846:13973" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="13874:13952" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="14039:14154" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="14067:14133" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="14223:14339" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="14251:14318" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="14491:15266" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="14600:15253" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="14621:15237" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="14741:15130" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="14766:15014" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="15042:15110" ph="..." />
+                <marker date="1513578489265" expanded="true" signature="15314:15361" ph="..." />
               </folding>
             </state>
           </provider>
@@ -152,8 +166,8 @@
       <file leaf-file-name="Main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/Main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="280" column="17" lean-forward="true" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
+            <state relative-caret-position="447">
+              <caret line="336" column="21" lean-forward="true" selection-start-line="336" selection-start-column="21" selection-end-line="336" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -162,7 +176,7 @@
       <file leaf-file-name="MainContentFunction.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentFunction.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="234">
               <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <marker date="1513518429092" expanded="true" signature="2718:2732" ph="..." />
@@ -203,6 +217,8 @@
       <find>set-option</find>
       <find>Vbox</find>
       <find>Line</find>
+      <find>消息</find>
+      <find>radio</find>
     </findStrings>
     <replaceStrings>
       <replace>Microsoft YaHei UI</replace>
@@ -222,6 +238,9 @@
       <projects_view />
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/com/notalk/view/MinorContentSetting.fxml" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -238,8 +257,8 @@
         <option value="$PROJECT_DIR$/src/com/notalk/view/MainContentFunctionController.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/MainContentTalk.fxml" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java" />
-        <option value="$PROJECT_DIR$/src/com/notalk/view/MinorContentSetting.fxml" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/MainContentSettingController.java" />
+        <option value="$PROJECT_DIR$/src/com/notalk/view/MinorContentSetting.fxml" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/MinorContentSettingController.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/Main.css" />
       </list>
@@ -515,12 +534,12 @@
       <workItem from="1513350301190" duration="8288000" />
       <workItem from="1513398559021" duration="22992000" />
       <workItem from="1513469734579" duration="36985000" />
-      <workItem from="1513529604147" duration="13967000" />
+      <workItem from="1513529604147" duration="20344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83945000" />
+    <option name="totallyTimeSpent" value="90322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -535,8 +554,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1593583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1368984" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1593583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.120855615" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2046875" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
@@ -584,10 +603,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.073796794" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1368984" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1593583" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.120855615" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2046875" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2046875" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -902,19 +921,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentFunction.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <marker date="1513518429092" expanded="true" signature="2718:2732" ph="..." />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files/Java/jdk/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -924,17 +930,6 @@
             <element signature="e#83916#83917#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayout.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentFunctionController.java">
@@ -989,31 +984,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1884">
-          <caret line="106" column="12" lean-forward="false" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1346#1347#0" expanded="true" />
-            <element signature="e#1384#1385#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MinorContentSetting.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-          <folding>
-            <marker date="1513567815398" expanded="true" signature="9352:9366" ph="..." />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/MainApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
@@ -1035,6 +1005,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentFunction.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <marker date="1513518429092" expanded="true" signature="2718:2732" ph="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentSettingController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
@@ -1047,10 +1030,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1346#1347#0" expanded="true" />
+            <element signature="e#1384#1385#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MinorContentSetting.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+          <folding>
+            <element signature="n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" expanded="false" />
+            <element signature="n#VBox#0;n#center#0;n#BorderPane#0;n#children#0;n#AnchorPane#0;n#!!top" expanded="false" />
+            <marker date="1513578489265" expanded="true" signature="13255:13441" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="13370:13399" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="13370:13419" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="13488:14479" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="13631:14463" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="13652:14447" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="13846:13973" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="13874:13952" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="14039:14154" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="14067:14133" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="14223:14339" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="14251:14318" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="14491:15266" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="14600:15253" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="14621:15237" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="14741:15130" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="14766:15014" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="15042:15110" ph="..." />
+            <marker date="1513578489265" expanded="true" signature="15314:15361" ph="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayout.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MinorContentSettingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        <state relative-caret-position="405">
+          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1059,8 +1098,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/Main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="280" column="17" lean-forward="true" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
+        <state relative-caret-position="447">
+          <caret line="336" column="21" lean-forward="true" selection-start-line="336" selection-start-column="21" selection-end-line="336" selection-end-column="21" />
           <folding />
         </state>
       </provider>

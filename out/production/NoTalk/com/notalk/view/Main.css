@@ -272,6 +272,19 @@
 /*------------------------------------设置界面-------------------------------------*/
 
 /*------------------------------------设置子界面-------------------------------------*/
+.set-label-name{
+    -fx-font-size:16px;
+    -fx-text-fill:black;
+}
+.set-label-detail{
+    -fx-font-size:14px;
+    -fx-text-fill: gray;
+}
+/*设置每个具体选项的上下边框*/
+.set-option-label-border{
+    -fx-border-width:0.05 0 0.05 0;
+    -fx-border-color:gray;
+}
 
 /*-------我的资料-----*/
 #SetInfoPane{
@@ -296,6 +309,35 @@
     -fx-opacity: 0.7;
 }
 /*-------我的资料-----*/
+/*--------关于-------*/
+#about-logo{
+    -fx-background-image: url("../../../resources/images/About/logo.png");
+    -fx-background-size: cover;
+}
+#about-name{
+    -fx-font-size: 30px;
+}
+#about-version{
+    -fx-font-size: 15px;
+    -fx-text-fill: gray;
+    -fx-opacity: 0.7;
+}
+#about-feedback{
+    -fx-opacity: 0.8;
+}
+#about-miss-you{
+    -fx-font-weight: bold;
+    -fx-font-size: 22px;
+    -fx-text-fill: gray;
+    -fx-opacity: 0.2;
+}
+#about-declare{
+    -fx-font-size: 15px;
+    -fx-text-fill: gray;
+    -fx-opacity: 0.7;
+}
+/*--------关于-------*/
+
 /*------------------------------------设置子界面-------------------------------------*/
 
 .label{

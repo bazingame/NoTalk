@@ -16,6 +16,10 @@ public class MinorContentSettingController {
     @FXML private BorderPane AssistPane;
     @FXML private BorderPane AboutPane;
 
+    @FXML
+    public void initialize(){
+
+    }
 
 
     public void show(String paneName){
