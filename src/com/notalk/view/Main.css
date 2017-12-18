@@ -269,9 +269,34 @@
     -fx-background-color: #F1F5FA;
 }
 
-
-
 /*------------------------------------设置界面-------------------------------------*/
+
+/*------------------------------------设置子界面-------------------------------------*/
+
+/*-------我的资料-----*/
+#SetInfoPane{
+    -fx-background-image: url("../../../resources/images/themes/ColdNight/background.png");
+    -fx-background-size: cover;
+}
+#SetInfoPaneHead{
+    -fx-background-image: url("../../../resources/images/Menu/tempHead.png");
+    -fx-background-size: cover;
+}
+#EditinfoBtn{
+    /*-fx-background-color: #5FC7F2;*/
+    -fx-border-width: 19;
+    -fx-border-radius: 20px;
+    -fx-border-color: #5FC7F2;
+}
+.set-info-name-signature-label{
+    -fx-font-size: 20px;
+}
+.set-info-name-sid-label{
+    -fx-font-size: 15px;
+    -fx-opacity: 0.7;
+}
+/*-------我的资料-----*/
+/*------------------------------------设置子界面-------------------------------------*/
 
 .label{
     -fx-font-family: "Microsoft YaHei UI";

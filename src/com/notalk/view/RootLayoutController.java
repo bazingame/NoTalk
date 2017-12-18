@@ -20,7 +20,12 @@ public class RootLayoutController {
     private AnchorPane MainContentContacts ;
     private AnchorPane MainContentFunction ;
     private AnchorPane MainContentSetting ;
-
+    private MainContentSettingController mainContentSettingController;
+    private MainContentContactsController mainContentContactsController;
+    private MainContentTalkController mainContentTalkController;
+    private MainContentFunctionController mainContentFunctionController;
+    private boolean isLoadedMinorSetting = false;
+    private boolean isLoadedMinorMsg;
 
     @FXML
     private BorderPane TalkMain;
@@ -44,8 +49,6 @@ public class RootLayoutController {
     private SplitPane TalkContent;
 
 //    @FXML
-
-
 
     public void setMainApp(MainApp mainApp){
         this.mainApp = mainApp;
@@ -86,11 +89,16 @@ public class RootLayoutController {
         Function.setStyle("-fx-background-image: url('/resources/images/Menu/function.png')");
         Setting.setStyle("-fx-background-image: url('/resources/images/Menu/settingSelecetd.png')");
         TalkMain.setCenter(MainContentSetting);
+
+        //初次点击设置界面 加载设置子页面
+        if(!isLoadedMinorSetting)
+            this.mainContentSettingController.loadSetting();
     }
 
     /*
     * 加载四个右侧布局界面
     * 并初始界面设定为聊天界面
+    *
     * */
     public void loadPane(){
         try{
@@ -109,6 +117,8 @@ public class RootLayoutController {
             FXMLLoader settingLoader = new FXMLLoader();
             settingLoader.setLocation(MainApp.class.getResource("view/MainContentSetting.fxml"));
             MainContentSetting = (AnchorPane) settingLoader.load();
+            this.mainContentSettingController = settingLoader.getController();
+            mainContentSettingController.setMainApp(this);
 
         }catch (IOException e) {
             e.printStackTrace();
