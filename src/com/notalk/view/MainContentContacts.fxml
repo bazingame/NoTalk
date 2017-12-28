@@ -22,7 +22,7 @@
         </BorderPane>
       </center>
       <left>
-        <VBox prefHeight="700.0" prefWidth="350.0" styleClass="talk-left-pane">
+        <VBox fx:id="ContactsList" prefHeight="700.0" prefWidth="350.0" styleClass="talk-left-pane, contacts-scroll-pane">
           <children>
             <HBox fx:id="TalkSearchPane" prefHeight="50.0" prefWidth="200.0">
               <children>
@@ -47,112 +47,15 @@
                 </Label>
               </children>
             </HBox>
-            <TitledPane id="contacts-main" alignment="BOTTOM_LEFT" animated="false" disable="false" style="" styleClass="contacts-list" text="无标题" textAlignment="LEFT" textOverrun="ELLIPSIS" visible="true" wrapText="false">
-              <content>
-                <AnchorPane id="contacts-main" minHeight="0.0" minWidth="0.0" prefHeight="467.0" prefWidth="-1.0" styleClass="contacts-list">
-                  <children>
-                    <VBox prefHeight="180.0" prefWidth="-1.0" style="" styleClass="contacts-list" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                      <children>
-                        <BorderPane maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="200.0">
-                          <center>
-                            <BorderPane maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="200.0" styleClass="contacts-list-border">
-                              <bottom>
-                                <Label prefHeight="29.0" prefWidth="237.0" styleClass="label-talk-view-content" text="Snoopy史努比">
-                                  <BorderPane.margin>
-                                    <Insets fx:id="x1" />
-                                  </BorderPane.margin>
-                                </Label>
-                              </bottom>
-                              <padding>
-                                <Insets bottom="8.0" top="8.0" />
-                              </padding>
-                              <top>
-                                <Label prefHeight="30.0" prefWidth="237.0" styleClass="label-talk-view" text="Snoopy史努比" BorderPane.margin="$x1" />
-                              </top>
-                              <BorderPane.margin>
-                                <Insets left="10.0" fx:id="x2" />
-                              </BorderPane.margin>
-                            </BorderPane>
-                          </center>
-                          <left>
-                            <Pane maxHeight="60.0" maxWidth="60.0" minHeight="60.0" minWidth="60.0" prefHeight="60.0" prefWidth="60.0" BorderPane.margin="$x2">
-                              <children>
-                                <ImageView id="contacts-head" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
-                              </children>
-                            </Pane>
-                          </left>
-                        </BorderPane>
-                        <BorderPane maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="200.0">
-                          <center>
-                            <BorderPane maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="200.0" styleClass="contacts-list-border">
-                              <bottom>
-                                <Label prefHeight="29.0" prefWidth="237.0" styleClass="label-talk-view-content" text="Snoopy史努比">
-                                  <BorderPane.margin>
-                                    <Insets fx:id="x1" />
-                                  </BorderPane.margin>
-                                </Label>
-                              </bottom>
-                              <padding>
-                                <Insets bottom="8.0" top="8.0" />
-                              </padding>
-                              <top>
-                                <Label prefHeight="30.0" prefWidth="237.0" styleClass="label-talk-view" text="Snoopy史努比" BorderPane.margin="$x1" />
-                              </top>
-                              <BorderPane.margin>
-                                <Insets left="10.0" fx:id="x2" />
-                              </BorderPane.margin>
-                            </BorderPane>
-                          </center>
-                          <left>
-                            <Pane maxHeight="60.0" maxWidth="60.0" minHeight="60.0" minWidth="60.0" prefHeight="60.0" prefWidth="60.0" BorderPane.margin="$x2">
-                              <children>
-                                <ImageView id="contacts-head" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
-                              </children>
-                            </Pane>
-                          </left>
-                        </BorderPane>
-                        <BorderPane maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="200.0">
-                          <center>
-                            <BorderPane maxHeight="60.0" minHeight="60.0" prefHeight="60.0" prefWidth="200.0" styleClass="contacts-list-border">
-                              <bottom>
-                                <Label prefHeight="29.0" prefWidth="237.0" styleClass="label-talk-view-content" text="Snoopy史努比">
-                                  <BorderPane.margin>
-                                    <Insets fx:id="x1" />
-                                  </BorderPane.margin>
-                                </Label>
-                              </bottom>
-                              <padding>
-                                <Insets bottom="8.0" top="8.0" />
-                              </padding>
-                              <top>
-                                <Label prefHeight="30.0" prefWidth="237.0" styleClass="label-talk-view" text="Snoopy史努比" BorderPane.margin="$x1" />
-                              </top>
-                              <BorderPane.margin>
-                                <Insets left="10.0" fx:id="x2" />
-                              </BorderPane.margin>
-                            </BorderPane>
-                          </center>
-                          <left>
-                            <Pane maxHeight="60.0" maxWidth="60.0" minHeight="60.0" minWidth="60.0" prefHeight="60.0" prefWidth="60.0" BorderPane.margin="$x2">
-                              <children>
-                                <ImageView id="contacts-head" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" />
-                              </children>
-                            </Pane>
-                          </left>
-                        </BorderPane>
-                      </children>
-                    </VBox>
-                  </children>
-                </AnchorPane>
-              </content>
-              <font>
-                <Font name="Microsoft YaHei UI" size="18.0" />
-              </font>
-              <VBox.margin>
-                <Insets fx:id="x1" />
-              </VBox.margin>
-            </TitledPane>
+            <ScrollPane fx:id="scrollPane" content="$null" prefHeight="589.9998779296875" prefWidth="350.0" styleClass="contacts-scroll-pane">
+              <stylesheets>
+                <URL value="@Main.css" />
+              </stylesheets>
+            </ScrollPane>
           </children>
+          <stylesheets>
+            <URL value="@Main.css" />
+          </stylesheets>
         </VBox>
       </left>
     </BorderPane>

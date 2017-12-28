@@ -151,7 +151,11 @@
     -fx-background-size: cover;
 }
 .contacts-list{
-    -fx-background-color:white;
+    -fx-background-color:#EEEFF3;
+}
+.contacts-scroll-pane{
+    -fx-background-color:#EEEFF3;
+
 }
 
 /*联系人左侧折叠列表*/
@@ -170,6 +174,31 @@
 .contacts-list-border{
     -fx-border-width: 0.2 0 0.2 0;
     -fx-border-color: #D1D6DB;
+}
+
+/*每个联系人的BorderPane*/
+.people-BorderPane{
+    -fx-min-height: 60;
+    -fx-pref-height: 60;
+    -fx-max-height: 60;
+    /*-fx-background-color: green*/
+}
+/*联系人头像*/
+.people-headPane{
+    -fx-pref-height: 60;
+    -fx-min-height:60;
+    -fx-pref-width: 60;
+    /*-fx-background-color: blue;*/
+}
+
+/*联系人BorderPane中的右侧BoderPane*/
+.people-BorderPane-Right {
+    -fx-min-height: 60;
+    -fx-pref-height: 60;
+    -fx-max-height: 60;
+    -fx-pref-width: 250;
+    -fx-padding: 8 0 8 0;
+    /*-fx-background-color: red;*/
 }
 
 /*联系人添加符号*/
