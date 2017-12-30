@@ -109,6 +109,8 @@ public class RootLayoutController {
             FXMLLoader contactsLoader = new FXMLLoader();
             contactsLoader.setLocation(MainApp.class.getResource("view/MainContentContacts.fxml"));
             MainContentContacts = (AnchorPane) contactsLoader.load();
+            MainContentContactsController mainContentContactsController = contactsLoader.getController();
+            mainContentContactsController.setRootLayoutController(this);
 
             FXMLLoader functionLoader = new FXMLLoader();
             functionLoader.setLocation(MainApp.class.getResource("view/MainContentFunction.fxml"));

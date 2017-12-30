@@ -15,7 +15,7 @@
       <center>
         <FlowPane hgap="10.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="-1.0" vgap="10.0">
           <children>
-            <Pane id="functionMsg" maxHeight="140.0" maxWidth="140.0" minHeight="140.0" minWidth="140.0" prefHeight="140.0" prefWidth="140.0" styleClass="function-list-pane" />
+            <Pane id="functionMsg" maxHeight="140.0" maxWidth="140.0" minHeight="140.0" minWidth="140.0" prefHeight="140.0" prefWidth="140.0" style="" styleClass="function-list-pane" />
             <Pane id="functionCourse" maxHeight="140.0" maxWidth="140.0" minHeight="140.0" minWidth="140.0" prefHeight="140.0" prefWidth="140.0" styleClass="function-list-pane" />
             <Pane id="functionScore" maxHeight="140.0" maxWidth="140.0" minHeight="140.0" minWidth="140.0" prefHeight="140.0" prefWidth="140.0" styleClass="function-list-pane" />
             <Pane id="functionPayHistory" maxHeight="140.0" maxWidth="140.0" minHeight="140.0" minWidth="140.0" prefHeight="140.0" prefWidth="140.0" styleClass="function-list-pane" />

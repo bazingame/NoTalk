@@ -6,6 +6,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TitledPane;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.TransferMode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -13,14 +17,19 @@ import jdk.nashorn.internal.ir.VarNode;
 
 import javax.swing.*;
 import javax.swing.text.html.ImageView;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
-import java.beans.EventHandler;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.MouseEvent;
+//import java.beans.EventHandler;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
 
 public class MainContentContactsController {
+    private RootLayoutController rootLayoutController;
+    private MainContentTalkController mainContentTalkController;
+
     Collection<People> peopleList = new ArrayList();
 
 
@@ -58,11 +67,9 @@ public class MainContentContactsController {
             peopleBorderPaneRight.getStyleClass().addAll("people-BorderPane-Right","contacts-list-border");
 //        peopleBorderPaneRight.getStyleClass().addAll("contacts-list-border");
 
-
             Pane headPane = new Pane();
             headPane.getStyleClass().addAll("people-headPane");
 //        ImageView headPic = new ImageView();
-
             Label nickName = new Label();
             nickName.getStyleClass().addAll("label-talk-view");
             Label lastWords = new Label();
@@ -77,28 +84,15 @@ public class MainContentContactsController {
             peopleBorderPane.setRight(peopleBorderPaneRight);
             peopleSetVbox.getChildren().addAll(peopleBorderPane);
 
-            peopleSetVbox.setOnMouseClicked(new EventHandler<Event>(){
+            /*点击联系人事件*/
+            peopleBorderPane.setOnMouseClicked(new EventHandler <MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    switchToTalk(peopleBorderPane);
+                }
+            });
 
-            } );
-//
-//            EventHandler eventHandler = new EventHandler(){
-//                @Override
-//                public void handle(MouseEvent e){
-//                    System.out.println("sadasda");
-//                }
-//            }
 
-//            Creating the mouse event handler
-//            EventHandler<MouseEvent> eventHandler = new EventHandler<MouseEvent>() {
-//                @Override
-//                public void handle(MouseEvent e) {
-//                    System.out.println("Hello World");
-//                }
-//            };
-//Adding event Filter
-//            Circle.addEventFilter(MouseEvent.MOUSE_CLICKED, eventHandler);
-
-//            peopleSetVbox.addEventFilter(MouseEvent.MOUSE_CLICKED,eventHandler);
         }
 
         titledPane.setContent(peopleSetVbox);
@@ -110,9 +104,25 @@ public class MainContentContactsController {
         scrollPane.setContent(titledPane);
     }
 
+    /*
+    *
+    * */
 
+    public void setRootLayoutController(RootLayoutController rootLayoutController) {
+        this.rootLayoutController = rootLayoutController;
+    }
 
+    public void setMainContentTalkController(MainContentTalkController mainContentTalkController){
+        this.mainContentTalkController = mainContentTalkController;
+    }
 
+    /*
+    * 切换到消息界面 且对话框内加载相应数据
+    * */
+    private void switchToTalk(BorderPane peopleBorderPane){
+        System.out.println("Click Contacts");
+        rootLayoutController.clickMsg();
+    }
 
     @FXML
     private void initialize(){

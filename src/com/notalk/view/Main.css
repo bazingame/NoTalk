@@ -218,6 +218,8 @@
 /*功能列表方块*/
 .function-list-pane{
     /*-fx-background-color: red;*/
+    /*-fx-border-radius: 70px;*/
+    /*-fx-border-color: red;*/
 }
 #functionMsg{
     -fx-background-image: url("../../../resources/images/Function/msg.png");
