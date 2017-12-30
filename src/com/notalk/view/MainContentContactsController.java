@@ -22,6 +22,7 @@ import javax.swing.text.html.ImageView;
 //import java.beans.EventHandler;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
@@ -122,6 +123,11 @@ public class MainContentContactsController {
     private void switchToTalk(BorderPane peopleBorderPane){
         System.out.println("Click Contacts");
         rootLayoutController.clickMsg();
+//        String[] test = {"hhhh","asdas"};
+        HashMap<String,String> infoMap = new HashMap<>();
+        infoMap.put("name","SnoopyLikePiggy");
+        infoMap.put("words","Hello");
+        rootLayoutController.initTalkInfo(infoMap);
     }
 
     @FXML

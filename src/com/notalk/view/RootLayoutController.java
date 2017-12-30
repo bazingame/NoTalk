@@ -13,6 +13,7 @@ import javafx.scene.layout.Pane;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 public class RootLayoutController {
     private MainApp mainApp;
@@ -105,6 +106,8 @@ public class RootLayoutController {
             FXMLLoader talkLoader = new FXMLLoader();
             talkLoader.setLocation(MainApp.class.getResource("view/MainContentTalk.fxml"));
             MainContentTalk = (AnchorPane) talkLoader.load();
+            this.mainContentTalkController = talkLoader.getController();
+            mainContentTalkController.setRootLayoutController(this);
 
             FXMLLoader contactsLoader = new FXMLLoader();
             contactsLoader.setLocation(MainApp.class.getResource("view/MainContentContacts.fxml"));
@@ -128,6 +131,15 @@ public class RootLayoutController {
 
         TalkMain.setCenter(MainContentTalk);
     }
+
+    /*
+    *
+    * 初始化聊天界面
+    * */
+    public void initTalkInfo(HashMap<String,String> info){
+        mainContentTalkController.loadInfo(info);
+    }
+
 
 
 

@@ -67,7 +67,7 @@
                             <Insets left="20.0" />
                           </HBox.margin>
                         </Pane>
-                        <Label prefWidth="266.0" styleClass="label-talk-right-name" text="SNOOPY史努比" />
+                        <Label fx:id="nickName" prefWidth="266.0" styleClass="label-talk-right-name" text="SNOOPY史努比" />
                       </children>
                     </HBox>
                   </left>
@@ -106,7 +106,7 @@
                   <left>
                     <Pane fx:id="HeadTemp" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" styleClass="talk-left-head">
                       <children>
-                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" styleClass="talk-left-head-img" />
+                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" style="" styleClass="talk-left-head-img" />
                       </children>
                       <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

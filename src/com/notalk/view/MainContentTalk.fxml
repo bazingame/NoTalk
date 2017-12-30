@@ -67,7 +67,7 @@
                             <Insets left="20.0" />
                           </HBox.margin>
                         </Pane>
-                        <Label prefWidth="266.0" styleClass="label-talk-right-name" text="SNOOPY史努比" />
+                        <Label fx:id="nickName" prefWidth="266.0" styleClass="label-talk-right-name" text="SNOOPY史努比" />
                       </children>
                     </HBox>
                   </left>
