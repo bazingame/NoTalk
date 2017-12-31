@@ -38,10 +38,12 @@ public class MainContentContactsController {
     * */
     @FXML
     public void addPeople(){
-        GroupPeople people1 = new GroupPeople("Howard","2016501308");
-        GroupPeople people2 = new GroupPeople("Howard","2016501308");
-        peopleList.add(people1);
-        peopleList.add(people2);
+//        GroupPeople people1 = new GroupPeople("Howard","2016501308");
+//        GroupPeople people2 = new GroupPeople("Howard","2016501308");
+//        peopleList.add(people1);
+//        peopleList.add(people2);
+
+
         //获取联系人信息
         try {
             String friendsList = db.getFriendsList(2016501308);

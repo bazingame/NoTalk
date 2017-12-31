@@ -152,8 +152,9 @@ public class DataBaseOperate {
         //获取好友分组列表(json格式，需要先解析)
         String groupList = this.getFriendsGroupList(my_sid);
         Map<Integer,String> groupListMap = gson.fromJson(groupList,new TypeToken<HashMap<Integer,String>>(){}.getType());
-        Map<String,List> friendsList = new HashMap<String, List>();
+        List<Map<String,List>> friendsList = new ArrayList<>();
         for(int i = 1;i<=groupListMap.size();i++){
+            Map<String,List> friendsListNameAndData = new HashMap<String,List>();
             //根据组别名去遍历分组好友
             List<Map> thisGroupList = new ArrayList<Map>();
             while (res.next()){
@@ -166,7 +167,11 @@ public class DataBaseOperate {
                 }
             }
             res.first();
-            friendsList.put(groupListMap.get(i),thisGroupList);
+            List<String> groupName = new ArrayList<>();
+            groupName.add(groupListMap.get(i));
+            friendsListNameAndData.put("friend_list",thisGroupList);
+            friendsListNameAndData.put("group_name",groupName);
+            friendsList.add(friendsListNameAndData);
         }
         return gson.toJson(friendsList);
     }
