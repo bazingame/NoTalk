@@ -1,38 +1,31 @@
 package com.notalk.view;
 
-import com.notalk.model.People;
-import javafx.event.Event;
+import com.notalk.model.DataBaseOperate;
+import com.notalk.model.GroupPeople;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TitledPane;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.TransferMode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import jdk.nashorn.internal.ir.VarNode;
 
-import javax.swing.*;
-import javax.swing.text.html.ImageView;
 //import java.awt.event.ActionEvent;
 //import java.awt.event.MouseEvent;
 //import java.beans.EventHandler;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
+
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 
 public class MainContentContactsController {
     private RootLayoutController rootLayoutController;
     private MainContentTalkController mainContentTalkController;
-
-    Collection<People> peopleList = new ArrayList();
-
+    DataBaseOperate db = new DataBaseOperate();
+    Collection<GroupPeople> peopleList = new ArrayList();
 
     @FXML private VBox ContactsList;
 
@@ -45,10 +38,20 @@ public class MainContentContactsController {
     * */
     @FXML
     public void addPeople(){
-        People people1 = new People("Howard","2016501308");
-        People people2 = new People("Howard","2016501308");
+        GroupPeople people1 = new GroupPeople("Howard","2016501308");
+        GroupPeople people2 = new GroupPeople("Howard","2016501308");
         peopleList.add(people1);
         peopleList.add(people2);
+        //获取联系人信息
+        try {
+            String friendsList = db.getFriendsList(2016501308);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
+
 /*----------------------------------------------------set1*/
         /*先添加分组列表，每一组为一个TitledPane*/
         TitledPane titledPane = new TitledPane();

@@ -226,31 +226,31 @@
     -fx-background-size: cover;
 }
 #functionCourse{
-    -fx-background-image: url("../../../resources/images/Function/course.png");
+    /*-fx-background-image: url("../../../resources/images/Function/course.png");*/
     -fx-background-size: cover;
 }
 #functionScore{
-    -fx-background-image: url("../../../resources/images/Function/score.png");
+    /*-fx-background-image: url("../../../resources/images/Function/score.png");*/
     -fx-background-size: cover;
 }
 #functionArrange{
-    -fx-background-image: url("../../../resources/images/Function/arrange.png");
+    /*-fx-background-image: url("../../../resources/images/Function/arrange.png");*/
     -fx-background-size: cover;
 }
 #functionPayHistory{
-    -fx-background-image: url("../../../resources/images/Function/payhistory.png");
+    /*-fx-background-image: url("../../../resources/images/Function/payhistory.png");*/
     -fx-background-size: cover;
 }
 #functionRadio{
-    -fx-background-image: url("../../../resources/images/Function/radio.png");
+    /*-fx-background-image: url("../../../resources/images/Function/radio.png");*/
     -fx-background-size: cover;
 }
 #functionDoc{
-    -fx-background-image: url("../../../resources/images/Function/doc.png");
+    /*-fx-background-image: url("../../../resources/images/Function/doc.png");*/
     -fx-background-size: cover;
 }
 #functionShop{
-    -fx-background-image: url("../../../resources/images/Function/shop.png");
+    /*-fx-background-image: url("../../../resources/images/Function/shop.png");*/
     -fx-background-size: cover;
 }
 

@@ -3,12 +3,12 @@ package com.notalk.model;
 /*
 *  联系人类
 * */
-public class People {
+public class GroupPeople {
     private String nickname;
     private String sid;
 //    private
 
-    public People(String nickname,String sid){
+    public GroupPeople(String nickname, String sid){
 
     }
 
