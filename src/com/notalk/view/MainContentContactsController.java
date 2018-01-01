@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.notalk.model.DataBaseOperate;
 import com.notalk.model.GroupPeople;
 import com.notalk.util.Echo;
+import javafx.beans.property.Property;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -78,6 +79,7 @@ public class MainContentContactsController {
                     headPane.getStyleClass().addAll("people-headPane");
 //                  ImageView headPic = new ImageView();
                     Label nickName = new Label();
+                    nickName.setId("nickName");
                     nickName.getStyleClass().addAll("label-talk-view");
                     Label lastWords = new Label();
                     lastWords.getStyleClass().addAll("label-talk-view-content");
@@ -139,14 +141,12 @@ public class MainContentContactsController {
     * 切换到消息界面 且对话框内加载相应数据
     * */
     private void switchToTalk(BorderPane peopleBorderPane){
-        System.out.println("Click Contacts");
         rootLayoutController.clickMsg();
-//        String[] test = {"hhhh","asdas"};
         HashMap<String,String> infoMap = new HashMap<>();
-//        peopleBorderPane.getChildren();
-        peopleBorderPane.setStyle("-fx-background-color: red");
-//        echo( peopleBorderPane.getRight());
-        infoMap.put("name","SnoopyLikePiggy");
+        Label nickNameLabel = (Label)peopleBorderPane.lookup("#nickName");
+        String nickNameString = nickNameLabel.getText();
+        System.out.println(nickNameString);
+        infoMap.put("name",nickNameString);
         infoMap.put("words","Hello");
         rootLayoutController.initTalkInfo(infoMap);
     }
