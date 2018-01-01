@@ -1,7 +1,10 @@
 package com.notalk.view;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.notalk.model.DataBaseOperate;
 import com.notalk.model.GroupPeople;
+import com.notalk.util.Echo;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -17,14 +20,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
+
+import static com.notalk.util.Echo.echo;
 
 public class MainContentContactsController {
     private RootLayoutController rootLayoutController;
     private MainContentTalkController mainContentTalkController;
     DataBaseOperate db = new DataBaseOperate();
+    Gson gson = new Gson();
     Collection<GroupPeople> peopleList = new ArrayList();
 
     @FXML private VBox ContactsList;
@@ -33,20 +40,76 @@ public class MainContentContactsController {
 
     /*
     *
-    * 添加联系人
+    * 初始化并添加联系人
     *
     * */
     @FXML
     public void addPeople(){
-//        GroupPeople people1 = new GroupPeople("Howard","2016501308");
-//        GroupPeople people2 = new GroupPeople("Howard","2016501308");
-//        peopleList.add(people1);
-//        peopleList.add(people2);
 
-
-        //获取联系人信息
         try {
+
+            //获取联系人信息
             String friendsList = db.getFriendsList(2016501308);
+            List<GroupPeople> groupPeopleList = gson.fromJson(friendsList, new TypeToken<List<GroupPeople>>() {}.getType());
+//            System.out.println(gson.toJson(groupPeople));
+            VBox peoplelistvBox = new VBox();
+            for(int j = 0;j < groupPeopleList.size(); j++){
+                GroupPeople groupPeople =groupPeopleList.get(j);
+                /*先添加分组列表，每一组为一个TitledPane*/
+                TitledPane titledPane = new TitledPane();
+                titledPane.setText(groupPeople.getGroup_name().get(0));
+                titledPane.setStyle("-fx-font-size: 18px");
+                 /*添加联系人*/
+                VBox peopleSetVbox = new VBox();
+                peopleSetVbox.setStyle("-fx-background-color: #EEEFF3");
+
+                /*每个联系人一个peopleBorderPane*/
+                for(int i = 0;i < groupPeople.getFriend_list().size();i++){
+                    GroupPeople.FriendListBean friendListBean =  groupPeople.getFriend_list().get(i);
+                    BorderPane peopleBorderPane =  new BorderPane();
+                    peopleBorderPane.getStyleClass().addAll("people-BorderPane");
+
+                    /*联系人右侧昵称和最后发言BorderPane容器*/
+                    BorderPane peopleBorderPaneRight =  new BorderPane();
+                    peopleBorderPaneRight.getStyleClass().addAll("people-BorderPane-Right","contacts-list-border");
+//                  peopleBorderPaneRight.getStyleClass().addAll("contacts-list-border");
+
+                    Pane headPane = new Pane();
+                    headPane.getStyleClass().addAll("people-headPane");
+//                  ImageView headPic = new ImageView();
+                    Label nickName = new Label();
+                    nickName.getStyleClass().addAll("label-talk-view");
+                    Label lastWords = new Label();
+                    lastWords.getStyleClass().addAll("label-talk-view-content");
+
+                    nickName.setText(friendListBean.getFriend_nickname());
+                    lastWords.setText("Last Wordssss");
+                    peopleBorderPaneRight.setTop(nickName);
+                    peopleBorderPaneRight.setBottom(lastWords);
+
+                    peopleBorderPane.setLeft(headPane);
+                    peopleBorderPane.setRight(peopleBorderPaneRight);
+                    peopleSetVbox.getChildren().addAll(peopleBorderPane);
+
+                    /*点击联系人事件*/
+                    peopleBorderPane.setOnMouseClicked(new EventHandler <MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent event) {
+                            switchToTalk(peopleBorderPane);
+                        }
+                    });
+
+
+                }
+
+                titledPane.setContent(peopleSetVbox);
+                peoplelistvBox.getChildren().addAll(titledPane);
+            }
+
+            scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+            scrollPane.setContent(peoplelistvBox);
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -54,60 +117,10 @@ public class MainContentContactsController {
 
 
 
-/*----------------------------------------------------set1*/
-        /*先添加分组列表，每一组为一个TitledPane*/
-        TitledPane titledPane = new TitledPane();
-        titledPane.setText("Friends");
-        titledPane.setStyle("-fx-font-size: 18px");
-        /*添加联系人*/
-        VBox peopleSetVbox = new VBox();
-        peopleSetVbox.setStyle("-fx-background-color: #EEEFF3");
-
-        /*每个联系人一个peopleBorderPane*/
-        for(int i = 0;i < 20;i++){
-            BorderPane peopleBorderPane =  new BorderPane();
-            peopleBorderPane.getStyleClass().addAll("people-BorderPane");
-
-        /*联系人右侧昵称和最后发言BorderPane容器*/
-            BorderPane peopleBorderPaneRight =  new BorderPane();
-            peopleBorderPaneRight.getStyleClass().addAll("people-BorderPane-Right","contacts-list-border");
-//        peopleBorderPaneRight.getStyleClass().addAll("contacts-list-border");
-
-            Pane headPane = new Pane();
-            headPane.getStyleClass().addAll("people-headPane");
-//        ImageView headPic = new ImageView();
-            Label nickName = new Label();
-            nickName.getStyleClass().addAll("label-talk-view");
-            Label lastWords = new Label();
-            lastWords.getStyleClass().addAll("label-talk-view-content");
-
-            nickName.setText("Howad");
-            lastWords.setText("Last Wordssss");
-            peopleBorderPaneRight.setTop(nickName);
-            peopleBorderPaneRight.setBottom(lastWords);
-
-            peopleBorderPane.setLeft(headPane);
-            peopleBorderPane.setRight(peopleBorderPaneRight);
-            peopleSetVbox.getChildren().addAll(peopleBorderPane);
-
-            /*点击联系人事件*/
-            peopleBorderPane.setOnMouseClicked(new EventHandler <MouseEvent>() {
-                @Override
-                public void handle(MouseEvent event) {
-                    switchToTalk(peopleBorderPane);
-                }
-            });
-
-
-        }
-
-        titledPane.setContent(peopleSetVbox);
-//        this.ContactsList.getChildren().addAll(titledPane);
 
 /*----------------------------------------------------set1*/
 
-        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        scrollPane.setContent(titledPane);
+
     }
 
     /*
@@ -130,6 +143,9 @@ public class MainContentContactsController {
         rootLayoutController.clickMsg();
 //        String[] test = {"hhhh","asdas"};
         HashMap<String,String> infoMap = new HashMap<>();
+//        peopleBorderPane.getChildren();
+        peopleBorderPane.setStyle("-fx-background-color: red");
+//        echo( peopleBorderPane.getRight());
         infoMap.put("name","SnoopyLikePiggy");
         infoMap.put("words","Hello");
         rootLayoutController.initTalkInfo(infoMap);
@@ -145,3 +161,4 @@ public class MainContentContactsController {
 
     }
 }
+

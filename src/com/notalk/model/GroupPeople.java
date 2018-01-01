@@ -6,6 +6,7 @@ import java.util.List;
 *  联系人类
 * */
 public class GroupPeople {
+
     private List<FriendListBean> friend_list;
     private List<String> group_name;
 
