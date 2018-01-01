@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -25,6 +26,7 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
         primaryStage.setTitle("NoTalk");
+//        primaryStage.initStyle(StageStyle.UNDECORATED);//去掉头
         primaryStage.getIcons().add(new Image("file:resources/images/Talk/search.png"));
         primaryStage.setWidth(1140);
         primaryStage.setHeight(800);

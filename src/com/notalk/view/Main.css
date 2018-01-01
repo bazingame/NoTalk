@@ -110,6 +110,22 @@
     -fx-font-size: 13pt;
     -fx-opacity:0.9;
 }
+/*聊天界面列表每条记录*/
+.talk-people-BorderPane{
+    -fx-min-height: 80;
+    -fx-pref-height: 80;
+    -fx-max-height: 80;
+    /*-fx-background-color: green*/
+}
+/*聊天界面列表每条记录BorderPane中的右侧BoderPane*/
+.talk-people-BorderPane-Right {
+    -fx-min-height: 80;
+    -fx-pref-height: 80;
+    -fx-max-height: 80;
+    -fx-pref-width: 250;
+    -fx-padding: 18 0 20 0;
+    /*-fx-background-color: red;*/
+}
 /*聊天界面最后一条记时间*/
 .label-talk-view-time {
     -fx-font-size: 12pt;

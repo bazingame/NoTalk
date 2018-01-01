@@ -20,7 +20,7 @@
               <bottom>
                 <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="200.0">
                   <children>
-                    <Button id="talkSend" maxWidth="70.0" minWidth="70.0" mnemonicParsing="false" prefWidth="70.0" text="发送" textFill="WHITE">
+                    <Button id="talkSend" fx:id="sendMsgBtn" maxWidth="70.0" minWidth="70.0" mnemonicParsing="false" onMouseClicked="#sendMsg" prefWidth="70.0" text="发送" textFill="WHITE">
                       <HBox.margin>
                         <Insets right="20.0" />
                       </HBox.margin>
@@ -29,7 +29,7 @@
                 </HBox>
               </bottom>
               <center>
-                <TextArea id="talk-content-text-area" prefHeight="150.0" prefWidth="649.9998779296875" style="&#10;" wrapText="true">
+                <TextArea id="talk-content-text-area" fx:id="msgContent" prefHeight="150.0" prefWidth="649.9998779296875" style="&#10;" wrapText="true">
                   <BorderPane.margin>
                     <Insets fx:id="x1" />
                   </BorderPane.margin>
@@ -100,293 +100,51 @@
                 <Insets fx:id="x1" />
               </padding>
             </HBox>
-            <HBox maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="200.0" styleClass="talk-pane">
-              <children>
-                <BorderPane prefHeight="80.0" prefWidth="330.0">
-                  <left>
-                    <Pane fx:id="HeadTemp" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" styleClass="talk-left-head">
-                      <children>
-                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" style="" styleClass="talk-left-head-img" />
-                      </children>
-                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                      </padding>
-                    </Pane>
-                  </left>
-                  <right>
-                    <BorderPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="245.0">
-                      <bottom>
-                        <Label prefHeight="29.0" prefWidth="231.0" styleClass="label-talk-view-content" text="今晚吃鸡" underline="false">
-                          <BorderPane.margin>
-                            <Insets bottom="14.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </bottom>
+            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" prefHeight="-1.0" prefWidth="350.0" styleClass="contacts-scroll-pane" visible="true">
+              <content>
+                <VBox fx:id="peopleBorderPaneList" alignment="TOP_LEFT" focusTraversable="false" prefHeight="-1.0" prefWidth="-1.0">
+                  <children>
+                    <BorderPane prefHeight="80.0" prefWidth="330.0">
                       <left>
-                        <Label prefHeight="17.0" prefWidth="161.0" styleClass="label-talk-view" text="Snoopy史努比">
-                          <BorderPane.margin>
-                            <Insets top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
+                        <Pane fx:id="HeadTemp" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" styleClass="talk-left-head">
+                          <children>
+                            <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" style="" styleClass="talk-left-head-img" />
+                          </children>
+                          <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                          </padding>
+                        </Pane>
                       </left>
                       <right>
-                        <Label alignment="CENTER_RIGHT" disable="false" maxWidth="68.0" minWidth="34.0" prefHeight="17.0" prefWidth="59.0" styleClass="label-talk-view-time" text="23:30" textAlignment="RIGHT" textOverrun="ELLIPSIS" wrapText="false" BorderPane.alignment="CENTER_RIGHT">
-                          <BorderPane.margin>
-                            <Insets right="5.0" top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
+                        <BorderPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="245.0">
+                          <bottom>
+                            <Label prefHeight="29.0" prefWidth="231.0" styleClass="label-talk-view-content" text="今晚吃鸡" underline="false">
+                              <BorderPane.margin>
+                                <Insets bottom="14.0" />
+                              </BorderPane.margin>
+                            </Label>
+                          </bottom>
+                          <left>
+                            <Label prefHeight="17.0" prefWidth="161.0" styleClass="label-talk-view" text="Snoopy史努比">
+                              <BorderPane.margin>
+                                <Insets top="18.0" />
+                              </BorderPane.margin>
+                            </Label>
+                          </left>
+                          <right>
+                            <Label alignment="CENTER_RIGHT" disable="false" maxWidth="68.0" minWidth="34.0" prefHeight="17.0" prefWidth="59.0" styleClass="label-talk-view-time" text="23:30" textAlignment="RIGHT" textOverrun="ELLIPSIS" wrapText="false" BorderPane.alignment="CENTER_RIGHT">
+                              <BorderPane.margin>
+                                <Insets right="5.0" top="18.0" />
+                              </BorderPane.margin>
+                            </Label>
+                          </right>
+                        </BorderPane>
                       </right>
                     </BorderPane>
-                  </right>
-                </BorderPane>
-              </children>
-            </HBox>
-            <HBox maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="200.0" styleClass="talk-pane">
-              <children>
-                <BorderPane prefHeight="80.0" prefWidth="330.0">
-                  <left>
-                    <Pane id="HeadTemp" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" styleClass="talk-left-head">
-                      <children>
-                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" styleClass="talk-left-head-img" />
-                      </children>
-                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                      </padding>
-                    </Pane>
-                  </left>
-                  <right>
-                    <BorderPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="245.0">
-                      <bottom>
-                        <Label prefHeight="29.0" prefWidth="231.0" styleClass="label-talk-view-content" text="今晚吃鸡" underline="false">
-                          <BorderPane.margin>
-                            <Insets bottom="14.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </bottom>
-                      <left>
-                        <Label prefHeight="17.0" prefWidth="161.0" styleClass="label-talk-view" text="Snoopy史努比">
-                          <BorderPane.margin>
-                            <Insets top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </left>
-                      <right>
-                        <Label alignment="CENTER_RIGHT" disable="false" maxWidth="68.0" minWidth="34.0" prefHeight="17.0" prefWidth="59.0" styleClass="label-talk-view-time" text="23:30" textAlignment="RIGHT" textOverrun="ELLIPSIS" wrapText="false" BorderPane.alignment="CENTER_RIGHT">
-                          <BorderPane.margin>
-                            <Insets right="5.0" top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </right>
-                    </BorderPane>
-                  </right>
-                </BorderPane>
-              </children>
-            </HBox>
-            <HBox maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="200.0" styleClass="talk-pane">
-              <children>
-                <BorderPane prefHeight="80.0" prefWidth="330.0">
-                  <left>
-                    <Pane id="HeadTemp" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" styleClass="talk-left-head">
-                      <children>
-                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" styleClass="talk-left-head-img" />
-                      </children>
-                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                      </padding>
-                    </Pane>
-                  </left>
-                  <right>
-                    <BorderPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="245.0">
-                      <bottom>
-                        <Label prefHeight="29.0" prefWidth="231.0" styleClass="label-talk-view-content" text="今晚吃鸡" underline="false">
-                          <BorderPane.margin>
-                            <Insets bottom="14.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </bottom>
-                      <left>
-                        <Label prefHeight="17.0" prefWidth="161.0" styleClass="label-talk-view" text="Snoopy史努比">
-                          <BorderPane.margin>
-                            <Insets top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </left>
-                      <right>
-                        <Label alignment="CENTER_RIGHT" disable="false" maxWidth="68.0" minWidth="34.0" prefHeight="17.0" prefWidth="59.0" styleClass="label-talk-view-time" text="23:30" textAlignment="RIGHT" textOverrun="ELLIPSIS" wrapText="false" BorderPane.alignment="CENTER_RIGHT">
-                          <BorderPane.margin>
-                            <Insets right="5.0" top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </right>
-                    </BorderPane>
-                  </right>
-                </BorderPane>
-              </children>
-            </HBox>
-            <HBox maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="200.0" styleClass="talk-pane">
-              <children>
-                <BorderPane prefHeight="80.0" prefWidth="330.0">
-                  <left>
-                    <Pane id="HeadTemp" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" styleClass="talk-left-head">
-                      <children>
-                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" styleClass="talk-left-head-img" />
-                      </children>
-                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                      </padding>
-                    </Pane>
-                  </left>
-                  <right>
-                    <BorderPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="245.0">
-                      <bottom>
-                        <Label prefHeight="29.0" prefWidth="231.0" styleClass="label-talk-view-content" text="今晚吃鸡" underline="false">
-                          <BorderPane.margin>
-                            <Insets bottom="14.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </bottom>
-                      <left>
-                        <Label prefHeight="17.0" prefWidth="161.0" styleClass="label-talk-view" text="Snoopy史努比">
-                          <BorderPane.margin>
-                            <Insets top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </left>
-                      <right>
-                        <Label alignment="CENTER_RIGHT" disable="false" maxWidth="68.0" minWidth="34.0" prefHeight="17.0" prefWidth="59.0" styleClass="label-talk-view-time" text="23:30" textAlignment="RIGHT" textOverrun="ELLIPSIS" wrapText="false" BorderPane.alignment="CENTER_RIGHT">
-                          <BorderPane.margin>
-                            <Insets right="5.0" top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </right>
-                    </BorderPane>
-                  </right>
-                </BorderPane>
-              </children>
-            </HBox>
-            <HBox maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="200.0" styleClass="talk-pane">
-              <children>
-                <BorderPane prefHeight="80.0" prefWidth="330.0">
-                  <left>
-                    <Pane id="HeadTemp" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" styleClass="talk-left-head">
-                      <children>
-                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" styleClass="talk-left-head-img" />
-                      </children>
-                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                      </padding>
-                    </Pane>
-                  </left>
-                  <right>
-                    <BorderPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="245.0">
-                      <bottom>
-                        <Label prefHeight="29.0" prefWidth="231.0" styleClass="label-talk-view-content" text="今晚吃鸡" underline="false">
-                          <BorderPane.margin>
-                            <Insets bottom="14.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </bottom>
-                      <left>
-                        <Label prefHeight="17.0" prefWidth="161.0" styleClass="label-talk-view" text="Snoopy史努比">
-                          <BorderPane.margin>
-                            <Insets top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </left>
-                      <right>
-                        <Label alignment="CENTER_RIGHT" disable="false" maxWidth="68.0" minWidth="34.0" prefHeight="17.0" prefWidth="59.0" styleClass="label-talk-view-time" text="23:30" textAlignment="RIGHT" textOverrun="ELLIPSIS" wrapText="false" BorderPane.alignment="CENTER_RIGHT">
-                          <BorderPane.margin>
-                            <Insets right="5.0" top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </right>
-                    </BorderPane>
-                  </right>
-                </BorderPane>
-              </children>
-            </HBox>
-            <HBox maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="200.0" styleClass="talk-pane">
-              <children>
-                <BorderPane prefHeight="80.0" prefWidth="330.0">
-                  <left>
-                    <Pane id="HeadTemp" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" styleClass="talk-left-head">
-                      <children>
-                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" styleClass="talk-left-head-img" />
-                      </children>
-                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                      </padding>
-                    </Pane>
-                  </left>
-                  <right>
-                    <BorderPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="245.0">
-                      <bottom>
-                        <Label prefHeight="29.0" prefWidth="231.0" styleClass="label-talk-view-content" text="今晚吃鸡" underline="false">
-                          <BorderPane.margin>
-                            <Insets bottom="14.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </bottom>
-                      <left>
-                        <Label prefHeight="17.0" prefWidth="161.0" styleClass="label-talk-view" text="Snoopy史努比">
-                          <BorderPane.margin>
-                            <Insets top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </left>
-                      <right>
-                        <Label alignment="CENTER_RIGHT" disable="false" maxWidth="68.0" minWidth="34.0" prefHeight="17.0" prefWidth="59.0" styleClass="label-talk-view-time" text="23:30" textAlignment="RIGHT" textOverrun="ELLIPSIS" wrapText="false" BorderPane.alignment="CENTER_RIGHT">
-                          <BorderPane.margin>
-                            <Insets right="5.0" top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </right>
-                    </BorderPane>
-                  </right>
-                </BorderPane>
-              </children>
-            </HBox>
-            <HBox maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="200.0" styleClass="talk-pane">
-              <children>
-                <BorderPane prefHeight="80.0" prefWidth="330.0">
-                  <left>
-                    <Pane id="HeadTemp" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" prefHeight="80.0" prefWidth="80.0" styleClass="talk-left-head">
-                      <children>
-                        <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" styleClass="talk-left-head-img" />
-                      </children>
-                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                      </padding>
-                    </Pane>
-                  </left>
-                  <right>
-                    <BorderPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" prefWidth="245.0">
-                      <bottom>
-                        <Label prefHeight="29.0" prefWidth="231.0" styleClass="label-talk-view-content" text="今晚吃鸡" underline="false">
-                          <BorderPane.margin>
-                            <Insets bottom="14.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </bottom>
-                      <left>
-                        <Label prefHeight="17.0" prefWidth="161.0" styleClass="label-talk-view" text="Snoopy史努比">
-                          <BorderPane.margin>
-                            <Insets top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </left>
-                      <right>
-                        <Label alignment="CENTER_RIGHT" disable="false" maxWidth="68.0" minWidth="34.0" prefHeight="17.0" prefWidth="59.0" styleClass="label-talk-view-time" text="23:30" textAlignment="RIGHT" textOverrun="ELLIPSIS" wrapText="false" BorderPane.alignment="CENTER_RIGHT">
-                          <BorderPane.margin>
-                            <Insets right="5.0" top="18.0" />
-                          </BorderPane.margin>
-                        </Label>
-                      </right>
-                    </BorderPane>
-                  </right>
-                </BorderPane>
-              </children>
-            </HBox>
+                  </children>
+                </VBox>
+              </content>
+            </ScrollPane>
           </children>
           <BorderPane.margin>
             <Insets fx:id="x1" />
