@@ -1,6 +1,7 @@
 package com.notalk.view;
 
 import com.notalk.MainApp;
+import com.notalk.model.TcpClientThread;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
@@ -17,6 +18,7 @@ import java.util.HashMap;
 
 public class RootLayoutController {
     private MainApp mainApp;
+    private TcpClientThread tcpClientThread;
     private AnchorPane MainContentTalk ;
     private AnchorPane MainContentContacts ;
     private AnchorPane MainContentFunction ;
@@ -53,6 +55,10 @@ public class RootLayoutController {
 
     public void setMainApp(MainApp mainApp){
         this.mainApp = mainApp;
+    }
+
+    public void setTcpClientThread(TcpClientThread tcpClientThread) {
+        this.tcpClientThread = tcpClientThread;
     }
 
     @FXML
@@ -108,6 +114,7 @@ public class RootLayoutController {
             MainContentTalk = (AnchorPane) talkLoader.load();
             this.mainContentTalkController = talkLoader.getController();
             mainContentTalkController.setRootLayoutController(this);
+            mainContentTalkController.setClient(this.tcpClientThread);
 
             FXMLLoader contactsLoader = new FXMLLoader();
             contactsLoader.setLocation(MainApp.class.getResource("view/MainContentContacts.fxml"));

@@ -1,6 +1,8 @@
 package com.notalk;
 
+import com.notalk.model.TcpClientThread;
 import com.notalk.view.LoginController;
+import com.notalk.view.MainContentTalkController;
 import com.notalk.view.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +23,7 @@ public class MainApp extends Application {
     private AnchorPane LoginScene;
     private BorderPane TalkScene;
     private AnchorPane TalkContentScene;
+    private TcpClientThread clientThread;
 //    private
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -33,6 +36,10 @@ public class MainApp extends Application {
 //        primaryStage.setMinWidth(1070);
 
 //        initLogin();
+        //连接服务器
+        this.clientThread = new TcpClientThread();
+        this.clientThread.start();
+
         initRootLayout();
 //        initMainContentTalk();
 
@@ -71,7 +78,7 @@ public class MainApp extends Application {
 
             RootLayoutController controller = loader.getController();
             controller.setMainApp(this);
-
+            controller.setTcpClientThread(this.clientThread);
             controller.loadPane();
 
             primaryStage.show();
