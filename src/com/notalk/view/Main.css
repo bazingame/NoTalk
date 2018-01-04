@@ -62,7 +62,7 @@
 }
 /*聊天界面右板块*/
 .talk-right-pane{
-    -fx-background-color: #DEE3E9;
+    -fx-background-color: #E9EEF4;
 }
 /*输入框*/
 .talk-content{
@@ -159,6 +159,21 @@
 /*聊天界面右侧消息框*/
 .talk-right-pane-msg{
     -fx-background-color:#E9EEF4;
+}
+
+.talk-sendmsg-label{
+    -fx-arc-height: 5px;
+    -fx-arc-width: 5px;
+    -fx-padding: 10 8 10 8;
+    -fx-background-color: #12B7F5;
+    -fx-fill: white;
+}
+.talk-recmsg-label{
+    -fx-arc-height: 5px;
+    -fx-arc-width: 5px;
+    -fx-padding: 10 8 10 8;
+    -fx-background-color: white;
+    -fx-fill: black;
 }
 /*------------------------------------聊天界面-------------------------------------*/
 

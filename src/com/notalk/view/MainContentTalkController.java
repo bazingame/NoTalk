@@ -9,15 +9,18 @@ import com.notalk.model.TcpClientThread;
 import com.notalk.model.p2pmsgRecord;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 import java.sql.SQLException;
 import java.sql.Time;
@@ -32,6 +35,9 @@ public class MainContentTalkController{
     private DataBaseOperate db = new DataBaseOperate();
     private Gson gson = new Gson();
     private List<p2pmsgRecord> msgRecordList;
+
+    @FXML
+    private ScrollPane talkScrollPane;
 
     @FXML
     private VBox msgRecordListBox;
@@ -76,11 +82,36 @@ public class MainContentTalkController{
         //初始化消息记录
         for(p2pmsgRecord personInfo : msgRecordList){
             HBox hBox = new HBox();
+//            StackPane stackPane = new StackPane();
+//            Rectangle rectangle = new Rectangle();
             Label label = new Label();
             label.setText(personInfo.getContent());
+//            rectangle.setStyle("-fx-fill: red;-fx-pref-height: 50px;-fx-pref-width: 50px;-fx-arc-height:5px;-fx-arc-width:5px");
+//            double height = label.widthProperty().doubleValue();
+//            System.out.println(height);
+//            double width = label.width();
+//            rectangle.setHeight(height);
+//            rectangle.setWidth(width);
+//            rectangle.setFill(Color.GREEN);
+
+//            stackPane.getChildren().addAll(rectangle,label);
             hBox.getChildren().addAll(label);
+            if(Integer.parseInt(personInfo.getFromSid())==MainApp.Mysid){
+                hBox.setAlignment(Pos.CENTER_RIGHT);
+                hBox.setPadding(new Insets(10,80,10,10));
+                label.getStyleClass().addAll("talk-sendmsg-label");
+            }else{
+                hBox.setAlignment(Pos.CENTER_LEFT);
+                hBox.setPadding(new Insets(10,10,10,80));
+                label.getStyleClass().addAll("talk-recmsg-label");
+            }
+
             this.msgRecordListBox.getChildren().addAll(hBox);
         }
+
+        double height = msgRecordListBox.getHeight();
+
+        this.talkScrollPane.setVvalue(999999999);
 
         BorderPane peopleBorderPane = this.creatTalkList("123",info.get("name"),"Last Words");
         peopleBorderPaneList.getChildren().add(peopleBorderPane);
@@ -143,6 +174,9 @@ public class MainContentTalkController{
             stringBuffer.deleteCharAt(msgContent.length()-1);
         }
         msgContent = stringBuffer.toString();
+        if(msgContent.length()==0){
+            return;
+        }
         //获取消息类型
         //获取发送、接受者账号
         //调用发送方法
@@ -175,6 +209,9 @@ public class MainContentTalkController{
         Label label = new Label();
         label.setText(msgContent);
         hBox.getChildren().addAll(label);
+        hBox.setAlignment(Pos.CENTER_RIGHT);
+        hBox.setPadding(new Insets(10,80,10,10));
+        label.getStyleClass().addAll("talk-sendmsg-label");
         this.msgRecordListBox.getChildren().addAll(hBox);
         /*发送成功后记录至数据库*/
         try {
@@ -182,7 +219,8 @@ public class MainContentTalkController{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        //滚到最下面！
+        this.talkScrollPane.setVvalue(999999999);
     }
 
 

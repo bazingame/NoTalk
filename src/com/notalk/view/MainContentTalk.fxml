@@ -14,7 +14,7 @@
   <children>
     <BorderPane prefHeight="960.0" prefWidth="1000.0" styleClass="talk-right-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <center>
-        <BorderPane prefHeight="699.0" prefWidth="594.0" styleClass="talk-right-pane">
+        <BorderPane prefHeight="699.0" prefWidth="594.0">
           <bottom>
             <BorderPane prefHeight="235.0" prefWidth="667.0" styleClass="talk-content">
               <bottom>
@@ -51,12 +51,9 @@
           <center>
             <BorderPane prefHeight="414.0" prefWidth="700.0" style="" styleClass="talk-right-pane-msg">
               <center>
-                <ScrollPane prefHeight="415.0" prefWidth="719.0" style="-fx-background-color:blue;">
+                <ScrollPane fx:id="talkScrollPane" fitToWidth="true" prefHeight="-1.0" prefWidth="-1.0" style="" styleClass="talk-right-pane-msg">
                   <content>
-                    <VBox fx:id="msgRecordListBox" prefHeight="401.0" prefWidth="635.0" style="-fx-background-color:red;">
-                      <children>
-                        <HBox minHeight="50.0" prefHeight="50.0" prefWidth="636.0" />
-                      </children>
+                    <VBox fx:id="msgRecordListBox" alignment="TOP_LEFT" fillWidth="true" prefHeight="415.0" prefWidth="648.0" style="&#10;" styleClass="talk-right-pane-msg">
                       <stylesheets>
                         <URL value="@Main.css" />
                       </stylesheets>
@@ -89,7 +86,7 @@
                           </HBox.margin>
                         </Pane>
                         <Label fx:id="nickName" prefWidth="266.0" styleClass="label-talk-right-name" text="SNOOPY史努比" />
-                        <Label fx:id="sidLabel" disable="false" text="Label" visible="true" />
+                        <Label fx:id="sidLabel" disable="false" text="Label" visible="false" />
                       </children>
                     </HBox>
                   </left>
