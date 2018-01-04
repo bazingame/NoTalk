@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.notalk.view.MainContentTalkController">
   <children>
-    <BorderPane prefHeight="960.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <BorderPane prefHeight="960.0" prefWidth="1000.0" styleClass="talk-right-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <center>
         <BorderPane prefHeight="699.0" prefWidth="594.0" styleClass="talk-right-pane">
           <bottom>
@@ -48,12 +48,12 @@
               </top>
             </BorderPane>
           </bottom>
-          <left>
-            <BorderPane prefHeight="414.0" prefWidth="700.0" styleClass="talk-right-pane-msg">
+          <center>
+            <BorderPane prefHeight="414.0" prefWidth="700.0" style="" styleClass="talk-right-pane-msg">
               <center>
-                <ScrollPane prefHeight="-1.0" prefWidth="-1.0" styleClass="talk-right-pane-msg">
+                <ScrollPane prefHeight="415.0" prefWidth="719.0" style="-fx-background-color:blue;">
                   <content>
-                    <VBox prefHeight="401.0" prefWidth="635.0" style="" styleClass="talk-right-pane-msg">
+                    <VBox fx:id="msgRecordListBox" prefHeight="401.0" prefWidth="635.0" style="-fx-background-color:red;">
                       <children>
                         <HBox minHeight="50.0" prefHeight="50.0" prefWidth="636.0" />
                       </children>
@@ -71,7 +71,7 @@
                 <URL value="@Main.css" />
               </stylesheets>
             </BorderPane>
-          </left>
+          </center>
           <top>
             <BorderPane prefHeight="50.0" prefWidth="0.0">
               <center>
@@ -89,6 +89,7 @@
                           </HBox.margin>
                         </Pane>
                         <Label fx:id="nickName" prefWidth="266.0" styleClass="label-talk-right-name" text="SNOOPY史努比" />
+                        <Label fx:id="sidLabel" disable="false" text="Label" visible="true" />
                       </children>
                     </HBox>
                   </left>

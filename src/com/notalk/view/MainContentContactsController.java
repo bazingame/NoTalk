@@ -2,6 +2,7 @@ package com.notalk.view;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.notalk.MainApp;
 import com.notalk.model.DataBaseOperate;
 import com.notalk.model.GroupPeople;
 import com.notalk.util.Echo;
@@ -78,14 +79,22 @@ public class MainContentContactsController {
                     Pane headPane = new Pane();
                     headPane.getStyleClass().addAll("people-headPane");
 //                  ImageView headPic = new ImageView();
+                    //昵称
                     Label nickName = new Label();
                     nickName.setId("nickName");
                     nickName.getStyleClass().addAll("label-talk-view");
+                    //账号标签 隐藏
+                    Label friendSid = new Label();
+                    friendSid.setId("friendSid");
+                    friendSid.setVisible(false);
+                    //最后发言
                     Label lastWords = new Label();
                     lastWords.getStyleClass().addAll("label-talk-view-content");
 
                     nickName.setText(friendListBean.getFriend_nickname());
+                    friendSid.setText(friendListBean.getFriend_sid());
                     lastWords.setText("Last Wordssss");
+                    peopleBorderPaneRight.setRight(friendSid);
                     peopleBorderPaneRight.setTop(nickName);
                     peopleBorderPaneRight.setBottom(lastWords);
 
@@ -146,11 +155,17 @@ public class MainContentContactsController {
         //获取姓名
         Label nickNameLabel = (Label)peopleBorderPane.lookup("#nickName");
         String nickNameString = nickNameLabel.getText();
-        System.out.println(nickNameString);
         infoMap.put("name",nickNameString);
+        //获取账号
+        Label friendSidLabel = (Label)peopleBorderPane.lookup("#friendSid");
+        String friendSidString = friendSidLabel.getText();
+        infoMap.put("sid",friendSidString);
+        System.out.println("name:"+nickNameString+" sid:"+friendSidString);
         //获取聊天记录
         try {
-            String msgRecord = db.getMsgRecord(2016501308,2016190918);
+            String msgRecord = db.getMsgRecord(MainApp.Mysid,Integer.parseInt(friendSidString));
+//            System.out.println(msgRecord);
+            infoMap.put("record",msgRecord);
         } catch (SQLException e) {
             e.printStackTrace();
         }

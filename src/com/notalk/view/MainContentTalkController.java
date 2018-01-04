@@ -1,8 +1,12 @@
 package com.notalk.view;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.notalk.MainApp;
 import com.notalk.model.DataBaseOperate;
+import com.notalk.model.GroupPeople;
 import com.notalk.model.TcpClientThread;
+import com.notalk.model.p2pmsgRecord;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -27,10 +31,17 @@ public class MainContentTalkController{
     private TcpClientThread client;
     private DataBaseOperate db = new DataBaseOperate();
     private Gson gson = new Gson();
-    private List<HashMap> magRecord;
+    private List<p2pmsgRecord> msgRecordList;
+
+    @FXML
+    private VBox msgRecordListBox;
 
     @FXML
     private Label nickName;
+
+    @FXML
+    private Label sidLabel;
+
 
     @FXML
     private VBox peopleBorderPaneList;
@@ -59,6 +70,18 @@ public class MainContentTalkController{
     /*初始化聊天界面*/
     public void loadInfo(HashMap<String, String> info) {
         nickName.setText(info.get("name"));
+        sidLabel.setText(info.get("sid"));
+        msgRecordList = gson.fromJson(info.get("record"), new TypeToken<List<p2pmsgRecord>>() {}.getType());
+        this.msgRecordListBox.getChildren().clear();
+        //初始化消息记录
+        for(p2pmsgRecord personInfo : msgRecordList){
+            HBox hBox = new HBox();
+            Label label = new Label();
+            label.setText(personInfo.getContent());
+            hBox.getChildren().addAll(label);
+            this.msgRecordListBox.getChildren().addAll(hBox);
+        }
+
         BorderPane peopleBorderPane = this.creatTalkList("123",info.get("name"),"Last Words");
         peopleBorderPaneList.getChildren().add(peopleBorderPane);
         //为textArea添加监听回车事件
@@ -123,7 +146,7 @@ public class MainContentTalkController{
         //获取消息类型
         //获取发送、接受者账号
         //调用发送方法
-        this.sendMsg("p2p","2016501308","2016190918",msgContent);
+        this.sendMsg("p2p", Integer.toString(MainApp.Mysid),this.sidLabel.getText(),msgContent);
 
 
     }
@@ -138,8 +161,8 @@ public class MainContentTalkController{
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-DD hh:mm:ss");
         String time = format.format(date);
         HashMap<String,String> msgHashMap = new HashMap<String,String>();
-        msgHashMap.put("mysid","2016501308");
-        msgHashMap.put("tosid","2016190918");
+        msgHashMap.put("mysid",fromsid);
+        msgHashMap.put("tosid",tosid);
         msgHashMap.put("time",time);
         msgHashMap.put("content",msgContent);
         /*发送至服务器*/
@@ -148,7 +171,11 @@ public class MainContentTalkController{
         /*清除输入框*/
         this.msgContent.clear();
         /*加入到记录框*/
-
+        HBox hBox = new HBox();
+        Label label = new Label();
+        label.setText(msgContent);
+        hBox.getChildren().addAll(label);
+        this.msgRecordListBox.getChildren().addAll(hBox);
         /*发送成功后记录至数据库*/
         try {
             db.sendfriendMsg(Integer.parseInt(fromsid),Integer.parseInt(tosid),msgContent,time);

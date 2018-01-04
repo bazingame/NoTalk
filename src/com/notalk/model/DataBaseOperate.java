@@ -217,12 +217,14 @@ public class DataBaseOperate {
     * 获取p2p聊天记录
     * */
     public String getMsgRecord(int from_sid,int to_sid) throws SQLException {
-        String sql = "SELECT content,time FROM p2p_messages WHERE ( from_sid = "+from_sid+" AND to_sid = "+to_sid+" ) OR ( from_sid = "+to_sid+" AND to_sid = "+from_sid+") ORDER BY time";
+        String sql = "SELECT * FROM p2p_messages WHERE ( from_sid = "+from_sid+" AND to_sid = "+to_sid+" ) OR ( from_sid = "+to_sid+" AND to_sid = "+from_sid+") ORDER BY time";
         stmt = conn.createStatement();
         ResultSet resultSet = stmt.executeQuery(sql);
         List<HashMap<String,String>> recordList= new ArrayList<HashMap<String,String>>();
         while (resultSet.next()){
             HashMap<String,String> singleRecord = new HashMap<String,String>();
+            singleRecord.put("fromSid",Integer.toString(resultSet.getInt("from_sid")));
+            singleRecord.put("toSid",Integer.toString(resultSet.getInt("to_sid")));
             singleRecord.put("content",resultSet.getString("content"));
             singleRecord.put("time",resultSet.getString("time"));
             recordList.add(singleRecord);

@@ -62,7 +62,7 @@
 }
 /*聊天界面右板块*/
 .talk-right-pane{
-    -fx-background-color: #E9EEF4;
+    -fx-background-color: #DEE3E9;
 }
 /*输入框*/
 .talk-content{
@@ -175,7 +175,6 @@
 }
 .contacts-scroll-pane{
     -fx-background-color:#EEEFF3;
-
 }
 
 /*联系人左侧折叠列表*/
