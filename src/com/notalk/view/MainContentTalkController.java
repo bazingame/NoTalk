@@ -199,6 +199,7 @@ public class MainContentTalkController{
         msgHashMap.put("tosid",tosid);
         msgHashMap.put("time",time);
         msgHashMap.put("content",msgContent);
+        msgHashMap.put("type","p2p");
         /*发送至服务器*/
         this.client.sendMsg(gson.toJson(msgHashMap));
         System.out.println(gson.toJson(msgHashMap));

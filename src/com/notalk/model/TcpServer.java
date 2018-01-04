@@ -12,10 +12,10 @@ public class TcpServer {
 
     private ServerSocket serverSocket;
 
-    /**
+     /**
      * 创建线程池来管理客户端的连接线程
      * 避免系统资源过度浪费
-     */
+     **/
     private ExecutorService exec;
 
     // 客户端信息
@@ -32,31 +32,38 @@ public class TcpServer {
         }
     }
 
-    // 将客户端的信息以Map形式存入集合中
+    /**
+    * 将客户端的信息以Map形式存入集合中
+    * */
     private void putIn(String key,PrintWriter value) {
         synchronized(this) {
             storeInfo.put(key, value);
         }
     }
 
-    // 将给定的输出流从共享集合中删除
+     /**
+     * 将给定的输出流从共享集合中删除
+     **/
     private synchronized void remove(String  key) {
         storeInfo.remove(key);
         System.out.println("当前在线人数为："+ storeInfo.size());
     }
 
-    // 将给定的消息转发给所有客户端
+    /**
+    * 将给定的消息转发给所有客户端
+    **/
     private synchronized void sendToAll(String message) {
         for(PrintWriter out: storeInfo.values()) {
             out.println(message);
         }
     }
 
-    // 将给定的消息转发给私聊的客户端
+    // 将给定的消息转发给私聊的客户端(加个同步锁~)
     private synchronized void sendToSomeone(String name,String message) {
         PrintWriter pw = storeInfo.get(name); //将对应客户端的聊天信息取出作为私聊内容发送出去
         if(pw != null) pw.println(message);
     }
+
 
     public void start() {
         try {
@@ -91,7 +98,9 @@ public class TcpServer {
             this.socket = socket;
         }
 
-        // 创建内部类来获取昵称
+        /**
+        * 内部类来获取昵称
+        * */
         private String getName() throws Exception {
             try {
                 //服务端的输入流读取客户端发送来的昵称输出流
@@ -146,19 +155,9 @@ public class TcpServer {
 
 
                 while((msgString = bReader.readLine()) != null) {
-                    // 检验是否为私聊（格式：@昵称：内容）
-//                    if(msgString.startsWith("@")) {
-//                        int index = msgString.indexOf(":");
-//                        if(index >= 0) {
-//                            //获取昵称
-//                            String theName = msgString.substring(1, index);
-//                            String info = msgString.substring(index+1, msgString.length());
-//                            info =  name + "："+ info;
-//                            //将私聊信息发送出去
-//                            sendToSomeone(theName, info);
-//                            continue;
-//                        }
-//                    }
+
+
+
                     // 遍历所有输出流，将该客户端发送的信息转发给所有客户端
                     System.out.println("Client："+ msgString);
 //                    sendToAll(name+"："+ msgString);

@@ -10,14 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController$2.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController$2.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/notalk/model/Msg.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/Server.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/SocketDispatcher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/SocketHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/SocketSchedule.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/SocketWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/notalk/model/Server.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/notalk/model/SocketDispatcher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/notalk/model/SocketHolder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/notalk/model/SocketSchedule.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/notalk/model/SocketWrapper.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalk.fxml" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalk.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/Main.css" afterPath="$PROJECT_DIR$/src/com/notalk/view/Main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalk.fxml" afterPath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalk.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/model/TcpServer.java" afterPath="$PROJECT_DIR$/src/com/notalk/model/TcpServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" afterPath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MinorContentSetting.fxml" afterPath="$PROJECT_DIR$/src/com/notalk/view/MinorContentSetting.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -107,28 +114,70 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MainContentTalkController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="TcpServer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/notalk/model/TcpServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="222" column="49" lean-forward="false" selection-start-line="222" selection-start-column="49" selection-end-line="222" selection-end-column="49" />
+            <state relative-caret-position="391">
+              <caret line="148" column="30" lean-forward="false" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6498#6513#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScrollPane.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Program Files/Java/jdk/javafx-src.zip!/javafx/scene/control/ScrollPane.java">
+      <file leaf-file-name="Msg.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/notalk/model/Msg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="232" column="36" lean-forward="false" selection-start-line="232" selection-start-column="36" selection-end-line="232" selection-end-column="36" />
+            <state relative-caret-position="92">
+              <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
               <folding>
-                <element signature="e#8370#8371#0" expanded="true" />
-                <element signature="e#8413#8414#0" expanded="true" />
+                <element signature="e#348#349#0" expanded="true" />
+                <element signature="e#376#377#0" expanded="true" />
+                <element signature="e#418#419#0" expanded="true" />
+                <element signature="e#452#453#0" expanded="true" />
+                <element signature="e#484#485#0" expanded="true" />
+                <element signature="e#512#513#0" expanded="true" />
+                <element signature="e#554#555#0" expanded="true" />
+                <element signature="e#588#589#0" expanded="true" />
+                <element signature="e#619#620#0" expanded="true" />
+                <element signature="e#646#647#0" expanded="true" />
+                <element signature="e#686#687#0" expanded="true" />
+                <element signature="e#718#719#0" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#776#777#0" expanded="true" />
+                <element signature="e#816#817#0" expanded="true" />
+                <element signature="e#848#849#0" expanded="true" />
+                <element signature="e#882#883#0" expanded="true" />
+                <element signature="e#912#913#0" expanded="true" />
+                <element signature="e#958#959#0" expanded="true" />
+                <element signature="e#996#997#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TcpClientThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/notalk/model/TcpClientThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#setName#0;class#TcpClientThread#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainContentTalkController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3">
+              <caret line="79" column="54" lean-forward="false" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,8 +186,8 @@
       <file leaf-file-name="Main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/Main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+            <state relative-caret-position="1035">
+              <caret line="45" column="34" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -147,44 +196,12 @@
       <file leaf-file-name="RootLayoutController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="104" column="6" lean-forward="true" selection-start-line="104" selection-start-column="6" selection-end-line="104" selection-end-column="6" />
+            <state relative-caret-position="1978">
+              <caret line="104" column="6" lean-forward="false" selection-start-line="104" selection-start-column="6" selection-end-line="104" selection-end-column="6" />
               <folding>
                 <element signature="e#5406#5407#0" expanded="true" />
                 <element signature="e#5462#5463#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainContentContactsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="172" column="38" lean-forward="false" selection-start-line="172" selection-start-column="38" selection-end-line="172" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4406#4407#0" expanded="true" />
-                <element signature="e#4492#4493#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="p2p_messages" pinned="false" current-in-tab="false">
-        <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.p2p_messages">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="friends" pinned="false" current-in-tab="false">
-        <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.friends">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -202,7 +219,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>padding</find>
       <find>bore</find>
       <find>label-talk-view-content</find>
       <find>set-option</find>
@@ -232,6 +248,7 @@
       <find>System</find>
       <find>talk-right-pane</find>
       <find>msg</find>
+      <find>gson</find>
     </findStrings>
     <replaceStrings>
       <replace>Microsoft YaHei UI</replace>
@@ -289,7 +306,6 @@
         <option value="$PROJECT_DIR$/src/com/notalk/model/TcpClient.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/model/TcpClientThread.java" />
-        <option value="$PROJECT_DIR$/src/com/notalk/model/TcpServer.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/test/test.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/MainApp.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/model/msgRecord.java" />
@@ -298,6 +314,8 @@
         <option value="$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/Main.css" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" />
+        <option value="$PROJECT_DIR$/src/com/notalk/model/Msg.java" />
+        <option value="$PROJECT_DIR$/src/com/notalk/model/TcpServer.java" />
       </list>
     </option>
   </component>
@@ -336,6 +354,7 @@
       <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -383,7 +402,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,13 +416,13 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/MyQQ聊天软件/22/MyQQ_Client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -657,8 +675,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.MainApp" />
-        <item index="1" class="java.lang.String" itemvalue="Application.test" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TcpServer" />
+        <item index="1" class="java.lang.String" itemvalue="Application.TcpServer" />
+        <item index="2" class="java.lang.String" itemvalue="Application.test" />
         <item index="3" class="java.lang.String" itemvalue="Application.TcpClient" />
         <item index="4" class="java.lang.String" itemvalue="Application.Client" />
       </list>
@@ -695,11 +713,12 @@
       <workItem from="1514694446667" duration="36256000" />
       <workItem from="1514899645760" duration="153000" />
       <workItem from="1514900171161" duration="43370000" />
+      <workItem from="1515069622539" duration="4723000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268243000" />
+    <option name="totallyTimeSpent" value="273861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -713,87 +732,31 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22222222" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.90925926" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3175926" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="82" y="140" width="1475" height="734" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18796296" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="82" y="140" width="1475" height="734" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17916666" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2359375" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2898148" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3361111" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16944444" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="82" y="140" width="1475" height="734" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2359375" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2898148" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3361111" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16944444" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="82" y="140" width="1475" height="734" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2359375" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -816,20 +779,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/Program Files/Java/jdk/src.zip!/java/sql/Connection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="298" column="12" lean-forward="false" selection-start-line="298" selection-start-column="12" selection-end-line="298" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.group_list">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.group_list" />
     <entry file="jar://D:/Program Files/Java/jdk/src.zip!/java/sql/ResultSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1758">
@@ -844,13 +794,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.user" />
     <entry file="jar://D:/Program Files/Java/jdk/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -911,13 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/SocketWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files/Java/jdk/src.zip!/java/util/Set.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -939,27 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/SocketDispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/SocketHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/SocketSchedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files/Java/jdk/src.zip!/java/io/PrintWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-181">
@@ -975,13 +891,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/Server.java" />
     <entry file="jar://D:/Program Files/Java/jdk/javafx-src.zip!/com/sun/javafx/event/EventHandlerManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -1000,7 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="1773" column="0" lean-forward="false" selection-start-line="1773" selection-start-column="0" selection-end-line="1773" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,29 +927,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/TcpServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="159" column="27" lean-forward="true" selection-start-line="159" selection-start-column="27" selection-end-line="159" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2364#2365#0" expanded="true" />
-            <element signature="e#2408#2409#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/TcpClientThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="102" column="17" lean-forward="true" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files/Java/jdk/src.zip!/java/io/InputStreamReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1081,22 +972,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.p2g_messages">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.p2g_messages" />
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalk.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="22" column="49" lean-forward="false" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java">
@@ -1143,13 +1028,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.friends">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.friends" />
     <entry file="file://$PROJECT_DIR$/src/com/notalk/model/p2pmsgRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -1158,13 +1037,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.p2p_messages">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.p2p_messages" />
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
@@ -1181,10 +1054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding>
-            <element signature="e#228#229#0" expanded="false" />
-            <element signature="e#262#263#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1200,8 +1069,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="104" column="6" lean-forward="true" selection-start-line="104" selection-start-column="6" selection-end-line="104" selection-end-column="6" />
+        <state relative-caret-position="1978">
+          <caret line="104" column="6" lean-forward="false" selection-start-line="104" selection-start-column="6" selection-end-line="104" selection-end-column="6" />
           <folding>
             <element signature="e#5406#5407#0" expanded="true" />
             <element signature="e#5462#5463#0" expanded="true" />
@@ -1211,30 +1080,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/Main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+        <state relative-caret-position="1035">
+          <caret line="45" column="34" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://D:/Program Files/Java/jdk/javafx-src.zip!/javafx/scene/control/ScrollPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="232" column="36" lean-forward="false" selection-start-line="232" selection-start-column="36" selection-end-line="232" selection-end-column="36" />
+        <state relative-caret-position="4439">
+          <caret line="262" column="27" lean-forward="false" selection-start-line="262" selection-start-column="27" selection-end-line="262" selection-end-column="27" />
           <folding>
             <element signature="e#8370#8371#0" expanded="true" />
             <element signature="e#8413#8414#0" expanded="true" />
+            <element signature="e#9861#9862#0" expanded="true" />
+            <element signature="e#9904#9905#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/SocketWrapper.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/SocketSchedule.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/SocketHolder.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/SocketDispatcher.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/TcpClientThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setName#0;class#TcpClientThread#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/Msg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <element signature="e#348#349#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#554#555#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#882#883#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+            <element signature="e#996#997#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="222" column="49" lean-forward="false" selection-start-line="222" selection-start-column="49" selection-end-line="222" selection-end-column="49" />
+        <state relative-caret-position="-3">
+          <caret line="79" column="54" lean-forward="false" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6498#6513#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/TcpServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="148" column="30" lean-forward="false" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
