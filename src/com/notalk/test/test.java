@@ -1,7 +1,10 @@
 package com.notalk.test;
 
 
+import com.notalk.model.DataBaseOperate;
+
 import javax.xml.crypto.Data;
+import java.sql.SQLException;
 import java.sql.Time;
 import java.util.Date;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -16,13 +19,16 @@ public class test {
      * 接着在 initialDelay + 2 * period 后执行，依此类推。
      */
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws SQLException {
 //        exec.scheduleAtFixedRate(new Runnable() {
 //            public void run() {
 //                System.out.println(System.currentTimeMillis());
 //            }
 //        }, 1, 1, TimeUnit.MILLISECONDS);
-        Date date =  new Date();
+//        Date date =  new Date();
 //        System.out.println(date.getTime());
+        DataBaseOperate db = new DataBaseOperate();
+        db.sendfriendMsg(20123122,5132,"123123","2017-02-03");
+//        db.addNewUser(2016501333,"asdasdas","asdasd",1,"2017-2-20 12:20:20","asdas","asdas");
     }
 }

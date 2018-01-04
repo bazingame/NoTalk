@@ -156,6 +156,10 @@
     -fx-background-image: url("../../../resources/images/Operate/info.png");
     -fx-background-size: cover;
 }
+/*聊天界面右侧消息框*/
+.talk-right-pane-msg{
+    -fx-background-color:#E9EEF4;
+}
 /*------------------------------------聊天界面-------------------------------------*/
 
 

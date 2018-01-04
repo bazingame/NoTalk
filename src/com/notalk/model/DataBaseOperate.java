@@ -208,9 +208,10 @@ public class DataBaseOperate {
         pstmt.setInt(2,to_sid);
         pstmt.setString(3,content);
         pstmt.setString(4,time);
-        int res = pstmt.executeUpdate(sql);
+        int res = pstmt.executeUpdate();
         return res;
     }
+
 
     /*
     * 获取p2p聊天记录

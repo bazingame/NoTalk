@@ -39,7 +39,7 @@ public class MainContentContactsController {
 
     @FXML private  ScrollPane scrollPane;
 
-    /*
+    /**
     *
     * 初始化并添加联系人
     *
@@ -137,17 +137,24 @@ public class MainContentContactsController {
         this.mainContentTalkController = mainContentTalkController;
     }
 
-    /*
+    /**
     * 切换到消息界面 且对话框内加载相应数据
     * */
     private void switchToTalk(BorderPane peopleBorderPane){
         rootLayoutController.clickMsg();
         HashMap<String,String> infoMap = new HashMap<>();
+        //获取姓名
         Label nickNameLabel = (Label)peopleBorderPane.lookup("#nickName");
         String nickNameString = nickNameLabel.getText();
         System.out.println(nickNameString);
         infoMap.put("name",nickNameString);
-        infoMap.put("words","Hello");
+        //获取聊天记录
+        try {
+            String msgRecord = db.getMsgRecord(2016501308,2016190918);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         rootLayoutController.initTalkInfo(infoMap);
     }
 
