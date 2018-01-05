@@ -18,6 +18,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -25,9 +26,7 @@ import javafx.scene.shape.Rectangle;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class MainContentTalkController{
     private RootLayoutController rootLayoutController;
@@ -35,6 +34,7 @@ public class MainContentTalkController{
     private DataBaseOperate db = new DataBaseOperate();
     private Gson gson = new Gson();
     private List<p2pmsgRecord> msgRecordList;
+    private List<Integer> recentPeople = new ArrayList<>();
 
     @FXML
     private ScrollPane talkScrollPane;
@@ -80,6 +80,7 @@ public class MainContentTalkController{
         msgRecordList = gson.fromJson(info.get("record"), new TypeToken<List<p2pmsgRecord>>() {}.getType());
         this.msgRecordListBox.getChildren().clear();
         //初始化消息记录
+        //TODO 缓存处理
         for(p2pmsgRecord personInfo : msgRecordList){
             HBox hBox = new HBox();
 //            StackPane stackPane = new StackPane();
@@ -109,12 +110,18 @@ public class MainContentTalkController{
             this.msgRecordListBox.getChildren().addAll(hBox);
         }
 
-        double height = msgRecordListBox.getHeight();
+        //double height = msgRecordListBox.getHeight();
 
         this.talkScrollPane.setVvalue(999999999);
 
-        BorderPane peopleBorderPane = this.creatTalkList("123",info.get("name"),"Last Words");
-        peopleBorderPaneList.getChildren().add(peopleBorderPane);
+        //左侧最近联系人列表
+        //若Hbox中已有则转到，无则添加
+        if(this.recentPeople.contains(Integer.parseInt(info.get("sid")))){
+        }else{
+            BorderPane peopleBorderPane = this.creatTalkList("123",info.get("name"),info.get("sid"),"Last Words");
+            peopleBorderPaneList.getChildren().add(peopleBorderPane);
+        }
+
         //为textArea添加监听回车事件
         this.msgContent.setOnKeyReleased(new EventHandler<KeyEvent>(){
             public void handle(KeyEvent event) {
@@ -127,9 +134,13 @@ public class MainContentTalkController{
         });
     }
 
+    /**
+     *正在聊天联系人列表单独Hbox生成
+     **/
+    public BorderPane creatTalkList(String headAddress,String nickName,String sid,String lastWord){
+        //添加到list中
+        this.recentPeople.add(Integer.parseInt(sid));
 
-    /*正在聊天联系人列表单独Hbox生成*/
-    public BorderPane creatTalkList(String headAddress,String nickName,String lastWord){
         BorderPane peopleBorderPane =  new BorderPane();
         peopleBorderPane.getStyleClass().addAll("talk-people-BorderPane");
 
@@ -146,17 +157,37 @@ public class MainContentTalkController{
         nickNameLabel.getStyleClass().addAll("label-talk-view");
         Label lastWordLabel = new Label();
         lastWordLabel.getStyleClass().addAll("label-talk-view-content");
+        Label sidLabel = new Label();
 
         nickNameLabel.setText(nickName);
         lastWordLabel.setText(lastWord);
+        sidLabel.setText(sid);
         peopleBorderPaneRight.setTop(nickNameLabel);
         peopleBorderPaneRight.setBottom(lastWordLabel);
 
         peopleBorderPane.setLeft(headPane);
         peopleBorderPane.setRight(peopleBorderPaneRight);
 
+        /*点击联系人事件*/
+        peopleBorderPane.setOnMouseClicked(new EventHandler <MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                HashMap<String,String> hashMap = new HashMap<String,String>();
+                hashMap.put("name",nickName);
+                hashMap.put("sid",sid);
+                try {
+                    String msgRecord = db.getMsgRecord(MainApp.Mysid,Integer.parseInt(sid));
+                    hashMap.put("record",msgRecord);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                loadInfo(hashMap);
+            }
+        });
         return peopleBorderPane;
     }
+
+
 
     /**
     *处理发送按钮点击事件

@@ -25,6 +25,7 @@ public class MainApp extends Application {
     private AnchorPane TalkContentScene;
     private TcpClientThread clientThread;
     public static int Mysid = 2016501308;
+//    public static int Mysid = 2016190918;
 //    private
     @Override
     public void start(Stage primaryStage) throws Exception{

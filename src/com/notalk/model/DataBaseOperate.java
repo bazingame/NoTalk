@@ -47,7 +47,7 @@ public class DataBaseOperate {
 
     }
 
-    /*
+    /**
     * 注册新用户
     * */
     public int addNewUser(int sid, String password, String nickname, int sex, String birthday, String head_img,String sinature) throws SQLException {
@@ -64,7 +64,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     * 获取个人信息
     * */
     public ResultSet getUserInfo(int sid) throws SQLException {
@@ -74,7 +74,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     * 修改个人信息
     * */
     public int adviseUserInfo(int sid, String password, String nickname, int sex, String birthday, String head_img, String signature, String set_info) throws SQLException {
@@ -91,7 +91,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     * 上线
     * */
     public int setOnline(int sid) throws SQLException {
@@ -101,7 +101,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     * 下线
     * */
     public int setOffline(int sid) throws SQLException {
@@ -111,7 +111,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     *添加好友
     * */
     public int addFriend(int my_sid,int friend_sid,String friend_nickname,int group_id) throws SQLException {
@@ -121,7 +121,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     * 删除好友
     * */
     public int deleteFriend(int my_sid,int friend_sid) throws SQLException {
@@ -131,7 +131,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     *修改好友昵称
     * */
     public int reviseFriendNickname(int my_sid,int friend_sid,String nickname) throws SQLException {
@@ -142,7 +142,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     * 获取好友列表(分组输出)
     * */
     public String getFriendsList(int my_sid) throws SQLException {
@@ -176,7 +176,21 @@ public class DataBaseOperate {
         return gson.toJson(friendsList);
     }
 
-    /*
+    /**
+     * 获取好友列表(仅账号)
+     * */
+    public String getFriendsSidList(int my_sid) throws SQLException {
+        String sql = "SELECT * FROM friends WHERE my_sid = "+my_sid;
+        stmt = conn.createStatement();
+        ResultSet res = stmt.executeQuery(sql);
+        List<String> friendsSidList = new ArrayList<String>();
+        while (res.next()){
+            friendsSidList.add(res.getString("friend_sid"));
+        }
+        return gson.toJson(friendsSidList);
+    }
+
+    /**
     * 获取好友分组列表
     * */
     public String getFriendsGroupList(int sid) throws SQLException {
@@ -188,7 +202,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     * 获取好友信息
     * */
     public ResultSet getFriendInfo(int friend_sid) throws SQLException {
@@ -198,7 +212,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     * 发送好友消息
     * */
     public int sendfriendMsg(int from_sid,int to_sid,String content,String time) throws SQLException {
@@ -212,8 +226,22 @@ public class DataBaseOperate {
         return res;
     }
 
+    /**
+    * 发送好友消息(好友未上线->未读)
+    * */
+    public int sendfriendUnreadMsg(int from_sid, int to_sid, String content, String time) throws SQLException {
+        String sql = "INSERT INTO p2p_unread_messages (from_sid,to_sid,content,time) VALUES (?,?,?,?)";
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1,from_sid);
+        pstmt.setInt(2,to_sid);
+        pstmt.setString(3,content);
+        pstmt.setString(4,time);
+        int res = pstmt.executeUpdate();
+        return res;
+    }
 
-    /*
+
+    /**
     * 获取p2p聊天记录
     * */
     public String getMsgRecord(int from_sid,int to_sid) throws SQLException {
@@ -233,7 +261,7 @@ public class DataBaseOperate {
         return recordListJson;
     }
 
-    /*
+    /**
     * 创建群组
     * */
     public int creatGroup(int creator,String users_list,String creat_time,String group_name) throws SQLException {
@@ -243,7 +271,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     * 删除群
     * */
     public int deleteGroup(int groupId) throws SQLException {
@@ -253,7 +281,7 @@ public class DataBaseOperate {
         return res;
     }
 
-    /*
+    /**
     * 加入群
     * */
     public int joinGroup(int user_sid,int group_sid) throws SQLException {
@@ -266,7 +294,7 @@ public class DataBaseOperate {
         return  res;
     }
 
-    /*
+    /**
     * 退出群
     * */
     public int quitGroup(int user_sid,int group_sid) throws SQLException {
@@ -284,7 +312,7 @@ public class DataBaseOperate {
         return  res;
     }
 
-    /*
+    /**
     * 获取群列表
     * */
     public ResultSet getGroupList(int sid) throws SQLException {
@@ -296,7 +324,7 @@ public class DataBaseOperate {
         return group_list;
     }
 
-    /*
+    /**
     * 获取群成员(仅账号)
     * */
     public List<Integer> getGroupMemberList(int groupId) throws SQLException {
@@ -309,7 +337,7 @@ public class DataBaseOperate {
         return user_list_list;
     }
 
-    /*
+    /**
     * 获取群成员(详细信息)
     * */
     public List<ResultSet> getGroupMemberListDetail(int groupId) throws SQLException {
@@ -321,7 +349,7 @@ public class DataBaseOperate {
         return friendInfo;
     }
 
-    /*
+    /**
     * 获取群信息
     * */
     public ResultSet getGroupInfo(int groupId) throws SQLException {
@@ -332,7 +360,7 @@ public class DataBaseOperate {
     }
 
 
-    /*
+    /**
     * 发送群信息
     * */
     public int sendGroupMsg(int from_sid,int to_group_sid,String content,String time) throws SQLException{
@@ -346,7 +374,7 @@ public class DataBaseOperate {
         return 0;
     }
 
-    /*
+    /**
     * 获取p2g聊天记录
     * */
     public String getGroupMsgRecord(int from_sid,int group_sid) throws SQLException {

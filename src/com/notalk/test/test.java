@@ -28,7 +28,10 @@ public class test {
 //        Date date =  new Date();
 //        System.out.println(date.getTime());
         DataBaseOperate db = new DataBaseOperate();
-        db.sendfriendMsg(20123122,5132,"123123","2017-02-03");
+//        db.sendfriendMsg(20123122,5132,"123123","2017-02-03");
 //        db.addNewUser(2016501333,"asdasdas","asdasd",1,"2017-2-20 12:20:20","asdas","asdas");
+//        System.out.println(db.getFriendsSidList(2016501308));
+        db.setOnline(2016501308);
+//        db.setOffline(2016501308);
     }
 }

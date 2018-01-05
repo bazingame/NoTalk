@@ -12,6 +12,8 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
 import java.net.*;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,8 +23,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 
 public class TcpServer {
-
+    private DataBaseOperate db = new DataBaseOperate();
     private ServerSocket serverSocket;
+    private Gson gson = new Gson();
 
      /**
      * 创建线程池来管理客户端的连接线程
@@ -30,7 +33,9 @@ public class TcpServer {
      **/
     private ExecutorService exec;
 
-    // 客户端信息
+     /**
+     * 客户端信息
+     **/
     private Map<String,PrintWriter> storeInfo;
 
     public TcpServer() {
@@ -64,17 +69,40 @@ public class TcpServer {
     /**
     * 将给定的消息转发给所有客户端
     **/
-    private synchronized void sendToAll(String message) {
-        for(PrintWriter out: storeInfo.values()) {
-            out.println(message);
+    private synchronized void sendToAll(String mySid,String message,String type) {
+        //TODO 获取好友列表
+        try {
+            String sidListJson = db.getFriendsSidList(Integer.parseInt(mySid));
+            List<String> friendSidList = gson.fromJson(sidListJson,List.class);
+            //发送上线通知至各好友
+            for(String sid: friendSidList) {
+                if(storeInfo.containsKey(sid)){
+                    storeInfo.get(sid).println();
+                }else{
+
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
     }
 
-    // 将给定的消息转发给私聊的客户端(加个同步锁~)
-    private synchronized void sendToSomeone(String sid,String message) {
-        System.out.println("Sending to "+sid+":"+message+"……");
-        PrintWriter pw = storeInfo.get(sid); //将对应客户端的聊天信息取出作为私聊内容发送出去
-        if(pw != null) pw.println(message);
+    /**
+     *将给定的消息转发给私聊的客户端(加个同步锁~)
+     *若好友在线则直接发送并存储到数据库中
+     *若不在线则同时存储到未读数据库中
+     *待上线时检查是否有未读消息
+     *
+     */
+    private synchronized void sendToSomeone(String mySid,String toSid,String content,String time,String msg) throws SQLException {
+        if(storeInfo.containsKey(toSid)){
+            PrintWriter pw = storeInfo.get(toSid);
+            if(pw != null) pw.println(msg);
+        }else{
+            db.sendfriendUnreadMsg(Integer.parseInt(mySid),Integer.parseInt(toSid),content,time);
+        }
+        db.sendfriendMsg(Integer.parseInt(mySid),Integer.parseInt(toSid),content,time);
     }
 
 
@@ -151,13 +179,9 @@ public class TcpServer {
                 putIn(sid, pw);
                 Thread.sleep(100);
 
-                // 服务端通知所有客户端，某用户上线
-//                sendToAll("[系统通知] “" + name + "”已上线");
 
-                /*
-                * 通过客户端的Socket获取输入流
-                * 读取客户端发送来的信息
-                */
+                // 通过客户端的Socket获取输入流
+                //读取客户端发送来的信息
                 BufferedReader bReader = new BufferedReader(
                         new InputStreamReader(socket.getInputStream(), "UTF-8"));
                 String msgString = null;
@@ -166,12 +190,17 @@ public class TcpServer {
                 while((msgString = bReader.readLine()) != null) {
                     System.out.println(msgString);
                     Msg msg = gson.fromJson(msgString,Msg.class);
-                    System.out.println(msg.getType());
                     if(msg.getType().equals("p2p")){
-                        sendToSomeone(msg.getTosid(),msg.getContent());
+                        sendToSomeone(msg.getTosid(),msg.getTosid(),msg.getContent(),msg.getTime(),msgString);
                     }else if(msg.getType()=="p2g"){
-                    }else if(msg.getType()=="status"){
-//                        sendToAll();
+                    }else if(msg.getType()=="onLine"){
+                        sendToAll(msg.getMysid(),msgString,"onLine");
+                        //数据库改变状态
+                        db.setOnline(Integer.parseInt(msg.getMysid()));
+                    }else if(msg.getType()=="offLine"){
+                        sendToAll(msg.getMysid(),msgString,"offLine");
+                        //数据库改变状态
+                        db.setOffline(Integer.parseInt(msg.getMysid()));
                     }else{
                         //TODO
                     }
