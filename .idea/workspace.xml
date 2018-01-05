@@ -7,11 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController$3.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NoTalkNote.txt" afterPath="$PROJECT_DIR$/NoTalkNote.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/model/TcpServer.java" afterPath="$PROJECT_DIR$/src/com/notalk/model/TcpServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/Main.css" afterPath="$PROJECT_DIR$/src/com/notalk/view/Main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalk.fxml" afterPath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalk.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" afterPath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" />
     </list>
@@ -119,9 +117,10 @@
       <file leaf-file-name="DataBaseOperate.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="246" column="25" lean-forward="true" selection-start-line="246" selection-start-column="25" selection-end-line="246" selection-end-column="25" />
+            <state relative-caret-position="-851">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#6542#6550#0" expanded="true" />
                 <element signature="e#8924#8939#0" expanded="true" />
                 <marker date="1515120800187" expanded="true" signature="1541:1636" ph="INSERT INTO user... " />
@@ -168,8 +167,8 @@
       <file leaf-file-name="MainApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state relative-caret-position="460">
+              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -178,8 +177,8 @@
       <file leaf-file-name="MainContentContactsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="156" column="56" lean-forward="true" selection-start-line="156" selection-start-column="56" selection-end-line="156" selection-end-column="56" />
+            <state relative-caret-position="667">
+              <caret line="56" column="45" lean-forward="true" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
               <folding>
                 <element signature="e#4406#4407#0" expanded="true" />
                 <element signature="e#4492#4493#0" expanded="true" />
@@ -191,9 +190,10 @@
       <file leaf-file-name="RootLayoutController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+            <state relative-caret-position="782">
+              <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
               <folding>
+                <element signature="e#5406#5407#0" expanded="true" />
                 <element signature="e#5462#5463#0" expanded="true" />
               </folding>
             </state>
@@ -203,11 +203,11 @@
       <file leaf-file-name="MainContentTalkController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="273" column="53" lean-forward="false" selection-start-line="273" selection-start-column="53" selection-end-line="273" selection-end-column="53" />
+            <state relative-caret-position="368">
+              <caret line="195" column="50" lean-forward="true" selection-start-line="195" selection-start-column="50" selection-end-line="195" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6393#6408#0" expanded="true" />
+                <element signature="e#6437#6452#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -322,7 +322,6 @@
         <option value="$PROJECT_DIR$/src/com/notalk/model/Server.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/model/TcpSocket.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/model/TcpClient.java" />
-        <option value="$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/model/msgRecord.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/model/p2pmsgRecord.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java" />
@@ -333,6 +332,7 @@
         <option value="$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/model/TcpServer.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/Main.css" />
+        <option value="$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" />
       </list>
     </option>
@@ -344,7 +344,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="200" />
     <option name="y" value="113" />
     <option name="width" value="1403" />
@@ -731,12 +731,12 @@
       <workItem from="1514694446667" duration="36256000" />
       <workItem from="1514899645760" duration="153000" />
       <workItem from="1514900171161" duration="43370000" />
-      <workItem from="1515069622539" duration="29687000" />
+      <workItem from="1515069622539" duration="33582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298825000" />
+    <option name="totallyTimeSpent" value="302720000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -748,8 +748,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921812" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -759,7 +758,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54115224" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38333333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15226337" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" x="82" y="140" width="1475" height="734" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -924,17 +923,6 @@
       </provider>
     </entry>
     <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.p2g_messages" />
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalk.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="22" column="49" lean-forward="false" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/159de81b/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.friends" />
     <entry file="file://$PROJECT_DIR$/src/com/notalk/model/p2pmsgRecord.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1041,16 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding>
-            <element signature="e#5462#5463#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/6347f90e/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.friends">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1062,53 +1040,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="246" column="25" lean-forward="true" selection-start-line="246" selection-start-column="25" selection-end-line="246" selection-end-column="25" />
-          <folding>
-            <element signature="e#6542#6550#0" expanded="true" />
-            <element signature="e#8924#8939#0" expanded="true" />
-            <marker date="1515120800187" expanded="true" signature="1541:1636" ph="INSERT INTO user... " />
-            <marker date="1515120800187" expanded="true" signature="2117:2148" ph="SELECT * FOR... " />
-            <marker date="1515120800187" expanded="true" signature="2496:2592" ph="UPDATE user " />
-            <marker date="1515120800187" expanded="true" signature="2496:2604" ph="UPDATE user " />
-            <marker date="1515120800187" expanded="true" signature="2496:2605" ph="UPDATE user " />
-            <marker date="1515120800187" expanded="true" signature="3089:3128" ph="UPDATE user " />
-            <marker date="1515120800187" expanded="true" signature="3349:3388" ph="UPDATE user " />
-            <marker date="1515120800187" expanded="true" signature="3663:3797" ph="INSERT INTO friends... " />
-            <marker date="1515120800187" expanded="true" signature="4036:4099" ph="DELETE FROM " />
-            <marker date="1515120800187" expanded="true" signature="4374:4443" ph="UPDATE frien... " />
-            <marker date="1515120800187" expanded="true" signature="4731:4768" ph="SELECT * FRO... friends" />
-            <marker date="1515120800187" expanded="true" signature="4731:4796" ph="SELECT * FRO... friends" />
-            <marker date="1515120800187" expanded="true" signature="6357:6394" ph="SELECT * FRO... friends" />
-            <marker date="1515120800187" expanded="true" signature="6827:6875" ph="SELECT frien... user" />
-            <marker date="1515120800187" expanded="true" signature="7217:7248" ph="SELECT * FRO... user" />
-            <marker date="1515120800187" expanded="true" signature="7531:7603" ph="INSERT INTO p2p_message... " />
-            <marker date="1515120800187" expanded="true" signature="8028:8107" ph="INSERT INTO p2p_unread_messages... " />
-            <marker date="1515120800187" expanded="true" signature="8491:8643" ph="SELECT conte... " />
-            <marker date="1515120800187" expanded="true" signature="9565:9650" ph="INSERT INTO group... " />
-            <marker date="1515120800187" expanded="true" signature="9565:9704" ph="INSERT INTO group... " />
-            <marker date="1515120800187" expanded="true" signature="9927:9960" ph="DELETE FROM " />
-            <marker date="1515120800187" expanded="true" signature="9927:9961" ph="DELETE FROM " />
-            <marker date="1515120800187" expanded="true" signature="9927:9962" ph="DELETE FROM " />
-            <marker date="1515120800187" expanded="true" signature="10379:10414" ph="UPDATE group... " />
-            <marker date="1515120800187" expanded="true" signature="10379:10415" ph="UPDATE group... " />
-            <marker date="1515120800187" expanded="true" signature="10379:10445" ph="UPDATE group... " />
-            <marker date="1515120800187" expanded="true" signature="10379:10446" ph="UPDATE group... " />
-            <marker date="1515120800187" expanded="true" signature="10379:10457" ph="UPDATE group... " />
-            <marker date="1515120800187" expanded="true" signature="11053:11120" ph="UPDATE group... " />
-            <marker date="1515120800187" expanded="true" signature="11359:11390" ph="SELECT group... user" />
-            <marker date="1515120800187" expanded="true" signature="11756:11801" ph="SELECT users... group" />
-            <marker date="1515120800187" expanded="true" signature="12666:12702" ph="SELECT users... group" />
-            <marker date="1515120800187" expanded="true" signature="12986:13063" ph="INSERT INTO p2g_message... " />
-            <marker date="1515120800187" expanded="true" signature="13458:13514" ph="SELECT conte... " />
-            <marker date="1515120800187" expanded="true" signature="13458:13561" ph="SELECT conte... " />
-            <marker date="1515120800187" expanded="true" signature="13458:13574" ph="SELECT conte... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1170,14 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/MainApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/Main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="667">
@@ -1186,10 +1109,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+          <folding>
+            <element signature="e#5406#5407#0" expanded="true" />
+            <element signature="e#5462#5463#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="156" column="56" lean-forward="true" selection-start-line="156" selection-start-column="56" selection-end-line="156" selection-end-column="56" />
+        <state relative-caret-position="667">
+          <caret line="56" column="45" lean-forward="true" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
           <folding>
             <element signature="e#4406#4407#0" expanded="true" />
             <element signature="e#4492#4493#0" expanded="true" />
@@ -1197,13 +1131,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="273" column="53" lean-forward="false" selection-start-line="273" selection-start-column="53" selection-end-line="273" selection-end-column="53" />
+        <state relative-caret-position="-851">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6393#6408#0" expanded="true" />
+            <element signature="e#6542#6550#0" expanded="true" />
+            <element signature="e#8924#8939#0" expanded="true" />
+            <marker date="1515120800187" expanded="true" signature="1541:1636" ph="INSERT INTO user... " />
+            <marker date="1515120800187" expanded="true" signature="2117:2148" ph="SELECT * FOR... " />
+            <marker date="1515120800187" expanded="true" signature="2496:2592" ph="UPDATE user " />
+            <marker date="1515120800187" expanded="true" signature="2496:2604" ph="UPDATE user " />
+            <marker date="1515120800187" expanded="true" signature="2496:2605" ph="UPDATE user " />
+            <marker date="1515120800187" expanded="true" signature="3089:3128" ph="UPDATE user " />
+            <marker date="1515120800187" expanded="true" signature="3349:3388" ph="UPDATE user " />
+            <marker date="1515120800187" expanded="true" signature="3663:3797" ph="INSERT INTO friends... " />
+            <marker date="1515120800187" expanded="true" signature="4036:4099" ph="DELETE FROM " />
+            <marker date="1515120800187" expanded="true" signature="4374:4443" ph="UPDATE frien... " />
+            <marker date="1515120800187" expanded="true" signature="4731:4768" ph="SELECT * FRO... friends" />
+            <marker date="1515120800187" expanded="true" signature="4731:4796" ph="SELECT * FRO... friends" />
+            <marker date="1515120800187" expanded="true" signature="6357:6394" ph="SELECT * FRO... friends" />
+            <marker date="1515120800187" expanded="true" signature="6827:6875" ph="SELECT frien... user" />
+            <marker date="1515120800187" expanded="true" signature="7217:7248" ph="SELECT * FRO... user" />
+            <marker date="1515120800187" expanded="true" signature="7531:7603" ph="INSERT INTO p2p_message... " />
+            <marker date="1515120800187" expanded="true" signature="8028:8107" ph="INSERT INTO p2p_unread_messages... " />
+            <marker date="1515120800187" expanded="true" signature="8491:8643" ph="SELECT conte... " />
+            <marker date="1515120800187" expanded="true" signature="9565:9650" ph="INSERT INTO group... " />
+            <marker date="1515120800187" expanded="true" signature="9565:9704" ph="INSERT INTO group... " />
+            <marker date="1515120800187" expanded="true" signature="9927:9960" ph="DELETE FROM " />
+            <marker date="1515120800187" expanded="true" signature="9927:9961" ph="DELETE FROM " />
+            <marker date="1515120800187" expanded="true" signature="9927:9962" ph="DELETE FROM " />
+            <marker date="1515120800187" expanded="true" signature="10379:10414" ph="UPDATE group... " />
+            <marker date="1515120800187" expanded="true" signature="10379:10415" ph="UPDATE group... " />
+            <marker date="1515120800187" expanded="true" signature="10379:10445" ph="UPDATE group... " />
+            <marker date="1515120800187" expanded="true" signature="10379:10446" ph="UPDATE group... " />
+            <marker date="1515120800187" expanded="true" signature="10379:10457" ph="UPDATE group... " />
+            <marker date="1515120800187" expanded="true" signature="11053:11120" ph="UPDATE group... " />
+            <marker date="1515120800187" expanded="true" signature="11359:11390" ph="SELECT group... user" />
+            <marker date="1515120800187" expanded="true" signature="11756:11801" ph="SELECT users... group" />
+            <marker date="1515120800187" expanded="true" signature="12666:12702" ph="SELECT users... group" />
+            <marker date="1515120800187" expanded="true" signature="12986:13063" ph="INSERT INTO p2g_message... " />
+            <marker date="1515120800187" expanded="true" signature="13458:13514" ph="SELECT conte... " />
+            <marker date="1515120800187" expanded="true" signature="13458:13561" ph="SELECT conte... " />
+            <marker date="1515120800187" expanded="true" signature="13458:13574" ph="SELECT conte... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/MainApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalk.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="22" column="49" lean-forward="false" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="195" column="50" lean-forward="true" selection-start-line="195" selection-start-column="50" selection-end-line="195" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6437#6452#0" expanded="true" />
           </folding>
         </state>
       </provider>

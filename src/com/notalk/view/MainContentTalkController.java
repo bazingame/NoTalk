@@ -130,7 +130,7 @@ public class MainContentTalkController{
             }
             BorderPane peopleBorderPane = this.creatTalkList("123",info.get("name"),info.get("sid"),lastWords);
 
-            peopleBorderPaneList.getChildren().add(peopleBorderPane);
+            peopleBorderPaneList.getChildren().add(0,peopleBorderPane);
         }
 
         //为textArea添加监听回车事件
@@ -169,6 +169,7 @@ public class MainContentTalkController{
         nickNameLabel.setId("nickName");
         nickNameLabel.getStyleClass().addAll("label-talk-view");
         Label lastWordLabel = new Label();
+        lastWordLabel.setId("lastWords");
         lastWordLabel.getStyleClass().addAll("label-talk-view-content");
         Label sidLabel = new Label();
 
@@ -269,16 +270,14 @@ public class MainContentTalkController{
 //        }
         //滚到最下面！
         this.talkScrollPane.setVvalue(999999999);
+        //获取这个人的BorderPane!!
+        BorderPane thisFriendBorderPane = (BorderPane) peopleBorderPaneList.lookup("#"+tosid);
         //更新最后聊天记录！
-//        System.out.println(gson.toJson(peopleBorderPaneList));
-//        peopleBorderPaneList.lookup("#"+tosid).setStyle("-fx-background-color: red");
-        BorderPane thisborderPane = (BorderPane) peopleBorderPaneList.lookup("#"+tosid);
-
+        Label lastWordLabel = (Label)thisFriendBorderPane.lookup("#lastWords");
+        lastWordLabel.setText(msgContent);
         //上浮到最顶层!!!!!!
-        peopleBorderPaneList.getChildren().remove(thisborderPane);
-        peopleBorderPaneList.getChildren().add(1,thisborderPane);
+        peopleBorderPaneList.getChildren().remove(thisFriendBorderPane);
+        peopleBorderPaneList.getChildren().add(0,thisFriendBorderPane);
     }
-
-
 
 }
