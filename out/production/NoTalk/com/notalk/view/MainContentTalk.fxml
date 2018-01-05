@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.notalk.view.MainContentTalkController">
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" styleClass="talk-right-pane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.notalk.view.MainContentTalkController">
   <children>
     <BorderPane prefHeight="960.0" prefWidth="1000.0" styleClass="talk-right-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <center>
-        <BorderPane prefHeight="699.0" prefWidth="594.0">
+        <BorderPane prefHeight="699.0" prefWidth="594.0" styleClass="talk-right-pane">
           <bottom>
             <BorderPane prefHeight="235.0" prefWidth="667.0" styleClass="talk-content">
               <bottom>
@@ -49,11 +49,11 @@
             </BorderPane>
           </bottom>
           <center>
-            <BorderPane prefHeight="414.0" prefWidth="700.0" style="" styleClass="talk-right-pane-msg">
+            <BorderPane prefHeight="414.0" prefWidth="700.0" style="" styleClass="talk-right-pane">
               <center>
-                <ScrollPane fx:id="talkScrollPane" fitToWidth="true" prefHeight="-1.0" prefWidth="-1.0" style="" styleClass="talk-right-pane-msg">
+                <ScrollPane fx:id="talkScrollPane" fitToWidth="true" prefHeight="-1.0" prefWidth="-1.0" style="" styleClass="talk-right-pane">
                   <content>
-                    <VBox fx:id="msgRecordListBox" alignment="TOP_LEFT" fillWidth="true" prefHeight="415.0" prefWidth="648.0" style="&#10;" styleClass="talk-right-pane-msg">
+                    <VBox fx:id="msgRecordListBox" alignment="TOP_LEFT" fillWidth="true" prefHeight="415.0" prefWidth="648.0" style="&#10;" styleClass="talk-right-pane">
                       <stylesheets>
                         <URL value="@Main.css" />
                       </stylesheets>
@@ -69,6 +69,9 @@
               </stylesheets>
             </BorderPane>
           </center>
+          <stylesheets>
+            <URL value="@Main.css" />
+          </stylesheets>
           <top>
             <BorderPane prefHeight="50.0" prefWidth="0.0">
               <center>
@@ -170,6 +173,9 @@
           </BorderPane.margin>
         </VBox>
       </left>
+      <stylesheets>
+        <URL value="@Main.css" />
+      </stylesheets>
     </BorderPane>
   </children>
   <stylesheets>

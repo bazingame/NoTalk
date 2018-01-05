@@ -34,170 +34,229 @@
     <table id="22" parent="2" name="p2p_messages">
       <Comment>单对单消息记录表</Comment>
     </table>
-    <table id="23" parent="2" name="user">
+    <table id="23" parent="2" name="p2p_unread_messages">
+      <Comment>单对单未读消息记录表</Comment>
+    </table>
+    <table id="24" parent="2" name="user">
       <Comment>用户表</Comment>
     </table>
-    <column id="24" parent="19" name="Id">
+    <column id="25" parent="19" name="Id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="25" parent="19" name="my_sid">
+    <column id="26" parent="19" name="my_sid">
       <Position>2</Position>
       <Comment>我的账号</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="26" parent="19" name="friend_sid">
+    <column id="27" parent="19" name="friend_sid">
       <Position>3</Position>
       <Comment>好友账号</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="27" parent="19" name="friend_nickname">
+    <column id="28" parent="19" name="friend_nickname">
       <Position>4</Position>
       <Comment>好友备注</Comment>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="28" parent="19" name="group_id">
+    <column id="29" parent="19" name="group_id">
       <Position>5</Position>
       <Comment>所属分组</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <key id="29" parent="19" name="PRIMARY">
+    <key id="30" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="30" parent="20" name="Id">
+    <column id="31" parent="20" name="Id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="31" parent="20" name="creator">
+    <column id="32" parent="20" name="creator">
       <Position>2</Position>
       <Comment>群主信息</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="32" parent="20" name="group_name">
+    <column id="33" parent="20" name="group_name">
       <Position>3</Position>
       <Comment>群名称</Comment>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="33" parent="20" name="users_list">
+    <column id="34" parent="20" name="users_list">
       <Position>4</Position>
       <Comment>成员列表</Comment>
       <DataType>varchar(1000)|0</DataType>
     </column>
-    <column id="34" parent="20" name="creat_time">
+    <column id="35" parent="20" name="creat_time">
       <Position>5</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0</DataType>
     </column>
-    <key id="35" parent="20" name="PRIMARY">
+    <key id="36" parent="20" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="36" parent="21" name="Id">
+    <column id="37" parent="21" name="Id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <key id="37" parent="21" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>Id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="38" parent="22" name="Id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="39" parent="22" name="from_sid">
+    <column id="38" parent="21" name="from_sid">
       <Position>2</Position>
-      <Comment>来源账号</Comment>
+      <Comment>发送者账号</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="40" parent="22" name="to_sid">
+    <column id="39" parent="21" name="to_group_sid">
       <Position>3</Position>
-      <Comment>接收者账号</Comment>
+      <Comment>接收群号</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="41" parent="22" name="content">
+    <column id="40" parent="21" name="content">
       <Position>4</Position>
-      <Comment>消息内容</Comment>
+      <Comment>内容</Comment>
       <DataType>varchar(1000)|0</DataType>
     </column>
-    <column id="42" parent="22" name="time">
+    <column id="41" parent="21" name="time">
       <Position>5</Position>
       <Comment>发送时间</Comment>
       <DataType>datetime|0</DataType>
     </column>
-    <key id="43" parent="22" name="PRIMARY">
+    <key id="42" parent="21" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="44" parent="23" name="Id">
+    <column id="43" parent="22" name="Id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="45" parent="23" name="sid">
+    <column id="44" parent="22" name="from_sid">
+      <Position>2</Position>
+      <Comment>来源账号</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="45" parent="22" name="to_sid">
+      <Position>3</Position>
+      <Comment>接收者账号</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="46" parent="22" name="content">
+      <Position>4</Position>
+      <Comment>消息内容</Comment>
+      <DataType>varchar(1000)|0</DataType>
+    </column>
+    <column id="47" parent="22" name="time">
+      <Position>5</Position>
+      <Comment>发送时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="48" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="49" parent="23" name="Id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="50" parent="23" name="from_sid">
+      <Position>2</Position>
+      <Comment>来源账号</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="51" parent="23" name="to_sid">
+      <Position>3</Position>
+      <Comment>接收者账号</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="52" parent="23" name="content">
+      <Position>4</Position>
+      <Comment>消息内容</Comment>
+      <DataType>varchar(1000)|0</DataType>
+    </column>
+    <column id="53" parent="23" name="time">
+      <Position>5</Position>
+      <Comment>发送时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="54" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="55" parent="24" name="Id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="56" parent="24" name="sid">
       <Position>2</Position>
       <Comment>学号</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="46" parent="23" name="password">
+    <column id="57" parent="24" name="password">
       <Position>3</Position>
       <Comment>密码</Comment>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="47" parent="23" name="nickname">
+    <column id="58" parent="24" name="nickname">
       <Position>4</Position>
       <Comment>昵称</Comment>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="48" parent="23" name="sex">
+    <column id="59" parent="24" name="sex">
       <Position>5</Position>
       <Comment>性别</Comment>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="49" parent="23" name="birthday">
+    <column id="60" parent="24" name="birthday">
       <Position>6</Position>
       <Comment>生日</Comment>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="50" parent="23" name="head_img">
+    <column id="61" parent="24" name="head_img">
       <Position>7</Position>
       <Comment>头像地址</Comment>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="51" parent="23" name="signature">
+    <column id="62" parent="24" name="signature">
       <Position>8</Position>
       <Comment>签名</Comment>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="52" parent="23" name="status">
+    <column id="63" parent="24" name="status">
       <Position>9</Position>
       <Comment>登录状态</Comment>
       <DataType>int(1)|0</DataType>
     </column>
-    <column id="53" parent="23" name="group_list">
+    <column id="64" parent="24" name="group_list">
       <Position>10</Position>
-      <Comment>分组列表</Comment>
+      <Comment>群列表</Comment>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="54" parent="23" name="set_info">
+    <column id="65" parent="24" name="set_info">
       <Position>11</Position>
       <Comment>设置信息</Comment>
       <DataType>varchar(1000)|0</DataType>
     </column>
-    <key id="55" parent="23" name="PRIMARY">
+    <column id="66" parent="24" name="friends_group_list">
+      <Position>12</Position>
+      <Comment>分组列表</Comment>
+      <DataType>varchar(1000)|0</DataType>
+    </column>
+    <key id="67" parent="24" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>

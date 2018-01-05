@@ -99,8 +99,10 @@ public class TcpServer {
         if(storeInfo.containsKey(toSid)){
             PrintWriter pw = storeInfo.get(toSid);
             if(pw != null) pw.println(msg);
+            System.out.println("发送……");
         }else{
             db.sendfriendUnreadMsg(Integer.parseInt(mySid),Integer.parseInt(toSid),content,time);
+            System.out.println("存至未读数据库……");
         }
         db.sendfriendMsg(Integer.parseInt(mySid),Integer.parseInt(toSid),content,time);
     }
@@ -191,7 +193,7 @@ public class TcpServer {
                     System.out.println(msgString);
                     Msg msg = gson.fromJson(msgString,Msg.class);
                     if(msg.getType().equals("p2p")){
-                        sendToSomeone(msg.getTosid(),msg.getTosid(),msg.getContent(),msg.getTime(),msgString);
+                        sendToSomeone(msg.getMysid(),msg.getTosid(),msg.getContent(),msg.getTime(),msgString);
                     }else if(msg.getType()=="p2g"){
                     }else if(msg.getType()=="onLine"){
                         sendToAll(msg.getMysid(),msgString,"onLine");

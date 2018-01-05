@@ -48,7 +48,9 @@ public class MainContentTalkController{
     @FXML
     private Label sidLabel;
 
-
+    /**
+    * 最近联系人的Vbox列表
+    * */
     @FXML
     private VBox peopleBorderPaneList;
 
@@ -72,8 +74,10 @@ public class MainContentTalkController{
         this.rootLayoutController = rootLayoutController;
     }
 
-
-    /*初始化聊天界面*/
+    /**
+    * 初始化聊天界面
+    * 包括右侧消息记录的加载和调用creatTalkList()方法更新左侧最近联系人
+    **/
     public void loadInfo(HashMap<String, String> info) {
         nickName.setText(info.get("name"));
         sidLabel.setText(info.get("sid"));
@@ -118,7 +122,14 @@ public class MainContentTalkController{
         //若Hbox中已有则转到，无则添加
         if(this.recentPeople.contains(Integer.parseInt(info.get("sid")))){
         }else{
-            BorderPane peopleBorderPane = this.creatTalkList("123",info.get("name"),info.get("sid"),"Last Words");
+
+            //获取最近一条消息
+            String lastWords = "";
+            if(msgRecordList.size()>0){
+                lastWords = msgRecordList.get(msgRecordList.size()-1).getContent();
+            }
+            BorderPane peopleBorderPane = this.creatTalkList("123",info.get("name"),info.get("sid"),lastWords);
+
             peopleBorderPaneList.getChildren().add(peopleBorderPane);
         }
 
@@ -134,14 +145,16 @@ public class MainContentTalkController{
         });
     }
 
+
     /**
-     *正在聊天联系人列表单独Hbox生成
+     *左侧最近聊天联系人列表每个单独联系人的生成
      **/
     public BorderPane creatTalkList(String headAddress,String nickName,String sid,String lastWord){
         //添加到list中
         this.recentPeople.add(Integer.parseInt(sid));
 
         BorderPane peopleBorderPane =  new BorderPane();
+        peopleBorderPane.setId(sid);
         peopleBorderPane.getStyleClass().addAll("talk-people-BorderPane");
 
         /*联系人右侧昵称和最后发言BorderPane容器*/
@@ -168,7 +181,8 @@ public class MainContentTalkController{
         peopleBorderPane.setLeft(headPane);
         peopleBorderPane.setRight(peopleBorderPaneRight);
 
-        /*点击联系人事件*/
+
+        //监听点击联系人事件
         peopleBorderPane.setOnMouseClicked(new EventHandler <MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -178,10 +192,12 @@ public class MainContentTalkController{
                 try {
                     String msgRecord = db.getMsgRecord(MainApp.Mysid,Integer.parseInt(sid));
                     hashMap.put("record",msgRecord);
+                    System.out.println(msgRecord);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
                 loadInfo(hashMap);
+
             }
         });
         return peopleBorderPane;
@@ -190,7 +206,7 @@ public class MainContentTalkController{
 
 
     /**
-    *处理发送按钮点击事件
+    *处理发送按钮的点击事件
     * */
     @FXML
     private void sendMsgBtnClick(){
@@ -246,13 +262,21 @@ public class MainContentTalkController{
         label.getStyleClass().addAll("talk-sendmsg-label");
         this.msgRecordListBox.getChildren().addAll(hBox);
         /*发送成功后记录至数据库*/
-        try {
-            db.sendfriendMsg(Integer.parseInt(fromsid),Integer.parseInt(tosid),msgContent,time);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            db.sendfriendMsg(Integer.parseInt(fromsid),Integer.parseInt(tosid),msgContent,time);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
         //滚到最下面！
         this.talkScrollPane.setVvalue(999999999);
+        //更新最后聊天记录！
+//        System.out.println(gson.toJson(peopleBorderPaneList));
+//        peopleBorderPaneList.lookup("#"+tosid).setStyle("-fx-background-color: red");
+        BorderPane thisborderPane = (BorderPane) peopleBorderPaneList.lookup("#"+tosid);
+
+        //上浮到最顶层!!!!!!
+        peopleBorderPaneList.getChildren().remove(thisborderPane);
+        peopleBorderPaneList.getChildren().add(1,thisborderPane);
     }
 
 
