@@ -1,7 +1,19 @@
+/**
+*
+*  客户端第一次连接时发送自己的账号作为唯一认证
+*  并且与连接成功的socket作为键值对存入HashMap中
+*
+* */
+
+
 package com.notalk.model;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.*;
 import java.net.*;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -59,8 +71,9 @@ public class TcpServer {
     }
 
     // 将给定的消息转发给私聊的客户端(加个同步锁~)
-    private synchronized void sendToSomeone(String name,String message) {
-        PrintWriter pw = storeInfo.get(name); //将对应客户端的聊天信息取出作为私聊内容发送出去
+    private synchronized void sendToSomeone(String sid,String message) {
+        System.out.println("Sending to "+sid+":"+message+"……");
+        PrintWriter pw = storeInfo.get(sid); //将对应客户端的聊天信息取出作为私聊内容发送出去
         if(pw != null) pw.println(message);
     }
 
@@ -92,32 +105,30 @@ public class TcpServer {
     class ListenrClient implements Runnable {
 
         private Socket socket;
-        private String name;
+        private String sid;
 
         public ListenrClient(Socket socket) {
             this.socket = socket;
         }
 
         /**
-        * 内部类来获取昵称
+        * 首次链接即登录时通过内部类来获取账号！
         * */
-        private String getName() throws Exception {
+        private String getSid() throws Exception {
             try {
                 //服务端的输入流读取客户端发送来的昵称输出流
-                BufferedReader bReader = new BufferedReader(
-                        new InputStreamReader(socket.getInputStream(), "UTF-8"));
+                BufferedReader bReader = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
                 //服务端将昵称验证结果通过自身的输出流发送给客户端
-                PrintWriter ipw = new PrintWriter(
-                        new OutputStreamWriter(socket.getOutputStream(), "UTF-8"),true);
+                PrintWriter ipw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"),true);
 
                 //读取客户端发来的昵称
                 while(true) {
-                    String nameString = bReader.readLine();
-                    if ((nameString.trim().length() == 0) || storeInfo.containsKey(nameString)) {
+                    String sid = bReader.readLine();
+                    if ((sid.trim().length() == 0) || storeInfo.containsKey(sid)) {
                         ipw.println("FAIL");
                     } else {
                         ipw.println("OK");
-                        return nameString;
+                        return sid;
                     }
                 }
             } catch(Exception e) {
@@ -128,19 +139,17 @@ public class TcpServer {
         @Override
         public void run() {
             try {
-                /*
-                * 通过客户端的Socket获取客户端的输出流
-                * 用来将消息发送给客户端
-                */
+
+                //通过客户端的Socket获取客户端的输出流
+                //用来将消息发送给客户端
                 PrintWriter pw = new PrintWriter(
                         new OutputStreamWriter(socket.getOutputStream(), "UTF-8"), true);
 
-                /*
-                * 将客户昵称和其所说的内容存入共享集合HashMap中
-                */
-//                name = getName();
-//                putIn(name, pw);
-//                Thread.sleep(100);
+
+                 //将账号和其所说的内容存入共享集合HashMap中
+                sid = getSid();
+                putIn(sid, pw);
+                Thread.sleep(100);
 
                 // 服务端通知所有客户端，某用户上线
 //                sendToAll("[系统通知] “" + name + "”已上线");
@@ -152,15 +161,20 @@ public class TcpServer {
                 BufferedReader bReader = new BufferedReader(
                         new InputStreamReader(socket.getInputStream(), "UTF-8"));
                 String msgString = null;
-
+                Gson gson = new Gson();
 
                 while((msgString = bReader.readLine()) != null) {
-
-
-
-                    // 遍历所有输出流，将该客户端发送的信息转发给所有客户端
-                    System.out.println("Client："+ msgString);
-//                    sendToAll(name+"："+ msgString);
+                    System.out.println(msgString);
+                    Msg msg = gson.fromJson(msgString,Msg.class);
+                    System.out.println(msg.getType());
+                    if(msg.getType().equals("p2p")){
+                        sendToSomeone(msg.getTosid(),msg.getContent());
+                    }else if(msg.getType()=="p2g"){
+                    }else if(msg.getType()=="status"){
+//                        sendToAll();
+                    }else{
+                        //TODO
+                    }
                 }
             } catch (Exception e) {
                 // e.printStackTrace();

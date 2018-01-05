@@ -1,5 +1,7 @@
 package com.notalk.model;
 
+import com.notalk.MainApp;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
@@ -34,6 +36,8 @@ public class TcpClientThread extends Thread{
             // 建立输出流，给服务端发信息
             this.pw = new PrintWriter(
                     new OutputStreamWriter(clientSocket.getOutputStream(), "UTF-8"), true);
+            //首次连接 发送账号
+            pw.println(MainApp.Mysid);
 
         } catch(Exception e) {
             e.printStackTrace();
