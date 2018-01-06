@@ -17,11 +17,12 @@ public class DataBaseOperate {
 
     // JDBC 驱动名及数据库 URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/notalk";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/notalk?useSSL=false";
 
     // 数据库的用户名与密码，需要根据自己的设置
     static final String USER = "root";
-    static final String PASS = "root";
+//    static final String PASS = "root";
+    static final String PASS = "Fenghuayu05.28";
     Connection conn = null;
     PreparedStatement pstmt = null;
     Statement stmt = null;
@@ -69,6 +70,16 @@ public class DataBaseOperate {
     * */
     public ResultSet getUserInfo(int sid) throws SQLException {
         String sql = "SELECT * FROM user WHERE sid = " + sid;
+        stmt = conn.createStatement();
+        ResultSet res = stmt.executeQuery(sql);
+        return res;
+    }
+
+    /**
+     * 获取非自己信息
+     * */
+    public ResultSet getOthersInfo(int sid) throws SQLException {
+        String sql = "SELECT sid,nickname,sex,birthday,head_img,signature,status FROM user WHERE sid = " + sid;
         stmt = conn.createStatement();
         ResultSet res = stmt.executeQuery(sql);
         return res;
@@ -203,13 +214,13 @@ public class DataBaseOperate {
     }
 
     /**
-    * 获取好友信息
+    * 获取好友备注！
     * */
-    public ResultSet getFriendInfo(int friend_sid) throws SQLException {
-        String sql = "SELECT * FROM user WHERE sid = "+friend_sid;
+    public String getFriendNickName(int my_sid,int friend_sid) throws SQLException {
+        String sql = "SELECT friend_nickname FROM friends WHERE friend_sid = "+friend_sid+"AND my_sid = "+my_sid;
         stmt = conn.createStatement();
         ResultSet res = stmt.executeQuery(sql);
-        return res;
+        return res.getString("friend_nickname");
     }
 
     /**
@@ -344,7 +355,7 @@ public class DataBaseOperate {
         List<Integer> memberList = this.getGroupMemberList(groupId);
         List<ResultSet> friendInfo = new ArrayList<ResultSet>();
         for (Integer id:memberList) {
-            friendInfo.add(this.getFriendInfo(id));
+            friendInfo.add(this.getOthersInfo(id));
         }
         return friendInfo;
     }

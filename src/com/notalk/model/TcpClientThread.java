@@ -1,6 +1,8 @@
 package com.notalk.model;
 
+import com.google.gson.Gson;
 import com.notalk.MainApp;
+import com.notalk.view.MainContentTalkController;
 
 import java.io.*;
 import java.net.Socket;
@@ -10,9 +12,11 @@ import java.util.concurrent.Executors;
 
 public class TcpClientThread extends Thread{
     static private Socket clientSocket;
-    public static String HOSTNAME = "localhost";
-    public static int PORT = 8588;
+    public static String HOSTNAME = "112.74.62.166";
+//    public static String HOSTNAME = "127.0.0.1";
+    public static int PORT = 8888;
     public boolean SENDFLAG = false;
+    public MainContentTalkController mainContentTalkController = new MainContentTalkController();
     public PrintWriter pw;
 
 //    public static void main(String[] args) throws Exception {
@@ -84,13 +88,15 @@ public class TcpClientThread extends Thread{
 
     // 循环读取服务端发送过来的信息并输出到客户端的控制台
     class ListenrServser implements Runnable {
+        Gson gson = new Gson();
         @Override
         public void run() {
             try {
                 BufferedReader br = new BufferedReader(
-                        new InputStreamReader(clientSocket.getInputStream(), "UTF-8"));
+                new InputStreamReader(clientSocket.getInputStream(), "UTF-8"));
                 String msgString;
                 while((msgString = br.readLine())!= null) {
+                    mainContentTalkController.handleMsgFromServer(msgString);
                     System.out.println(msgString);
                 }
             } catch(Exception e) {

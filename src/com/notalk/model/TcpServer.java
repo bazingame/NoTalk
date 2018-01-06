@@ -40,7 +40,7 @@ public class TcpServer {
 
     public TcpServer() {
         try {
-            serverSocket = new ServerSocket(8588);
+            serverSocket = new ServerSocket(8888);
             storeInfo = new HashMap<String, PrintWriter>();
             exec = Executors.newCachedThreadPool();
 
@@ -151,13 +151,14 @@ public class TcpServer {
                 //服务端将昵称验证结果通过自身的输出流发送给客户端
                 PrintWriter ipw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"),true);
 
-                //读取客户端发来的昵称
+                //TODO
+                //读取客户端发来的昵称s
                 while(true) {
                     String sid = bReader.readLine();
                     if ((sid.trim().length() == 0) || storeInfo.containsKey(sid)) {
-                        ipw.println("FAIL");
+//                        ipw.println("FAIL");
                     } else {
-                        ipw.println("OK");
+//                        ipw.println("OK");
                         return sid;
                     }
                 }
@@ -175,8 +176,8 @@ public class TcpServer {
                 PrintWriter pw = new PrintWriter(
                         new OutputStreamWriter(socket.getOutputStream(), "UTF-8"), true);
 
-
                  //将账号和其所说的内容存入共享集合HashMap中
+
                 sid = getSid();
                 putIn(sid, pw);
                 Thread.sleep(100);

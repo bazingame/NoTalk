@@ -3,10 +3,7 @@ package com.notalk.view;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.notalk.MainApp;
-import com.notalk.model.DataBaseOperate;
-import com.notalk.model.GroupPeople;
-import com.notalk.model.TcpClientThread;
-import com.notalk.model.p2pmsgRecord;
+import com.notalk.model.*;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -20,9 +17,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import org.omg.PortableInterceptor.INACTIVE;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
@@ -63,8 +64,10 @@ public class MainContentTalkController{
     /**
     *构造函数 为文本域添监听回车事件
     * */
-    public MainContentTalkController(){
-    }
+//    public MainContentTalkController(){
+
+
+//    }
 
     public void setClient(TcpClientThread client) {
         this.client = client;
@@ -119,19 +122,7 @@ public class MainContentTalkController{
         this.talkScrollPane.setVvalue(999999999);
 
         //左侧最近联系人列表
-        //若Hbox中已有则转到，无则添加
-        if(this.recentPeople.contains(Integer.parseInt(info.get("sid")))){
-        }else{
-
-            //获取最近一条消息
-            String lastWords = "";
-            if(msgRecordList.size()>0){
-                lastWords = msgRecordList.get(msgRecordList.size()-1).getContent();
-            }
-            BorderPane peopleBorderPane = this.creatTalkList("123",info.get("name"),info.get("sid"),lastWords);
-
-            peopleBorderPaneList.getChildren().add(0,peopleBorderPane);
-        }
+        this.addTalkList(info.get("sid"),info.get("name"),"send","");
 
         //为textArea添加监听回车事件
         this.msgContent.setOnKeyReleased(new EventHandler<KeyEvent>(){
@@ -145,6 +136,29 @@ public class MainContentTalkController{
         });
     }
 
+    /**
+    *  左侧最近联系人列表每个单独联系人的添加与置顶
+    * */
+    public void addTalkList(String sid,String name,String type,String lastMsg){
+        //若Hbox中已有则转到，无则添加
+        if(this.recentPeople.contains(Integer.parseInt(sid))){
+        }else{
+
+            //获取最近一条消息
+            String lastWords = "";
+            if(type.equals("send")){
+                if(msgRecordList.size()>0){
+                    lastWords = msgRecordList.get(msgRecordList.size()-1).getContent();
+                }
+            }else if(type.equals("rec")){
+                lastWords = "[未读消息]"+lastMsg;
+            }
+
+            BorderPane peopleBorderPane = this.creatTalkList("123",name,sid,lastWords);
+
+            peopleBorderPaneList.getChildren().add(0,peopleBorderPane);
+        }
+    }
 
     /**
      *左侧最近聊天联系人列表每个单独联系人的生成
@@ -278,6 +292,44 @@ public class MainContentTalkController{
         //上浮到最顶层!!!!!!
         peopleBorderPaneList.getChildren().remove(thisFriendBorderPane);
         peopleBorderPaneList.getChildren().add(0,thisFriendBorderPane);
+
+    }
+
+
+    /**
+    * 接收处理服务器发送过来的消息
+    * */
+    public void handleMsgFromServer(String msgString) throws SQLException {
+        Msg recMsg = gson.fromJson(msgString,Msg.class);
+        String friendSid = recMsg.getTosid();
+        String content = recMsg.getContent();
+        String type = recMsg.getType();
+        ResultSet friendInfo = this.db.getOthersInfo(Integer.parseInt(friendSid));
+        String nickName = db.getFriendNickName(MainApp.Mysid,Integer.parseInt(friendSid));
+        //私人讯息
+        if(type.equals("p2p")){
+            //对应好友添加到最近联系人列表中(首位)
+            addTalkList(friendSid,nickName,"rec",content);
+            //显示气泡
+            //播放提示音
+            String url = getClass().getResource("/resources/music/newMsg.wav").toString();
+            Media media = new Media(url);
+            MediaPlayer mediaPlayer = new MediaPlayer(media);
+            mediaPlayer.setAutoPlay(true);
+            mediaPlayer.setCycleCount(1
+            );
+            mediaPlayer.play();
+            //
+
+            //上线消息
+        }else if(type.equals("onLine")){
+
+            //下线消息
+        }else if(type.equals("offLine")){
+
+        }
+        //TODO 其他消息类型
+
     }
 
 }
