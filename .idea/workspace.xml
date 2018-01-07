@@ -7,11 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NoTalkNote.txt" afterPath="$PROJECT_DIR$/NoTalkNote.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/MainApp.java" afterPath="$PROJECT_DIR$/src/com/notalk/MainApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/model/TcpServer.java" afterPath="$PROJECT_DIR$/src/com/notalk/model/TcpServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" afterPath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java" afterPath="$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/NoTalk_jar2/NoTalk.jar" afterPath="$PROJECT_DIR$/out/artifacts/NoTalk_jar2/NoTalk.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/MainApp$1.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/MainApp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/MainApp.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/MainApp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/TcpServer$ListenrClient.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/TcpServer$ListenrClient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/TcpServer.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/TcpServer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,6 +97,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="DataBaseOperate.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="37" column="67" lean-forward="true" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1515321300482" expanded="true" signature="1658:1689" ph="SELECT * FRO... user" />
+                <marker date="1515321300482" expanded="true" signature="2135:2230" ph="INSERT INTO user... " />
+                <marker date="1515321300482" expanded="true" signature="2711:2742" ph="SELECT * FRO... user" />
+                <marker date="1515321300482" expanded="true" signature="2986:3067" ph="SELECT sid,n... user" />
+                <marker date="1515321300482" expanded="true" signature="3415:3524" ph="UPDATE user " />
+                <marker date="1515321300482" expanded="true" signature="4008:4047" ph="UPDATE user " />
+                <marker date="1515321300482" expanded="true" signature="4268:4307" ph="UPDATE user " />
+                <marker date="1515321300482" expanded="true" signature="4582:4716" ph="INSERT INTO friends... " />
+                <marker date="1515321300482" expanded="true" signature="4955:5018" ph="DELETE FROM " />
+                <marker date="1515321300482" expanded="true" signature="5293:5362" ph="UPDATE frien... " />
+                <marker date="1515321300482" expanded="true" signature="5798:5863" ph="SELECT * FRO... friends" />
+                <marker date="1515321300482" expanded="true" signature="7665:7702" ph="SELECT * FRO... friends" />
+                <marker date="1515321300482" expanded="true" signature="8135:8183" ph="SELECT frien... user" />
+                <marker date="1515321300482" expanded="true" signature="8538:8573" ph="SELECT frien... friends" />
+                <marker date="1515321300482" expanded="true" signature="8538:8621" ph="SELECT frien... friends" />
+                <marker date="1515321300482" expanded="true" signature="9084:9156" ph="INSERT INTO p2p_messages... " />
+                <marker date="1515321300482" expanded="true" signature="9581:9660" ph="INSERT INTO p2p_unread_messages... " />
+                <marker date="1515321300482" expanded="true" signature="10044:10196" ph="SELECT * FRO... p2p_messages" />
+                <marker date="1515321300482" expanded="true" signature="11080:11129" ph="SELECT * FRO... p2p_unread_messages" />
+                <marker date="1515321300482" expanded="true" signature="11760:11807" ph="DELETE FROM " />
+                <marker date="1515321300482" expanded="true" signature="12094:12233" ph="INSERT INTO group_list... " />
+                <marker date="1515321300482" expanded="true" signature="12456:12490" ph="DELETE FROM " />
+                <marker date="1515321300482" expanded="true" signature="12908:12975" ph="UPDATE group... " />
+                <marker date="1515321300482" expanded="true" signature="13582:13649" ph="UPDATE group... " />
+                <marker date="1515321300482" expanded="true" signature="13888:13919" ph="SELECT * FRO... user" />
+                <marker date="1515321300482" expanded="true" signature="14285:14330" ph="SELECT users... group_list" />
+                <marker date="1515321300482" expanded="true" signature="15195:15231" ph="SELECT * FRO... group_list" />
+                <marker date="1515321300482" expanded="true" signature="15515:15592" ph="INSERT INTO p2g_message... " />
+                <marker date="1515321300482" expanded="true" signature="15987:16103" ph="SELECT conte... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MainApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -122,11 +164,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TcpServer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TcpServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/model/TcpServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="203" column="67" lean-forward="true" selection-start-line="203" selection-start-column="67" selection-end-line="203" selection-end-column="67" />
+            <state relative-caret-position="1311">
+              <caret line="74" column="79" lean-forward="true" selection-start-line="74" selection-start-column="79" selection-end-line="74" selection-end-column="79" />
               <folding>
                 <element signature="e#1361#1362#0" expanded="true" />
                 <element signature="e#1398#1399#0" expanded="true" />
@@ -306,7 +348,6 @@
         <option value="$PROJECT_DIR$/src/com/notalk/view/Main.css" />
         <option value="$PROJECT_DIR$/src/com/notalk/util/HttpRequest.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java" />
-        <option value="$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/test/test.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/model/TcpClientThread.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/LoginController.java" />
@@ -315,6 +356,7 @@
         <option value="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/MainApp.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/model/TcpServer.java" />
+        <option value="$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java" />
       </list>
     </option>
   </component>
@@ -331,7 +373,7 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="200" />
     <option name="y" value="113" />
     <option name="width" value="1403" />
@@ -363,6 +405,24 @@
             <path>
               <item name="NoTalk" type="b2602c69:ProjectViewProjectNode" />
               <item name="NoTalk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NoTalk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NoTalk" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NoTalk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NoTalk" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NoTalk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NoTalk" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="NoTalk_jar2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NoTalk" type="b2602c69:ProjectViewProjectNode" />
@@ -738,12 +798,12 @@
       <workItem from="1515245105052" duration="1889000" />
       <workItem from="1515256542287" duration="50000" />
       <workItem from="1515256614662" duration="594000" />
-      <workItem from="1515285519828" duration="27816000" />
+      <workItem from="1515285519828" duration="28090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="365446000" />
+    <option name="totallyTimeSpent" value="365720000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,7 +815,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -766,6 +826,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28909466" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23353909" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3580247" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" x="82" y="140" width="1475" height="734" />
@@ -789,7 +850,6 @@
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28909466" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -1067,45 +1127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="220" column="68" lean-forward="true" selection-start-line="220" selection-start-column="68" selection-end-line="220" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1515297007092" expanded="true" signature="1658:1689" ph="SELECT * FRO... user" />
-            <marker date="1515297007092" expanded="true" signature="2135:2230" ph="INSERT INTO user... " />
-            <marker date="1515297007092" expanded="true" signature="2711:2742" ph="SELECT * FRO... user" />
-            <marker date="1515297007092" expanded="true" signature="2986:3067" ph="SELECT sid,n... user" />
-            <marker date="1515297007092" expanded="true" signature="3415:3524" ph="UPDATE user " />
-            <marker date="1515297007092" expanded="true" signature="4008:4047" ph="UPDATE user " />
-            <marker date="1515297007092" expanded="true" signature="4268:4307" ph="UPDATE user " />
-            <marker date="1515297007092" expanded="true" signature="4582:4716" ph="INSERT INTO friends... " />
-            <marker date="1515297007092" expanded="true" signature="4955:5018" ph="DELETE FROM " />
-            <marker date="1515297007092" expanded="true" signature="5293:5362" ph="UPDATE frien... " />
-            <marker date="1515297007092" expanded="true" signature="5798:5863" ph="SELECT * FRO... friends" />
-            <marker date="1515297007092" expanded="true" signature="7665:7702" ph="SELECT * FRO... friends" />
-            <marker date="1515297007092" expanded="true" signature="8135:8183" ph="SELECT frien... user" />
-            <marker date="1515297007092" expanded="true" signature="8538:8573" ph="SELECT frien... friends" />
-            <marker date="1515297007092" expanded="true" signature="8538:8621" ph="SELECT frien... friends" />
-            <marker date="1515297007092" expanded="true" signature="9084:9156" ph="INSERT INTO p2p_messages... " />
-            <marker date="1515297007092" expanded="true" signature="9581:9660" ph="INSERT INTO p2p_unread_messages... " />
-            <marker date="1515297007092" expanded="true" signature="10044:10196" ph="SELECT * FRO... p2p_messages" />
-            <marker date="1515297007092" expanded="true" signature="11080:11129" ph="SELECT * FRO... p2p_unread_messages" />
-            <marker date="1515297007092" expanded="true" signature="11760:11807" ph="DELETE FROM " />
-            <marker date="1515297007092" expanded="true" signature="12094:12233" ph="INSERT INTO group_list... " />
-            <marker date="1515297007092" expanded="true" signature="12456:12490" ph="DELETE FROM " />
-            <marker date="1515297007092" expanded="true" signature="12908:12975" ph="UPDATE group... " />
-            <marker date="1515297007092" expanded="true" signature="13582:13649" ph="UPDATE group... " />
-            <marker date="1515297007092" expanded="true" signature="13888:13919" ph="SELECT * FRO... user" />
-            <marker date="1515297007092" expanded="true" signature="14285:14330" ph="SELECT users... group_list" />
-            <marker date="1515297007092" expanded="true" signature="15195:15231" ph="SELECT * FRO... group_list" />
-            <marker date="1515297007092" expanded="true" signature="15515:15592" ph="INSERT INTO p2g_message... " />
-            <marker date="1515297007092" expanded="true" signature="15987:16103" ph="SELECT conte... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/Login2.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -1196,11 +1217,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/model/TcpServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="203" column="67" lean-forward="true" selection-start-line="203" selection-start-column="67" selection-end-line="203" selection-end-column="67" />
+        <state relative-caret-position="1311">
+          <caret line="74" column="79" lean-forward="true" selection-start-line="74" selection-start-column="79" selection-end-line="74" selection-end-column="79" />
           <folding>
             <element signature="e#1361#1362#0" expanded="true" />
             <element signature="e#1398#1399#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="37" column="67" lean-forward="true" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1515321300482" expanded="true" signature="1658:1689" ph="SELECT * FRO... user" />
+            <marker date="1515321300482" expanded="true" signature="2135:2230" ph="INSERT INTO user... " />
+            <marker date="1515321300482" expanded="true" signature="2711:2742" ph="SELECT * FRO... user" />
+            <marker date="1515321300482" expanded="true" signature="2986:3067" ph="SELECT sid,n... user" />
+            <marker date="1515321300482" expanded="true" signature="3415:3524" ph="UPDATE user " />
+            <marker date="1515321300482" expanded="true" signature="4008:4047" ph="UPDATE user " />
+            <marker date="1515321300482" expanded="true" signature="4268:4307" ph="UPDATE user " />
+            <marker date="1515321300482" expanded="true" signature="4582:4716" ph="INSERT INTO friends... " />
+            <marker date="1515321300482" expanded="true" signature="4955:5018" ph="DELETE FROM " />
+            <marker date="1515321300482" expanded="true" signature="5293:5362" ph="UPDATE frien... " />
+            <marker date="1515321300482" expanded="true" signature="5798:5863" ph="SELECT * FRO... friends" />
+            <marker date="1515321300482" expanded="true" signature="7665:7702" ph="SELECT * FRO... friends" />
+            <marker date="1515321300482" expanded="true" signature="8135:8183" ph="SELECT frien... user" />
+            <marker date="1515321300482" expanded="true" signature="8538:8573" ph="SELECT frien... friends" />
+            <marker date="1515321300482" expanded="true" signature="8538:8621" ph="SELECT frien... friends" />
+            <marker date="1515321300482" expanded="true" signature="9084:9156" ph="INSERT INTO p2p_messages... " />
+            <marker date="1515321300482" expanded="true" signature="9581:9660" ph="INSERT INTO p2p_unread_messages... " />
+            <marker date="1515321300482" expanded="true" signature="10044:10196" ph="SELECT * FRO... p2p_messages" />
+            <marker date="1515321300482" expanded="true" signature="11080:11129" ph="SELECT * FRO... p2p_unread_messages" />
+            <marker date="1515321300482" expanded="true" signature="11760:11807" ph="DELETE FROM " />
+            <marker date="1515321300482" expanded="true" signature="12094:12233" ph="INSERT INTO group_list... " />
+            <marker date="1515321300482" expanded="true" signature="12456:12490" ph="DELETE FROM " />
+            <marker date="1515321300482" expanded="true" signature="12908:12975" ph="UPDATE group... " />
+            <marker date="1515321300482" expanded="true" signature="13582:13649" ph="UPDATE group... " />
+            <marker date="1515321300482" expanded="true" signature="13888:13919" ph="SELECT * FRO... user" />
+            <marker date="1515321300482" expanded="true" signature="14285:14330" ph="SELECT users... group_list" />
+            <marker date="1515321300482" expanded="true" signature="15195:15231" ph="SELECT * FRO... group_list" />
+            <marker date="1515321300482" expanded="true" signature="15515:15592" ph="INSERT INTO p2g_message... " />
+            <marker date="1515321300482" expanded="true" signature="15987:16103" ph="SELECT conte... " />
           </folding>
         </state>
       </provider>
