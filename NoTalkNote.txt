@@ -12,9 +12,16 @@ hover效果
 聊天界面自动下拉
 回车好像也是个问题……
 
+wxhxa.666Z
 
 更改备注
 移动分组
+汉字编码
 
 设置
+搜索
+
+
+{5:"My friends",6:"Family",7:"HighSchool Friends",8:"Best guys"}
+{1:"My friends",2:"Family",3:"HighSchool Friends",4:"Best guys"}
 

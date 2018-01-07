@@ -1,10 +1,12 @@
 package com.notalk;
 
+import com.google.gson.Gson;
 import com.notalk.model.TcpClientThread;
 import com.notalk.view.LoginController;
 import com.notalk.view.MainContentTalkController;
 import com.notalk.view.RootLayoutController;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,9 +15,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 
+import static java.lang.Thread.MIN_PRIORITY;
+import static java.lang.Thread.holdsLock;
 import static java.lang.Thread.sleep;
 
 public class MainApp extends Application {
@@ -103,6 +111,24 @@ public class MainApp extends Application {
             controller.loadPane();
 
             primaryStage.show();
+
+            //监控窗口关闭
+            primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                @Override
+                public void handle(WindowEvent event) {
+                    Date date = new Date();
+                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+                    String time = format.format(date);
+                    HashMap<String,String> msgHashMap = new HashMap<String,String>();
+                    msgHashMap.put("mysid",Integer.toString(MainApp.Mysid));
+                    msgHashMap.put("tosid","All");
+                    msgHashMap.put("time",time);
+                    msgHashMap.put("content","offLine");
+                    msgHashMap.put("type","offLine");
+                    Gson gson = new Gson();
+                    clientThread.sendMsg(gson.toJson(msgHashMap));
+                }
+            });
         }catch (IOException e){
             e.printStackTrace();
         }

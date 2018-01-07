@@ -63,7 +63,6 @@ public class TcpServer {
      **/
     private synchronized void remove(String  key) {
         storeInfo.remove(key);
-        System.out.println("当前在线人数为："+ storeInfo.size());
     }
 
     /**
@@ -146,7 +145,7 @@ public class TcpServer {
         * */
         private String getSid() throws Exception {
             try {
-                //服务端的输入流读取客户端发送来的昵称输出流
+                //服务端的输入流读取客户端发送来的输出流
                 BufferedReader bReader = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
                 //服务端将昵称验证结果通过自身的输出流发送给客户端
                 PrintWriter ipw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8"),true);
@@ -180,7 +179,7 @@ public class TcpServer {
 
                 sid = getSid();
                 putIn(sid, pw);
-                Thread.sleep(100);
+//                Thread.sleep(100);
 
 
                 // 通过客户端的Socket获取输入流
@@ -195,15 +194,18 @@ public class TcpServer {
                     Msg msg = gson.fromJson(msgString,Msg.class);
                     if(msg.getType().equals("p2p")){
                         sendToSomeone(msg.getMysid(),msg.getTosid(),msg.getContent(),msg.getTime(),msgString);
-                    }else if(msg.getType()=="p2g"){
-                    }else if(msg.getType()=="onLine"){
+                    }else if(msg.getType().equals("p2g")){
+                    }else if(msg.getType().equals("onLine")){
                         sendToAll(msg.getMysid(),msgString,"onLine");
                         //数据库改变状态
                         db.setOnline(Integer.parseInt(msg.getMysid()));
-                    }else if(msg.getType()=="offLine"){
-                        sendToAll(msg.getMysid(),msgString,"offLine");
+                    }else if(msg.getType().equals("offLine")) {
+                        sendToAll(msg.getMysid(), msgString, "offLine");
+                        System.out.println(msg.getMysid()+"下线了……");
                         //数据库改变状态
                         db.setOffline(Integer.parseInt(msg.getMysid()));
+                        remove(sid);
+                        socket.close();
                     }else{
                         //TODO
                     }

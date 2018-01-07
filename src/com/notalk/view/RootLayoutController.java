@@ -148,7 +148,7 @@ public class RootLayoutController {
     * 初始化聊天界面
     * */
     public void initTalkInfo(HashMap<String,String> info){
-        mainContentTalkController.loadInfo(info);
+        mainContentTalkController.loadInfo(info,"BOTH");
     }
 
     /**

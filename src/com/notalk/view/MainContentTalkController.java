@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.notalk.MainApp;
 import com.notalk.model.*;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -53,7 +54,7 @@ public class MainContentTalkController{
     * 最近联系人的Vbox列表
     * */
     @FXML
-    public VBox peopleBorderPaneList;
+    public  VBox peopleBorderPaneList;
 
     @FXML
     private Button sendMsgBtn;
@@ -80,65 +81,72 @@ public class MainContentTalkController{
     /**
     * 初始化聊天界面
     * 包括右侧消息记录的加载和调用creatTalkList()方法更新左侧最近联系人
+    * 如果是仅更新右侧则参数为 RIGHT 都更新为BOTH
     **/
-    public void loadInfo(HashMap<String, String> info) {
-        nickName.setText(info.get("name"));
-        sidLabel.setText(info.get("sid"));
-        msgRecordList = gson.fromJson(info.get("record"), new TypeToken<List<p2pmsgRecord>>() {}.getType());
-        this.msgRecordListBox.getChildren().clear();
-        //初始化消息记录
-        //TODO 缓存处理
-        for(p2pmsgRecord personInfo : msgRecordList){
-            HBox hBox = new HBox();
-//            StackPane stackPane = new StackPane();
-//            Rectangle rectangle = new Rectangle();
-            Label label = new Label();
-            label.setText(personInfo.getContent());
-//            rectangle.setStyle("-fx-fill: red;-fx-pref-height: 50px;-fx-pref-width: 50px;-fx-arc-height:5px;-fx-arc-width:5px");
-//            double height = label.widthProperty().doubleValue();
-//            System.out.println(height);
-//            double width = label.width();
-//            rectangle.setHeight(height);
-//            rectangle.setWidth(width);
-//            rectangle.setFill(Color.GREEN);
+    public void loadInfo(HashMap<String, String> info,String type) {
+        Platform.runLater(() -> {
 
-//            stackPane.getChildren().addAll(rectangle,label);
-            hBox.getChildren().addAll(label);
-            if(Integer.parseInt(personInfo.getFromSid())==MainApp.Mysid){
-                hBox.setAlignment(Pos.CENTER_RIGHT);
-                hBox.setPadding(new Insets(10,80,10,10));
-                label.getStyleClass().addAll("talk-sendmsg-label");
-            }else{
-                hBox.setAlignment(Pos.CENTER_LEFT);
-                hBox.setPadding(new Insets(10,10,10,80));
-                label.getStyleClass().addAll("talk-recmsg-label");
-            }
+            nickName.setText(info.get("name"));
+            sidLabel.setText(info.get("sid"));
+            msgRecordList = gson.fromJson(info.get("record"), new TypeToken<List<p2pmsgRecord>>() {}.getType());
+            this.msgRecordListBox.getChildren().clear();
+            //初始化消息记录
+            //TODO 缓存处理
+            for(p2pmsgRecord personInfo : msgRecordList){
+                HBox hBox = new HBox();
+    //            StackPane stackPane = new StackPane();
+    //            Rectangle rectangle = new Rectangle();
+                Label label = new Label();
+                label.setText(personInfo.getContent());
+    //            rectangle.setStyle("-fx-fill: red;-fx-pref-height: 50px;-fx-pref-width: 50px;-fx-arc-height:5px;-fx-arc-width:5px");
+    //            double height = label.widthProperty().doubleValue();
+    //            System.out.println(height);
+    //            double width = label.width();
+    //            rectangle.setHeight(height);
+    //            rectangle.setWidth(width);
+    //            rectangle.setFill(Color.GREEN);
 
-            this.msgRecordListBox.getChildren().addAll(hBox);
-        }
-
-        //double height = msgRecordListBox.getHeight();
-
-        this.talkScrollPane.setVvalue(999999999);
-
-        //左侧最近联系人列表
-        this.addTalkList(info.get("sid"),info.get("name"),"send","");
-
-        //为textArea添加监听回车事件
-        this.msgContent.setOnKeyReleased(new EventHandler<KeyEvent>(){
-            public void handle(KeyEvent event) {
-                if(event.getCode()== KeyCode.ENTER){
-//                    System.out.println("Enter");
-                    sendMsgBtnClick();
-                    msgContent.clear();
+    //            stackPane.getChildren().addAll(rectangle,label);
+                hBox.getChildren().addAll(label);
+                if(Integer.parseInt(personInfo.getFromSid())==MainApp.Mysid){
+                    hBox.setAlignment(Pos.CENTER_RIGHT);
+                    hBox.setPadding(new Insets(10,80,10,10));
+                    label.getStyleClass().addAll("talk-sendmsg-label");
+                }else{
+                    hBox.setAlignment(Pos.CENTER_LEFT);
+                    hBox.setPadding(new Insets(10,10,10,80));
+                    label.getStyleClass().addAll("talk-recmsg-label");
                 }
+
+                this.msgRecordListBox.getChildren().addAll(hBox);
             }
+
+            //double height = msgRecordListBox.getHeight();
+
+            this.talkScrollPane.setVvalue(999999999);
+
+            if(type.equals("BOTH")){
+                //左侧最近联系人列表
+                this.addTalkList(info.get("sid"),info.get("name"),"send","");
+            }
+            //为textArea添加监听回车事件
+            this.msgContent.setOnKeyReleased(new EventHandler<KeyEvent>(){
+                public void handle(KeyEvent event) {
+                    if(event.getCode()== KeyCode.ENTER){
+    //                    System.out.println("Enter");
+                        sendMsgBtnClick();
+                        msgContent.clear();
+                    }
+                }
+            });
+
         });
+
     }
 
     /**
     *  左侧最近联系人列表每个单独联系人的添加与置顶
-    *  仅在第一次添加至最贱联系人列表时起作用其他情况下 由其他方法进行上浮等操作
+    *  仅在第一次添加至最近联系人列表时起作用其他情况下 由其他方法进行上浮等操作
     * */
     public void addTalkList(String sid,String name,String type,String lastMsg){
         System.out.println(sid+name+type+lastMsg);
@@ -158,19 +166,25 @@ public class MainContentTalkController{
 
             BorderPane peopleBorderPane = this.creatTalkList("123",name,sid,lastWords);
 
-            peopleBorderPaneList.getChildren().add(0,peopleBorderPane);
+            Platform.runLater(() -> {
+                this.peopleBorderPaneList.getChildren().add(0,peopleBorderPane);
+            });
         }
+
         //当已在最近联系人列表且接收到消息时
-//        if(type.equals("rec")){
-//            //获取这个人的BorderPane!!
-//            BorderPane thisFriendBorderPane = (BorderPane) peopleBorderPaneList.lookup("#"+sid);
-//            //更新最后聊天记录！
-//            Label lastWordLabel = (Label)thisFriendBorderPane.lookup("#lastWords");
-//            lastWordLabel.setText(lastMsg);
-//            //上浮到最顶层!!!!!!
-//            peopleBorderPaneList.getChildren().remove(thisFriendBorderPane);
-//            peopleBorderPaneList.getChildren().add(0,thisFriendBorderPane);
-//        }
+        if(type.equals("rec")){
+            Platform.runLater(() -> {
+                //获取这个人的BorderPane!!
+                BorderPane thisFriendBorderPane = (BorderPane) peopleBorderPaneList.lookup("#"+sid);
+                //更新最后聊天记录！
+                Label lastWordLabel = (Label)thisFriendBorderPane.lookup("#lastWords");
+                lastWordLabel.setText(lastMsg);
+                //上浮到最顶层!!!!!!
+                this.peopleBorderPaneList.getChildren().remove(thisFriendBorderPane);
+                this.peopleBorderPaneList.getChildren().add(0,thisFriendBorderPane);
+            });
+
+        }
     }
 
     /**
@@ -228,7 +242,7 @@ public class MainContentTalkController{
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                loadInfo(hashMap);
+                loadInfo(hashMap,"BOTH");
 
             }
         });
@@ -327,7 +341,20 @@ public class MainContentTalkController{
         if(type.equals("p2p")){
             //对应好友添加到最近联系人列表中(首位)
             addTalkList(friendSid,nickName,"rec",content);
+            //更新消息记录
+            HashMap<String,String> hashMap = new HashMap<String,String>();
+            hashMap.put("name",nickName);
+            hashMap.put("sid",friendSid);
+            try {
+                String msgRecord = db.getMsgRecord(MainApp.Mysid,Integer.parseInt(friendSid));
+                hashMap.put("record",msgRecord);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            loadInfo(hashMap,"RIGHT");
+
             //显示气泡
+
             //播放提示音
             String url = getClass().getResource("/resources/music/newMsg.wav").toString();
             Media media = new Media(url);
