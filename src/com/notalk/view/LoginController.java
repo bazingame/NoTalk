@@ -15,6 +15,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 
 
@@ -87,7 +91,24 @@ public class LoginController {
             }
         });
 
-        newUser.hoverProperty();
+
+        //监听注册用户连接
+        this.newUser.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                Desktop d = Desktop.getDesktop();
+                URI address = null;
+                try {
+                    address = new URI("https://www.hammerfood.com");
+                    d.browse(address);
+                } catch (URISyntaxException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
     }
 
 
@@ -121,14 +142,14 @@ public class LoginController {
                String res =  HttpRequest.sendGet("https://api.sky31.com/edu-new/student_info.php","role=2016501308&hash=92a973960e0732fd426399954e578911&sid="+userSid+"&password="+password);
                //0为验证成功，1为验证失败
                int loginStatus = Integer.parseInt(res.charAt(8)+"");
-               if(loginStatus==0){
+//               if(loginStatus==0){
                    mainApp.Mysid = Integer.parseInt(userSid);
                    mainApp.initRootLayout();
-               }else if(loginStatus==1){
-                   loginMsgType.setText("登录失败");
-                   loginMsgContent.setText("密码错误，请检查后重试输入");
-                   coverPane.setVisible(true);
-               }
+//               }else if(loginStatus==1){
+//                   loginMsgType.setText("登录失败");
+//                   loginMsgContent.setText("密码错误，请检查后重试输入");
+//                   coverPane.setVisible(true);
+//               }
             }
         } catch (SQLException e) {
             e.printStackTrace();

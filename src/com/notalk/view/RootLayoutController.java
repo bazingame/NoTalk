@@ -14,6 +14,7 @@ import javafx.scene.layout.Pane;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 
 public class RootLayoutController {
@@ -115,6 +116,8 @@ public class RootLayoutController {
             this.mainContentTalkController = talkLoader.getController();
             mainContentTalkController.setRootLayoutController(this);
             mainContentTalkController.setClient(this.tcpClientThread);
+            tcpClientThread.setRootLayoutController(this);
+            mainContentTalkController.getUnreadMsg();
 
             FXMLLoader contactsLoader = new FXMLLoader();
             contactsLoader.setLocation(MainApp.class.getResource("view/MainContentContacts.fxml"));
@@ -134,18 +137,27 @@ public class RootLayoutController {
 
         }catch (IOException e) {
             e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
         TalkMain.setCenter(MainContentTalk);
     }
 
-    /*
-    *
+    /**
     * 初始化聊天界面
     * */
     public void initTalkInfo(HashMap<String,String> info){
         mainContentTalkController.loadInfo(info);
     }
+
+    /**
+    * 处理服务器消息
+    * */
+    public void handleMsg(String msgString) throws SQLException {
+        mainContentTalkController.handleMsgFromServer(msgString);
+    }
+
 
 
 

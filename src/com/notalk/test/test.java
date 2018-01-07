@@ -1,6 +1,7 @@
 package com.notalk.test;
 
 
+import com.google.gson.Gson;
 import com.notalk.model.DataBaseOperate;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -9,6 +10,7 @@ import javax.xml.crypto.Data;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -22,6 +24,7 @@ public class test {
      */
 
     public static void main(String[] args) throws SQLException {
+        Gson gson = new Gson();
 //        exec.scheduleAtFixedRate(new Runnable() {
 //            public void run() {
 //                System.out.println(System.currentTimeMillis());
@@ -35,8 +38,13 @@ public class test {
 //        System.out.println(db.getFriendsSidList(2016501308));
 //        db.setOnline(2016501308);
 //        db.setOffline(2016501308);
-        int res = db.hasThisUser(2016501308);
-        System.out.println(res);
+//        HashMap hashMap = db.getUnreadMsg(2016502020);
+//        if(hashMap.size()==0){
+//            System.out.println("null!");
+//        }
+        System.out.println(db.getFriendNickName(2016501308,2015551439));
+
+//        System.out.println(gson.toJson(hashMap));
 //        test test = new test();
 //        test.test();
 

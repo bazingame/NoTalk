@@ -138,8 +138,10 @@ public class MainContentTalkController{
 
     /**
     *  左侧最近联系人列表每个单独联系人的添加与置顶
+    *  仅在第一次添加至最贱联系人列表时起作用其他情况下 由其他方法进行上浮等操作
     * */
     public void addTalkList(String sid,String name,String type,String lastMsg){
+        System.out.println(sid+name+type+lastMsg);
         //若Hbox中已有则转到，无则添加
         if(this.recentPeople.contains(Integer.parseInt(sid))){
         }else{
@@ -151,12 +153,23 @@ public class MainContentTalkController{
                     lastWords = msgRecordList.get(msgRecordList.size()-1).getContent();
                 }
             }else if(type.equals("rec")){
-                lastWords = "[未读消息]"+lastMsg;
+                lastWords = "[未读消息]";
             }
 
             BorderPane peopleBorderPane = this.creatTalkList("123",name,sid,lastWords);
 
             peopleBorderPaneList.getChildren().add(0,peopleBorderPane);
+        }
+        //当已在最近联系人列表且接收到消息时
+        if(type.equals("rec")){
+            //获取这个人的BorderPane!!
+            BorderPane thisFriendBorderPane = (BorderPane) peopleBorderPaneList.lookup("#"+sid);
+            //更新最后聊天记录！
+            Label lastWordLabel = (Label)thisFriendBorderPane.lookup("#lastWords");
+            lastWordLabel.setText(lastMsg);
+            //上浮到最顶层!!!!!!
+            peopleBorderPaneList.getChildren().remove(thisFriendBorderPane);
+            peopleBorderPaneList.getChildren().add(0,thisFriendBorderPane);
         }
     }
 
@@ -201,6 +214,10 @@ public class MainContentTalkController{
         peopleBorderPane.setOnMouseClicked(new EventHandler <MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                Label lastWords = (Label)peopleBorderPane.lookup("#lastWords");
+                if(lastWords.getText().equals("[未读消息]")){
+                    lastWords.setText("");
+                }
                 HashMap<String,String> hashMap = new HashMap<String,String>();
                 hashMap.put("name",nickName);
                 hashMap.put("sid",sid);
@@ -276,12 +293,7 @@ public class MainContentTalkController{
         hBox.setPadding(new Insets(10,80,10,10));
         label.getStyleClass().addAll("talk-sendmsg-label");
         this.msgRecordListBox.getChildren().addAll(hBox);
-        /*发送成功后记录至数据库*/
-//        try {
-//            db.sendfriendMsg(Integer.parseInt(fromsid),Integer.parseInt(tosid),msgContent,time);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+
         //滚到最下面！
         this.talkScrollPane.setVvalue(999999999);
         //获取这个人的BorderPane!!
@@ -295,13 +307,18 @@ public class MainContentTalkController{
 
     }
 
+    /**
+    *  接收点对点消息
+    * */
+
+
 
     /**
     * 接收处理服务器发送过来的消息
     * */
     public void handleMsgFromServer(String msgString) throws SQLException {
         Msg recMsg = gson.fromJson(msgString,Msg.class);
-        String friendSid = recMsg.getTosid();
+        String friendSid = recMsg.getMysid();
         String content = recMsg.getContent();
         String type = recMsg.getType();
         ResultSet friendInfo = this.db.getOthersInfo(Integer.parseInt(friendSid));
@@ -316,8 +333,7 @@ public class MainContentTalkController{
             Media media = new Media(url);
             MediaPlayer mediaPlayer = new MediaPlayer(media);
             mediaPlayer.setAutoPlay(true);
-            mediaPlayer.setCycleCount(1
-            );
+            mediaPlayer.setCycleCount(1);
             mediaPlayer.play();
             //
 
@@ -329,6 +345,23 @@ public class MainContentTalkController{
 
         }
         //TODO 其他消息类型
+
+    }
+
+    /**
+    * 初始化时 从服务器获取未读消息并在最近联系人列表中初始化
+    * */
+    public void getUnreadMsg() throws SQLException {
+        HashMap<Integer,Integer> hashMap = db.getUnreadMsg(MainApp.Mysid);
+        if(hashMap.size()!=0){
+            for (Integer sid : hashMap.keySet()){
+                String nickName = db.getFriendNickName(MainApp.Mysid,sid);
+                addTalkList(Integer.toString(sid),nickName,"rec","");
+            }
+            //清除未读消息~
+            db.deleteUnreadMsg(MainApp.Mysid);
+
+        }
 
     }
 

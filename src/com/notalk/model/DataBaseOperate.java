@@ -2,24 +2,26 @@ package com.notalk.model;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.notalk.util.Echo;
 import com.sun.org.apache.regexp.internal.RE;
 import com.sun.xml.internal.bind.v2.TODO;
 import sun.security.util.Resources_sv;
 
 import javax.xml.transform.Result;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
+import static com.notalk.util.Echo.echo;
 
 public class DataBaseOperate {
 
     // JDBC 驱动名及数据库 URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://112.74.62.166:3306/notalk?useSSL=false";
+//    static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/notalk?useSSL=false";
 
     // 数据库的用户名与密码，需要根据自己的设置
+//    static final String USER = "root";
     static final String USER = "remote";
 //    static final String PASS = "root";
     static final String PASS = "Fenghuayu05.28";
@@ -173,6 +175,18 @@ public class DataBaseOperate {
     }
 
     /**
+    * 新建好友分组
+    * */
+    public int creatFriendGroup(int mysid,String groupName){
+
+        return 0;
+    }
+
+    /**
+    * 移动好友分组
+    * */
+
+    /**
     * 获取好友列表(分组输出)
     * */
     public String getFriendsList(int my_sid) throws SQLException {
@@ -183,12 +197,17 @@ public class DataBaseOperate {
         String groupList = this.getFriendsGroupList(my_sid);
         Map<Integer,String> groupListMap = gson.fromJson(groupList,new TypeToken<HashMap<Integer,String>>(){}.getType());
         List<Map<String,List>> friendsList = new ArrayList<>();
-        for(int i = 1;i<=groupListMap.size();i++){
+
+        Iterator iter = groupListMap.entrySet().iterator();
+        while (iter.hasNext()) {
+            Map.Entry entry = (Map.Entry) iter.next();
+            Object key = entry.getKey();
+            Object val = entry.getValue();
             Map<String,List> friendsListNameAndData = new HashMap<String,List>();
             //根据组别名去遍历分组好友
             List<Map> thisGroupList = new ArrayList<Map>();
             while (res.next()){
-                if(res.getInt("group_id")==i){
+                if(res.getInt("group_id")==(Integer)key){
                     Map<String,String> thisMan = new HashMap<String,String>();
                     thisMan.put("friend_sid",res.getInt("friend_sid")+"");
                     thisMan.put("friend_nickname",res.getString("friend_nickname"));
@@ -198,11 +217,14 @@ public class DataBaseOperate {
             }
             res.first();
             List<String> groupName = new ArrayList<>();
-            groupName.add(groupListMap.get(i));
+            groupName.add((String)val);
             friendsListNameAndData.put("friend_list",thisGroupList);
             friendsListNameAndData.put("group_name",groupName);
             friendsList.add(friendsListNameAndData);
         }
+
+
+        System.out.println(gson.toJson(friendsList));
         return gson.toJson(friendsList);
     }
 
@@ -236,10 +258,18 @@ public class DataBaseOperate {
     * 获取好友备注！
     * */
     public String getFriendNickName(int my_sid,int friend_sid) throws SQLException {
-        String sql = "SELECT friend_nickname FROM friends WHERE friend_sid = "+friend_sid+"AND my_sid = "+my_sid;
+        String sql = "SELECT friend_nickname FROM friends WHERE friend_sid = "+friend_sid+" AND my_sid = "+my_sid;
         stmt = conn.createStatement();
         ResultSet res = stmt.executeQuery(sql);
-        return res.getString("friend_nickname");
+        res.last();
+        int count = res.getRow();
+        res.first();
+        if(count!=0){
+            return res.getString("friend_nickname");
+        }else {
+            return "null";
+        }
+
     }
 
     /**
@@ -290,6 +320,38 @@ public class DataBaseOperate {
         String recordListJson = gson.toJson(recordList);
         return recordListJson;
     }
+
+    /**
+    * 初始化登录时获取未读聊天记录
+    * */
+    public HashMap getUnreadMsg(int userSid) throws SQLException {
+        String sql = "SELECT * FROM p2p_unread_messages WHERE to_sid = "+userSid;
+        stmt = conn.createStatement();
+        ResultSet set = stmt.executeQuery(sql);
+        HashMap<Integer,Integer> hashMap = new HashMap<Integer, Integer>();
+        while (set.next()){
+            int thisSid = set.getInt("from_sid");
+            if(hashMap.containsKey(thisSid)){
+                int count = hashMap.get(thisSid);
+                hashMap.replace(thisSid,++count);
+            }else {
+                hashMap.put(thisSid,1);
+            }
+        }
+        return hashMap;
+    }
+
+    /**
+    * 清空未读消息
+    * */
+    public int deleteUnreadMsg(int userSid) throws SQLException {
+        String sql = "DELETE FROM p2p_unread_messages WHERE to_sid = "+userSid;
+        stmt = conn.createStatement();
+        int res = stmt.executeUpdate(sql);
+        return res;
+    }
+
+
 
     /**
     * 创建群组

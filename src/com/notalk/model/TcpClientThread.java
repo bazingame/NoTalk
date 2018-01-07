@@ -3,6 +3,7 @@ package com.notalk.model;
 import com.google.gson.Gson;
 import com.notalk.MainApp;
 import com.notalk.view.MainContentTalkController;
+import com.notalk.view.RootLayoutController;
 
 import java.io.*;
 import java.net.Socket;
@@ -11,12 +12,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class TcpClientThread extends Thread{
+    private RootLayoutController rootLayoutController;
     static private Socket clientSocket;
     public static String HOSTNAME = "112.74.62.166";
 //    public static String HOSTNAME = "127.0.0.1";
     public static int PORT = 8888;
     public boolean SENDFLAG = false;
-    public MainContentTalkController mainContentTalkController = new MainContentTalkController();
     public PrintWriter pw;
 
 //    public static void main(String[] args) throws Exception {
@@ -24,6 +25,10 @@ public class TcpClientThread extends Thread{
 //        client.start();
 //    }
 
+
+    public void setRootLayoutController(RootLayoutController rootLayoutController) {
+        this.rootLayoutController = rootLayoutController;
+    }
 
     @Override
     public void run() {
@@ -96,7 +101,7 @@ public class TcpClientThread extends Thread{
                 new InputStreamReader(clientSocket.getInputStream(), "UTF-8"));
                 String msgString;
                 while((msgString = br.readLine())!= null) {
-                    mainContentTalkController.handleMsgFromServer(msgString);
+                    rootLayoutController.handleMsg(msgString);
                     System.out.println(msgString);
                 }
             } catch(Exception e) {

@@ -51,7 +51,7 @@ public class MainContentContactsController {
         try {
 
             //获取联系人信息
-            String friendsList = db.getFriendsList(2016501308);
+            String friendsList = db.getFriendsList(MainApp.Mysid);
             List<GroupPeople> groupPeopleList = gson.fromJson(friendsList, new TypeToken<List<GroupPeople>>() {}.getType());
 //            System.out.println(gson.toJson(groupPeople));
             VBox peoplelistvBox = new VBox();
