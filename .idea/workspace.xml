@@ -7,30 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/LoginController$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/MainApp.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/MainApp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/DataBaseOperate$1.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/DataBaseOperate$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/DataBaseOperate$2.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/DataBaseOperate$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/DataBaseOperate.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/DataBaseOperate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/TcpClientThread$ListenrServser.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/TcpClientThread$ListenrServser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/TcpClientThread.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/model/TcpClientThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/test/test.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/test/test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/LoginController$1.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/LoginController$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/LoginController$2.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/LoginController$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/LoginController$3.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/LoginController$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/LoginController$4.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/LoginController$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/LoginController.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/LoginController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentContactsController.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentContactsController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController$3.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/MainContentTalkController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/RootLayoutController.class" afterPath="$PROJECT_DIR$/out/production/NoTalk/com/notalk/view/RootLayoutController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NoTalkNote.txt" afterPath="$PROJECT_DIR$/NoTalkNote.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/MainApp.java" afterPath="$PROJECT_DIR$/src/com/notalk/MainApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java" afterPath="$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/model/TcpClientThread.java" afterPath="$PROJECT_DIR$/src/com/notalk/model/TcpClientThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/test/test.java" afterPath="$PROJECT_DIR$/src/com/notalk/test/test.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/LoginController.java" afterPath="$PROJECT_DIR$/src/com/notalk/view/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java" afterPath="$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" afterPath="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java" afterPath="$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java" />
     </list>
@@ -117,72 +100,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DataBaseOperate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1515297007092" expanded="true" signature="1658:1689" ph="SELECT * FRO... user" />
-                <marker date="1515297007092" expanded="true" signature="2135:2230" ph="INSERT INTO user... " />
-                <marker date="1515297007092" expanded="true" signature="2711:2742" ph="SELECT * FRO... user" />
-                <marker date="1515297007092" expanded="true" signature="2986:3067" ph="SELECT sid,n... user" />
-                <marker date="1515297007092" expanded="true" signature="3415:3524" ph="UPDATE user " />
-                <marker date="1515297007092" expanded="true" signature="4008:4047" ph="UPDATE user " />
-                <marker date="1515297007092" expanded="true" signature="4268:4307" ph="UPDATE user " />
-                <marker date="1515297007092" expanded="true" signature="4582:4716" ph="INSERT INTO friends... " />
-                <marker date="1515297007092" expanded="true" signature="4955:5018" ph="DELETE FROM " />
-                <marker date="1515297007092" expanded="true" signature="5293:5362" ph="UPDATE frien... " />
-                <marker date="1515297007092" expanded="true" signature="5798:5863" ph="SELECT * FRO... friends" />
-                <marker date="1515297007092" expanded="true" signature="7665:7702" ph="SELECT * FRO... friends" />
-                <marker date="1515297007092" expanded="true" signature="8135:8183" ph="SELECT frien... user" />
-                <marker date="1515297007092" expanded="true" signature="8538:8573" ph="SELECT frien... friends" />
-                <marker date="1515297007092" expanded="true" signature="8538:8621" ph="SELECT frien... friends" />
-                <marker date="1515297007092" expanded="true" signature="9084:9156" ph="INSERT INTO p2p_messages... " />
-                <marker date="1515297007092" expanded="true" signature="9581:9660" ph="INSERT INTO p2p_unread_messages... " />
-                <marker date="1515297007092" expanded="true" signature="10044:10196" ph="SELECT * FRO... p2p_messages" />
-                <marker date="1515297007092" expanded="true" signature="11080:11129" ph="SELECT * FRO... p2p_unread_messages" />
-                <marker date="1515297007092" expanded="true" signature="11760:11807" ph="DELETE FROM " />
-                <marker date="1515297007092" expanded="true" signature="12094:12233" ph="INSERT INTO group_list... " />
-                <marker date="1515297007092" expanded="true" signature="12456:12490" ph="DELETE FROM " />
-                <marker date="1515297007092" expanded="true" signature="12908:12975" ph="UPDATE group... " />
-                <marker date="1515297007092" expanded="true" signature="13582:13649" ph="UPDATE group... " />
-                <marker date="1515297007092" expanded="true" signature="13888:13919" ph="SELECT * FRO... user" />
-                <marker date="1515297007092" expanded="true" signature="14285:14330" ph="SELECT users... group_list" />
-                <marker date="1515297007092" expanded="true" signature="15195:15231" ph="SELECT * FRO... group_list" />
-                <marker date="1515297007092" expanded="true" signature="15515:15592" ph="INSERT INTO p2g_message... " />
-                <marker date="1515297007092" expanded="true" signature="15987:16103" ph="SELECT conte... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/notalk/test/test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="44" column="64" lean-forward="false" selection-start-line="44" selection-start-column="64" selection-end-line="44" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Echo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/notalk/util/Echo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainApp.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="575">
+              <caret line="101" column="47" lean-forward="true" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
               <folding>
                 <element signature="e#1556#1557#0" expanded="true" />
                 <element signature="e#1584#1585#0" expanded="true" />
@@ -194,8 +116,8 @@
       <file leaf-file-name="TcpClientThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/model/TcpClientThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="103" column="50" lean-forward="false" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
+            <state relative-caret-position="368">
+              <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
               <folding>
                 <element signature="method#setName#0;class#TcpClientThread#0" expanded="false" />
               </folding>
@@ -203,16 +125,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainContentTalkController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainContentTalkController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="161" column="9" lean-forward="false" selection-start-line="161" selection-start-column="9" selection-end-line="161" selection-end-column="9" />
+            <state relative-caret-position="291">
+              <caret line="273" column="69" lean-forward="false" selection-start-line="273" selection-start-column="69" selection-end-line="273" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1734#1735#0" expanded="true" />
-                <element signature="e#1770#1771#0" expanded="true" />
+                <element signature="e#1733#1734#0" expanded="true" />
+                <element signature="e#1769#1770#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainContentContactsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="163" column="16" lean-forward="true" selection-start-line="163" selection-start-column="16" selection-end-line="163" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -230,13 +162,13 @@
       <file leaf-file-name="RootLayoutController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="157" column="35" lean-forward="false" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
+            <state relative-caret-position="337">
+              <caret line="119" column="46" lean-forward="true" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
               <folding>
                 <element signature="e#1597#1598#0" expanded="true" />
                 <element signature="e#1651#1652#0" expanded="true" />
-                <element signature="e#5612#5613#0" expanded="true" />
-                <element signature="e#5668#5669#0" expanded="true" />
+                <element signature="e#5614#5615#0" expanded="true" />
+                <element signature="e#5670#5671#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -245,8 +177,8 @@
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/notalk/view/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="151" column="18" lean-forward="true" selection-start-line="151" selection-start-column="18" selection-end-line="151" selection-end-column="18" />
+            <state relative-caret-position="465">
+              <caret line="146" column="34" lean-forward="false" selection-start-line="146" selection-start-column="34" selection-end-line="146" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1226#1227#0" expanded="true" />
@@ -262,8 +194,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -362,14 +294,15 @@
         <option value="$PROJECT_DIR$/src/com/notalk/view/Login.fxml" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/Main.css" />
         <option value="$PROJECT_DIR$/src/com/notalk/util/HttpRequest.java" />
-        <option value="$PROJECT_DIR$/src/com/notalk/view/LoginController.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/test/test.java" />
+        <option value="$PROJECT_DIR$/src/com/notalk/model/TcpClientThread.java" />
+        <option value="$PROJECT_DIR$/src/com/notalk/view/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/com/notalk/view/Login2.fxml" />
+        <option value="$PROJECT_DIR$/src/com/notalk/MainApp.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java" />
         <option value="$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java" />
-        <option value="$PROJECT_DIR$/src/com/notalk/model/TcpClientThread.java" />
-        <option value="$PROJECT_DIR$/src/com/notalk/MainApp.java" />
       </list>
     </option>
   </component>
@@ -793,12 +726,12 @@
       <workItem from="1515245105052" duration="1889000" />
       <workItem from="1515256542287" duration="50000" />
       <workItem from="1515256614662" duration="594000" />
-      <workItem from="1515285519828" duration="16747000" />
+      <workItem from="1515285519828" duration="22404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354377000" />
+    <option name="totallyTimeSpent" value="360034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -811,7 +744,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281893" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -822,8 +754,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33641976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16666667" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" x="82" y="140" width="1475" height="734" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37345678" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3580247" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" x="82" y="140" width="1475" height="734" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -834,7 +766,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15885417" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -876,11 +808,11 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28909466" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24588478" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49176955" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" x="82" y="140" width="1475" height="734" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37345678" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3580247" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" x="82" y="140" width="1475" height="734" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962963" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19635417" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19635417" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -899,7 +831,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -908,8 +840,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/SocketDispatcher.java" />
-    <entry file="jar://D:/Program Files/Java/jdk/src.zip!/java/util/Map.java" />
     <entry file="jar://D:/Program Files/Java/jdk/src.zip!/java/lang/String.java" />
     <entry file="das://table:/6347f90e/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.p2g_messages" />
     <entry file="das://table:/6347f90e/fe84c60a-b8e0-4c70-b699-9bd5ee4046f6/notalk.p2p_unread_messages" />
@@ -1108,15 +1038,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/Msg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="151" column="18" lean-forward="true" selection-start-line="151" selection-start-column="18" selection-end-line="151" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1226#1227#0" expanded="true" />
-            <element signature="e#1264#1265#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="345">
+          <caret line="30" column="37" lean-forward="false" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,10 +1054,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="44" column="64" lean-forward="false" selection-start-line="44" selection-start-column="64" selection-end-line="44" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/model/DataBaseOperate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+        <state relative-caret-position="718">
+          <caret line="220" column="68" lean-forward="true" selection-start-line="220" selection-start-column="68" selection-end-line="220" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1515297007092" expanded="true" signature="1658:1689" ph="SELECT * FRO... user" />
@@ -1167,59 +1101,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/test/test.java">
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/Login2.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="44" column="64" lean-forward="false" selection-start-line="44" selection-start-column="64" selection-end-line="44" selection-end-column="64" />
+        <state relative-caret-position="317">
+          <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk/javafx-src.zip!/com/sun/javafx/tk/Toolkit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/model/Msg.java">
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="30" column="37" lean-forward="false" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="157" column="35" lean-forward="false" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
-          <folding>
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#1651#1652#0" expanded="true" />
-            <element signature="e#5612#5613#0" expanded="true" />
-            <element signature="e#5668#5669#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="161" column="9" lean-forward="false" selection-start-line="161" selection-start-column="9" selection-end-line="161" selection-end-column="9" />
+        <state relative-caret-position="465">
+          <caret line="146" column="34" lean-forward="false" selection-start-line="146" selection-start-column="34" selection-end-line="146" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1734#1735#0" expanded="true" />
-            <element signature="e#1770#1771#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+            <element signature="e#1264#1265#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentContactsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="33" column="64" lean-forward="true" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
+        <state relative-caret-position="391">
+          <caret line="163" column="16" lean-forward="true" selection-start-line="163" selection-start-column="16" selection-end-line="163" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/RootLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="119" column="46" lean-forward="true" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
+          <folding>
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1651#1652#0" expanded="true" />
+            <element signature="e#5614#5615#0" expanded="true" />
+            <element signature="e#5670#5671#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/model/TcpClientThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="103" column="50" lean-forward="false" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
+        <state relative-caret-position="368">
+          <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
           <folding>
             <element signature="method#setName#0;class#TcpClientThread#0" expanded="false" />
           </folding>
@@ -1228,11 +1165,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/notalk/MainApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="575">
+          <caret line="101" column="47" lean-forward="true" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
           <folding>
             <element signature="e#1556#1557#0" expanded="true" />
             <element signature="e#1584#1585#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/notalk/view/MainContentTalkController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="273" column="69" lean-forward="false" selection-start-line="273" selection-start-column="69" selection-end-line="273" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1733#1734#0" expanded="true" />
+            <element signature="e#1769#1770#0" expanded="true" />
           </folding>
         </state>
       </provider>

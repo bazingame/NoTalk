@@ -53,7 +53,7 @@ public class MainContentTalkController{
     * 最近联系人的Vbox列表
     * */
     @FXML
-    private VBox peopleBorderPaneList;
+    public VBox peopleBorderPaneList;
 
     @FXML
     private Button sendMsgBtn;
@@ -161,16 +161,16 @@ public class MainContentTalkController{
             peopleBorderPaneList.getChildren().add(0,peopleBorderPane);
         }
         //当已在最近联系人列表且接收到消息时
-        if(type.equals("rec")){
-            //获取这个人的BorderPane!!
-            BorderPane thisFriendBorderPane = (BorderPane) peopleBorderPaneList.lookup("#"+sid);
-            //更新最后聊天记录！
-            Label lastWordLabel = (Label)thisFriendBorderPane.lookup("#lastWords");
-            lastWordLabel.setText(lastMsg);
-            //上浮到最顶层!!!!!!
-            peopleBorderPaneList.getChildren().remove(thisFriendBorderPane);
-            peopleBorderPaneList.getChildren().add(0,thisFriendBorderPane);
-        }
+//        if(type.equals("rec")){
+//            //获取这个人的BorderPane!!
+//            BorderPane thisFriendBorderPane = (BorderPane) peopleBorderPaneList.lookup("#"+sid);
+//            //更新最后聊天记录！
+//            Label lastWordLabel = (Label)thisFriendBorderPane.lookup("#lastWords");
+//            lastWordLabel.setText(lastMsg);
+//            //上浮到最顶层!!!!!!
+//            peopleBorderPaneList.getChildren().remove(thisFriendBorderPane);
+//            peopleBorderPaneList.getChildren().add(0,thisFriendBorderPane);
+//        }
     }
 
     /**
@@ -271,7 +271,7 @@ public class MainContentTalkController{
     private void sendMsg(String type,String fromsid,String tosid,String msgContent){
 
         Date date = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-DD hh:mm:ss");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
         String time = format.format(date);
         HashMap<String,String> msgHashMap = new HashMap<String,String>();
         msgHashMap.put("mysid",fromsid);

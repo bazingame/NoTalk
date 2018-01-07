@@ -99,6 +99,7 @@ public class MainApp extends Application {
             RootLayoutController controller = loader.getController();
             controller.setMainApp(this);
             controller.setTcpClientThread(this.clientThread);
+            this.clientThread.setRootLayoutController(controller);
             controller.loadPane();
 
             primaryStage.show();

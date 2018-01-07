@@ -116,7 +116,7 @@ public class RootLayoutController {
             this.mainContentTalkController = talkLoader.getController();
             mainContentTalkController.setRootLayoutController(this);
             mainContentTalkController.setClient(this.tcpClientThread);
-            tcpClientThread.setRootLayoutController(this);
+//            tcpClientThread.setRootLayoutController(this);
             mainContentTalkController.getUnreadMsg();
 
             FXMLLoader contactsLoader = new FXMLLoader();
