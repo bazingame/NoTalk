@@ -24,26 +24,28 @@ public class MainApp extends Application {
     private BorderPane TalkScene;
     private AnchorPane TalkContentScene;
     private TcpClientThread clientThread;
-    public static int Mysid = 2016501308;
+    public static int Mysid;
 //    public static int Mysid = 2016190918;
-//    private
+
     @Override
     public void start(Stage primaryStage) throws Exception{
+
         this.primaryStage = primaryStage;
         primaryStage.setTitle("NoTalk");
 //        primaryStage.initStyle(StageStyle.UNDECORATED);//去掉头
-        primaryStage.getIcons().add(new Image("file:resources/images/Talk/search.png"));
-        primaryStage.setWidth(1140);
-        primaryStage.setHeight(800);
-//        primaryStage.setMinWidth(1070);
+        primaryStage.getIcons().add(new Image(getClass().getResource("/resources/images/Head/logo.png").toString()));
 
-//        initLogin();
-        //连接服务器
-        this.clientThread = new TcpClientThread();
-        this.clientThread.start();
 
-        initRootLayout();
-//        initMainContentTalk();
+        //加载初始化登录界面~
+        primaryStage.setWidth(600);
+        primaryStage.setHeight(400);
+        primaryStage.setMinHeight(400);
+        primaryStage.setMinWidth(600);
+
+        initLogin();
+
+        //加载主界面~
+//        initRootLayout();
 
     }
 
@@ -51,6 +53,9 @@ public class MainApp extends Application {
         launch(args);
     }
 
+    /**
+    * 初始化登录界面~
+    * */
     public void initLogin(){
         try {
             /*从FXML文档加载对象层次结构*/
@@ -69,8 +74,19 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+
+    /**
+    * 初始化主界面~
+    * */
     public void initRootLayout(){
         try{
+            //连接服务器
+            this.clientThread = new TcpClientThread();
+            this.clientThread.start();
+
+            //主界面重设大小
+            primaryStage.setWidth(1140);
+            primaryStage.setHeight(800);
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
             TalkScene = (BorderPane) loader.load();
@@ -89,19 +105,4 @@ public class MainApp extends Application {
         }
     }
 
-    public void initMainContentTalk() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/MainContentTalk.fxml"));
-            TalkContentScene = (AnchorPane)loader.load();
-
-            TalkScene.setCenter(TalkContentScene);
-//            Scene scene = new Scene(TalkContentScene);
-//            primaryStage.setScene(scene);
-
-            primaryStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

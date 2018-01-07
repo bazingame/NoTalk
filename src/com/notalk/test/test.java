@@ -29,14 +29,16 @@ public class test {
 //        }, 1, 1, TimeUnit.MILLISECONDS);
 //        Date date =  new Date();
 //        System.out.println(date.getTime());
-//        DataBaseOperate db = new DataBaseOperate();
+        DataBaseOperate db = new DataBaseOperate();
 //        db.sendfriendMsg(20123122,5132,"123123","2017-02-03");
 //        db.addNewUser(2016501333,"asdasdas","asdasd",1,"2017-2-20 12:20:20","asdas","asdas");
 //        System.out.println(db.getFriendsSidList(2016501308));
 //        db.setOnline(2016501308);
 //        db.setOffline(2016501308);
-        test test = new test();
-        test.test();
+        int res = db.hasThisUser(2016501308);
+        System.out.println(res);
+//        test test = new test();
+//        test.test();
 
     }
 
@@ -48,5 +50,6 @@ public class test {
         mediaPlayer.setCycleCount(1);
         mediaPlayer.play();
         System.out.println(url);
+
     }
 }

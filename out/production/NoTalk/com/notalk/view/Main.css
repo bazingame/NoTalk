@@ -55,6 +55,32 @@
     -fx-image: url("../../../resources/images/Menu/tempHead.png");
 }
 
+/*------------------------------------登录界面-------------------------------------*/
+/*默认头像*/
+.login-head-pane{
+    -fx-background-image: url("../../../resources/images/Head/logo.png");
+    -fx-background-size: cover;
+}
+/*遮罩层*/
+.cover-pane{
+    -fx-background-color: rgba(50,50,50,0.8);
+}
+/*遮罩层消息框*/
+.cover-content{
+    -fx-background-color: white;
+}
+/*按钮*/
+#login-msg-btn{
+    -fx-background-color: #18B4ED;
+}
+/*遮罩层按钮*/
+/*遮罩层文本*/
+.login-msg-text{
+    -fx-font-size: 17px;
+}
+
+
+/*------------------------------------登录界面-------------------------------------*/
 /*------------------------------------聊天界面-------------------------------------*/
 /*聊天界面左板块*/
 .talk-left-pane{

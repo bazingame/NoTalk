@@ -17,10 +17,10 @@ public class DataBaseOperate {
 
     // JDBC 驱动名及数据库 URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/notalk?useSSL=false";
+    static final String DB_URL = "jdbc:mysql://112.74.62.166:3306/notalk?useSSL=false";
 
     // 数据库的用户名与密码，需要根据自己的设置
-    static final String USER = "root";
+    static final String USER = "remote";
 //    static final String PASS = "root";
     static final String PASS = "Fenghuayu05.28";
     Connection conn = null;
@@ -47,6 +47,25 @@ public class DataBaseOperate {
     public static void main(String[] args) throws SQLException {
 
     }
+
+    /**
+    * 该用户是否已注册，即成功添加到该数据
+     *
+    * */
+    public int hasThisUser(int sid) throws SQLException {
+        String sql = "SELECT * FROM user WHERE sid = "+sid;
+        stmt = conn.createStatement();
+        ResultSet set = stmt.executeQuery(sql);
+        set.last();
+        int res = set.getRow();
+        if(res==0){
+            return 0;
+        }else {
+            return 1;
+        }
+    }
+
+
 
     /**
     * 注册新用户
