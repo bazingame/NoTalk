@@ -4,12 +4,17 @@ import com.notalk.MainApp;
 import com.notalk.model.TcpClientThread;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.SplitPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
+import sun.applet.Main;
 
 import java.awt.*;
 import java.io.File;
@@ -47,7 +52,7 @@ public class RootLayoutController {
     private Pane Setting;
 
     @FXML
-    private Pane MainHead;
+    private BorderPane MainHead;
 
     @FXML
     private SplitPane TalkContent;
@@ -134,6 +139,20 @@ public class RootLayoutController {
             MainContentSetting = (AnchorPane) settingLoader.load();
             this.mainContentSettingController = settingLoader.getController();
             mainContentSettingController.setMainApp(this);
+
+
+            //头像啊~~
+//            Pane headPane = new Pane();
+//            headPane.getStyleClass().addAll("people-headPane");
+            Circle circle = new Circle();
+            circle.setRadius(25);
+            circle.setCenterX(25);
+            circle.setCenterY(25);
+            String url = getClass().getResource("/resources/images/Head/"+MainApp.Mysid+".jpg").toString();
+            javafx.scene.image.Image image = new Image(url);
+            ImagePattern imagePattern = new ImagePattern(image);
+            circle.setFill(imagePattern);
+            MainHead.setCenter(circle);
 
         }catch (IOException e) {
             e.printStackTrace();

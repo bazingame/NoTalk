@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -21,9 +22,12 @@ import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import org.omg.PortableInterceptor.INACTIVE;
 
+import javax.swing.text.html.ImageView;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
@@ -107,15 +111,40 @@ public class MainContentTalkController{
     //            rectangle.setFill(Color.GREEN);
 
     //            stackPane.getChildren().addAll(rectangle,label);
-                hBox.getChildren().addAll(label);
+
+
+                //头像啊~~
+                BorderPane headPane = new BorderPane();
+                headPane.getStyleClass().addAll("people-headPane-talk");
+                Circle circle = new Circle();
+                circle.setRadius(25);
+                circle.setCenterX(25);
+                circle.setCenterY(25);
+                String url;
+                //判断是自己的消息 还是朋友的消息
                 if(Integer.parseInt(personInfo.getFromSid())==MainApp.Mysid){
                     hBox.setAlignment(Pos.CENTER_RIGHT);
-                    hBox.setPadding(new Insets(10,80,10,10));
+                    hBox.setPadding(new Insets(10,20,10,10));
                     label.getStyleClass().addAll("talk-sendmsg-label");
+                    url = getClass().getResource("/resources/images/Head/"+MainApp.Mysid+".jpg").toString();
                 }else{
                     hBox.setAlignment(Pos.CENTER_LEFT);
-                    hBox.setPadding(new Insets(10,10,10,80));
+                    hBox.setPadding(new Insets(10,10,10,20));
                     label.getStyleClass().addAll("talk-recmsg-label");
+                    url = getClass().getResource("/resources/images/Head/"+personInfo.getFromSid()+".jpg").toString();
+                }
+
+                Image image = new Image(url);
+                ImagePattern imagePattern = new ImagePattern(image);
+                circle.setFill(imagePattern);
+                headPane.setCenter(circle);
+
+                Pane insetPane = new Pane();
+                insetPane.setPrefWidth(15);
+                if(Integer.parseInt(personInfo.getFromSid())==MainApp.Mysid){
+                    hBox.getChildren().addAll(label,insetPane,headPane);
+                }else{
+                    hBox.getChildren().addAll(headPane,insetPane,label);
                 }
 
                 this.msgRecordListBox.getChildren().addAll(hBox);
@@ -203,9 +232,19 @@ public class MainContentTalkController{
         peopleBorderPaneRight.getStyleClass().addAll("talk-people-BorderPane-Right","contacts-list-border");
 //                  peopleBorderPaneRight.getStyleClass().addAll("contacts-list-border");
 
-        Pane headPane = new Pane();
+        //头像啊~~
+        BorderPane headPane = new BorderPane();
         headPane.getStyleClass().addAll("people-headPane");
-//                  ImageView headPic = new ImageView();
+        Circle circle = new Circle();
+        circle.setRadius(30);
+        circle.setCenterX(30);
+        circle.setCenterY(30);
+        String url = getClass().getResource("/resources/images/Head/"+sid+".jpg").toString();
+        Image image = new Image(url);
+        ImagePattern imagePattern = new ImagePattern(image);
+        circle.setFill(imagePattern);
+        headPane.setCenter(circle);
+
         Label nickNameLabel = new Label();
         nickNameLabel.setId("nickName");
         nickNameLabel.getStyleClass().addAll("label-talk-view");
@@ -220,7 +259,9 @@ public class MainContentTalkController{
         peopleBorderPaneRight.setTop(nickNameLabel);
         peopleBorderPaneRight.setBottom(lastWordLabel);
 
-        peopleBorderPane.setLeft(headPane);
+//        Pane insetPane = new Pane();
+//        insetPane.setPrefWidth(13);
+        peopleBorderPane.setCenter(headPane);
         peopleBorderPane.setRight(peopleBorderPaneRight);
 
 
@@ -299,12 +340,31 @@ public class MainContentTalkController{
         /*清除输入框*/
         this.msgContent.clear();
         /*加入到记录框*/
+
+        //头像啊~~
+        BorderPane headPane = new BorderPane();
+        headPane.getStyleClass().addAll("people-headPane-talk");
+        Circle circle = new Circle();
+        circle.setRadius(25);
+        circle.setCenterX(25);
+        circle.setCenterY(25);
+        String url = getClass().getResource("/resources/images/Head/"+MainApp.Mysid+".jpg").toString();
+
+        Image image = new Image(url);
+        ImagePattern imagePattern = new ImagePattern(image);
+        circle.setFill(imagePattern);
+        headPane.setCenter(circle);
+
         HBox hBox = new HBox();
         Label label = new Label();
         label.setText(msgContent);
-        hBox.getChildren().addAll(label);
+
+        Pane insetPane = new Pane();
+        insetPane.setPrefWidth(15);
+
+        hBox.getChildren().addAll(label,insetPane,headPane);
         hBox.setAlignment(Pos.CENTER_RIGHT);
-        hBox.setPadding(new Insets(10,80,10,10));
+        hBox.setPadding(new Insets(10,20,10,10));
         label.getStyleClass().addAll("talk-sendmsg-label");
         this.msgRecordListBox.getChildren().addAll(hBox);
 
@@ -345,6 +405,7 @@ public class MainContentTalkController{
             HashMap<String,String> hashMap = new HashMap<String,String>();
             hashMap.put("name",nickName);
             hashMap.put("sid",friendSid);
+
             try {
                 String msgRecord = db.getMsgRecord(MainApp.Mysid,Integer.parseInt(friendSid));
                 hashMap.put("record",msgRecord);

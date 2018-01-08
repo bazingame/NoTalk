@@ -8,9 +8,12 @@ import com.notalk.model.GroupPeople;
 import com.notalk.util.Echo;
 import javafx.beans.property.Property;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TitledPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -26,6 +29,9 @@ import java.util.List;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 
 import static com.notalk.util.Echo.echo;
 
@@ -39,6 +45,7 @@ public class MainContentContactsController {
     @FXML private VBox ContactsList;
 
     @FXML private  ScrollPane scrollPane;
+
 
     /**
     *
@@ -76,9 +83,20 @@ public class MainContentContactsController {
                     peopleBorderPaneRight.getStyleClass().addAll("people-BorderPane-Right","contacts-list-border");
 //                  peopleBorderPaneRight.getStyleClass().addAll("contacts-list-border");
 
+                    //头像啊~~
                     Pane headPane = new Pane();
                     headPane.getStyleClass().addAll("people-headPane");
-//                  ImageView headPic = new ImageView();
+                    headPane.setPadding(new Insets(0,20,0,0));
+                    Circle circle = new Circle();
+                    circle.setRadius(30);
+                    circle.setCenterX(30);
+                    circle.setCenterY(30);
+                    String url = getClass().getResource("/resources/images/Head/"+friendListBean.getFriend_sid()+".jpg").toString();
+                    Image image = new Image(url);
+                    ImagePattern imagePattern = new ImagePattern(image);
+                    circle.setFill(imagePattern);
+                    headPane.getChildren().addAll(circle);
+
                     //昵称
                     Label nickName = new Label();
                     nickName.setId("nickName");
@@ -93,11 +111,14 @@ public class MainContentContactsController {
 
                     nickName.setText(friendListBean.getFriend_nickname());
                     friendSid.setText(friendListBean.getFriend_sid());
-                    lastWords.setText("Last Wordssss");
+                    lastWords.setText("signature");
                     peopleBorderPaneRight.setRight(friendSid);
                     peopleBorderPaneRight.setTop(nickName);
                     peopleBorderPaneRight.setBottom(lastWords);
 
+                    Pane insetPane = new Pane();
+                    insetPane.setPrefWidth(20);
+                    peopleBorderPane.setCenter(insetPane);
                     peopleBorderPane.setLeft(headPane);
                     peopleBorderPane.setRight(peopleBorderPaneRight);
                     peopleSetVbox.getChildren().addAll(peopleBorderPane);
@@ -161,6 +182,7 @@ public class MainContentContactsController {
         String friendSidString = friendSidLabel.getText();
         infoMap.put("sid",friendSidString);
         System.out.println("name:"+nickNameString+" sid:"+friendSidString);
+
         //获取聊天记录
         try {
             String msgRecord = db.getMsgRecord(MainApp.Mysid,Integer.parseInt(friendSidString));

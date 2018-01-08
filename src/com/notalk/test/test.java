@@ -7,6 +7,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import javax.xml.crypto.Data;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.util.Date;
@@ -42,7 +43,9 @@ public class test {
 //        if(hashMap.size()==0){
 //            System.out.println("null!");
 //        }
-        System.out.println(db.getFriendNickName(2016501308,2015551439));
+        ResultSet resultSet = db.getOthersInfo(2016501308);
+        resultSet.next();
+        System.out.println(resultSet.getString("head_img"));
 
 //        System.out.println(gson.toJson(hashMap));
 //        test test = new test();

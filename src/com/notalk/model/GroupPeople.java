@@ -36,6 +36,7 @@ public class GroupPeople {
         private String group_id;
         private String friend_nickname;
         private String friend_sid;
+        private String head_img;
 
         public String getGroup_id() {
             return group_id;
@@ -59,6 +60,14 @@ public class GroupPeople {
 
         public void setFriend_sid(String friend_sid) {
             this.friend_sid = friend_sid;
+        }
+
+        public String getHead_img(){
+            return head_img;
+        }
+
+        public void setHead_img(String head_img){
+            this.head_img = head_img;
         }
     }
 }

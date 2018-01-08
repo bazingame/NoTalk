@@ -224,7 +224,6 @@ public class DataBaseOperate {
         }
 
 
-        System.out.println(gson.toJson(friendsList));
         return gson.toJson(friendsList);
     }
 

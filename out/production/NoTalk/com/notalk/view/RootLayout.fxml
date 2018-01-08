@@ -21,15 +21,7 @@
       <top>
         <VBox maxHeight="300.0" minHeight="300.0" prefHeight="300.0" prefWidth="65.0">
           <children>
-            <Pane maxHeight="71.0" maxWidth="71.0" minHeight="71.0" minWidth="71.0" padding="$x1" prefHeight="71.0" prefWidth="71.0" VBox.margin="$x1" VBox.vgrow="SOMETIMES">
-              <children>
-                <Pane id="RootLayoutLeftHead" fx:id="RootLayoutLeftButton0" layoutX="11.0" layoutY="10.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" prefHeight="50.0" prefWidth="50.0">
-                  <padding>
-                    <Insets fx:id="x1" />
-                  </padding>
-                </Pane>
-              </children>
-            </Pane>
+            <BorderPane fx:id="MainHead" maxHeight="71.0" maxWidth="71.0" minHeight="71.0" minWidth="71.0" prefHeight="71.0" prefWidth="71.0" />
             <Pane id="RootLayoutLeftButtonMsg" fx:id="Msg" disable="false" focusTraversable="false" maxHeight="71.0" maxWidth="71.0" minHeight="71.0" minWidth="71.0" onMouseClicked="#clickMsg" prefHeight="71.0" prefWidth="71.0" visible="true" />
             <Pane id="RootLayoutLeftButtonPeople" fx:id="People" maxHeight="71.0" maxWidth="71.0" minHeight="71.0" minWidth="71.0" onMouseClicked="#clickPeople" prefHeight="71.0" prefWidth="71.0" />
             <Pane id="RootLayoutLeftButtonFunction" fx:id="Function" maxHeight="71.0" maxWidth="71.0" minHeight="71.0" minWidth="71.0" onMouseClicked="#clickFunciton" prefHeight="71.0" prefWidth="71.0" />
