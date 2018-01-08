@@ -32,8 +32,8 @@ public class MainApp extends Application {
     private BorderPane TalkScene;
     private AnchorPane TalkContentScene;
     private TcpClientThread clientThread;
-    public static int Mysid;
-//    public static int Mysid = 2016501308;
+//    public static int Mysid;
+    public static int Mysid = 2016501308;
 //    public static int Mysid = 2015551439;
 
     @Override
@@ -52,10 +52,10 @@ public class MainApp extends Application {
         primaryStage.setMinWidth(600);
 
         //加载登录界面
-        initLogin();
+//        initLogin();
 
         //加载主界面~
-//        initRootLayout();
+        initRootLayout();
 
     }
 

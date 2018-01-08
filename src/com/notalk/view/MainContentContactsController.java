@@ -9,18 +9,20 @@ import com.notalk.util.Echo;
 import javafx.beans.property.Property;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 //import java.awt.event.ActionEvent;
 //import java.awt.event.MouseEvent;
 //import java.beans.EventHandler;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,12 +34,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import sun.applet.Main;
 
 import static com.notalk.util.Echo.echo;
 
 public class MainContentContactsController {
     private RootLayoutController rootLayoutController;
     private MainContentTalkController mainContentTalkController;
+    private HashMap<String,String> searchUserInfo = new HashMap<>();
     DataBaseOperate db = new DataBaseOperate();
     Gson gson = new Gson();
     Collection<GroupPeople> peopleList = new ArrayList();
@@ -46,6 +50,33 @@ public class MainContentContactsController {
 
     @FXML private  ScrollPane scrollPane;
 
+    @FXML private HBox addPeople;
+
+    @FXML private TextField addUserSid;
+
+    @FXML private BorderPane contactsAddUserSearch;
+
+    @FXML private BorderPane contactsNone;
+
+    @FXML private BorderPane contactsUserInfo;
+
+    @FXML private Button searchLookBtn;
+
+    @FXML private Label searchResultNameLabel;
+
+    @FXML private BorderPane searchResultBorderPane;
+
+    @FXML private Label addThisUserLabel;
+
+    @FXML private Label userSid;
+
+    @FXML private Label userSignature;
+
+    @FXML private Label userNickName;
+
+    @FXML private Pane returnToSearch;
+
+    @FXML private Pane returnToNone;
 
     /**
     *
@@ -146,10 +177,6 @@ public class MainContentContactsController {
             e.printStackTrace();
         }
 
-
-
-
-
 /*----------------------------------------------------set1*/
 
 
@@ -199,8 +226,109 @@ public class MainContentContactsController {
     private void initialize(){
         /*初始化联系人列表*/
         this.addPeople();
-        System.out.println("addPeople OK");
+        System.out.println("contacts list load ok");
         /*添加监听事件 监听任务的选择*/
+
+        /*点击添加联系人事件*/
+        addPeople.setOnMouseClicked(new EventHandler <MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                contactsNone.setVisible(false);
+                contactsAddUserSearch.setVisible(true);
+            }
+        });
+
+
+        //添加好友账号查询监听回车
+        this.addUserSid.setOnKeyReleased(new EventHandler<KeyEvent>(){
+            public void handle(KeyEvent event) {
+                if(event.getCode()== KeyCode.ENTER){
+                    String searchSid = addUserSid.getText();
+                    try {
+                        ResultSet resultSet = db.getOthersInfo(Integer.parseInt(searchSid));
+                        resultSet.next();
+                        if(resultSet.getRow()==0){
+                            searchResultBorderPane.setVisible(true);
+                            searchResultNameLabel.setVisible(true);
+                            searchLookBtn.setVisible(false);
+                            searchResultNameLabel.setText("没有找到符合搜索条件的账户");
+                        }else{
+                            String nickName = resultSet.getString("nickname");
+                            int sex = resultSet.getInt("sex");
+                            String signature = resultSet.getString("signature");
+                            searchUserInfo.put("sid",searchSid);
+                            searchUserInfo.put("nickname",nickName);
+                            searchUserInfo.put("sex",Integer.toString(sex));
+                            searchUserInfo.put("signature",signature);
+                            // 显示按钮
+                            searchResultBorderPane.setVisible(true);
+                            searchResultNameLabel.setVisible(true);
+                            searchLookBtn.setVisible(true);
+                            searchResultNameLabel.setText(nickName+"("+searchSid+")");
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
+        //查看详细信息界面
+        this.searchLookBtn.setOnMouseClicked(new EventHandler <MouseEvent>(){
+            public void handle(MouseEvent event) {
+                contactsNone.setVisible(false);
+                contactsAddUserSearch.setVisible(false);
+                contactsUserInfo.setVisible(true);
+                userSid.setText(searchUserInfo.get("sid"));
+                userNickName.setText(searchUserInfo.get("nickname"));
+                userSignature.setText(searchUserInfo.get("signature"));
+                System.out.println(searchUserInfo.get("sid")+searchUserInfo.get("nickname")+searchUserInfo.get("signature"));
+                try {
+                    String friendListString = db.getFriendsSidList(MainApp.Mysid);
+                    List<String> friendSidList = gson.fromJson(friendListString,List.class);
+                    if(friendSidList.contains(searchUserInfo.get("sid"))) {
+                        addThisUserLabel.setText("已是好友");
+                    }else if(Integer.parseInt(searchUserInfo.get("sid"))==MainApp.Mysid){
+                        addThisUserLabel.setText("不可添加");
+                    }else{
+                        addThisUserLabel.setText("加为好友");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+        //加好友！！！！请求
+        this.addThisUserLabel.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if(addThisUserLabel.getText().equals("加为好友")){
+                    rootLayoutController.sendMsg("addUser",Integer.toString(MainApp.Mysid),searchUserInfo.get("sid"),"加你为好友");
+                }
+            }
+        });
+
+        //返回至none按钮监听
+        this.returnToNone.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                contactsUserInfo.setVisible(false);
+                contactsNone.setVisible(true);
+                contactsAddUserSearch.setVisible(false);
+            }
+        });
+
+        //返回至search按钮监听
+        this.returnToSearch.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                contactsUserInfo.setVisible(false);
+                contactsNone.setVisible(false);
+                contactsAddUserSearch.setVisible(true);
+            }
+        });
 
 
     }

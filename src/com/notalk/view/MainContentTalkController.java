@@ -323,61 +323,77 @@ public class MainContentTalkController{
     /**
     * 发送点对点普通消息
     * */
-    private void sendMsg(String type,String fromsid,String tosid,String msgContent){
+    public void sendMsg(String type,String fromsid,String tosid,String msgContent){
 
-        Date date = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
-        String time = format.format(date);
-        HashMap<String,String> msgHashMap = new HashMap<String,String>();
-        msgHashMap.put("mysid",fromsid);
-        msgHashMap.put("tosid",tosid);
-        msgHashMap.put("time",time);
-        msgHashMap.put("content",msgContent);
-        msgHashMap.put("type","p2p");
+        if(type.equals("p2p")){
+            Date date = new Date();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+            String time = format.format(date);
+            HashMap<String,String> msgHashMap = new HashMap<String,String>();
+            msgHashMap.put("mysid",fromsid);
+            msgHashMap.put("tosid",tosid);
+            msgHashMap.put("time",time);
+            msgHashMap.put("content",msgContent);
+            msgHashMap.put("type","p2p");
         /*发送至服务器*/
-        this.client.sendMsg(gson.toJson(msgHashMap));
-        System.out.println(gson.toJson(msgHashMap));
+            this.client.sendMsg(gson.toJson(msgHashMap));
+            System.out.println(gson.toJson(msgHashMap));
         /*清除输入框*/
-        this.msgContent.clear();
+            this.msgContent.clear();
         /*加入到记录框*/
 
-        //头像啊~~
-        BorderPane headPane = new BorderPane();
-        headPane.getStyleClass().addAll("people-headPane-talk");
-        Circle circle = new Circle();
-        circle.setRadius(25);
-        circle.setCenterX(25);
-        circle.setCenterY(25);
-        String url = getClass().getResource("/resources/images/Head/"+MainApp.Mysid+".jpg").toString();
+            //头像啊~~
+            BorderPane headPane = new BorderPane();
+            headPane.getStyleClass().addAll("people-headPane-talk");
+            Circle circle = new Circle();
+            circle.setRadius(25);
+            circle.setCenterX(25);
+            circle.setCenterY(25);
+            String url = getClass().getResource("/resources/images/Head/"+MainApp.Mysid+".jpg").toString();
 
-        Image image = new Image(url);
-        ImagePattern imagePattern = new ImagePattern(image);
-        circle.setFill(imagePattern);
-        headPane.setCenter(circle);
+            Image image = new Image(url);
+            ImagePattern imagePattern = new ImagePattern(image);
+            circle.setFill(imagePattern);
+            headPane.setCenter(circle);
 
-        HBox hBox = new HBox();
-        Label label = new Label();
-        label.setText(msgContent);
+            HBox hBox = new HBox();
+            Label label = new Label();
+            label.setText(msgContent);
 
-        Pane insetPane = new Pane();
-        insetPane.setPrefWidth(15);
+            Pane insetPane = new Pane();
+            insetPane.setPrefWidth(15);
 
-        hBox.getChildren().addAll(label,insetPane,headPane);
-        hBox.setAlignment(Pos.CENTER_RIGHT);
-        hBox.setPadding(new Insets(10,20,10,10));
-        label.getStyleClass().addAll("talk-sendmsg-label");
-        this.msgRecordListBox.getChildren().addAll(hBox);
+            hBox.getChildren().addAll(label,insetPane,headPane);
+            hBox.setAlignment(Pos.CENTER_RIGHT);
+            hBox.setPadding(new Insets(10,20,10,10));
+            label.getStyleClass().addAll("talk-sendmsg-label");
+            this.msgRecordListBox.getChildren().addAll(hBox);
 
-        //滚到最下面！
-        this.talkScrollPane.setVvalue(999999999);
-        //获取这个人的BorderPane!!
-        BorderPane thisFriendBorderPane = (BorderPane) peopleBorderPaneList.lookup("#"+tosid);
-        //更新最后聊天记录！
-        Label lastWordLabel = (Label)thisFriendBorderPane.lookup("#lastWords");
-        lastWordLabel.setText(msgContent);
-        //上浮到最顶层!!!!!!
-        peopleBorderPaneList.getChildren().remove(thisFriendBorderPane);
-        peopleBorderPaneList.getChildren().add(0,thisFriendBorderPane);
+            //滚到最下面！
+            this.talkScrollPane.setVvalue(999999999);
+            //获取这个人的BorderPane!!
+            BorderPane thisFriendBorderPane = (BorderPane) peopleBorderPaneList.lookup("#"+tosid);
+            //更新最后聊天记录！
+            Label lastWordLabel = (Label)thisFriendBorderPane.lookup("#lastWords");
+            lastWordLabel.setText(msgContent);
+            //上浮到最顶层!!!!!!
+            peopleBorderPaneList.getChildren().remove(thisFriendBorderPane);
+            peopleBorderPaneList.getChildren().add(0,thisFriendBorderPane);
+        }else if(type.equals("addUser")) {
+            Date date = new Date();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+            String time = format.format(date);
+            HashMap<String,String> msgHashMap = new HashMap<String,String>();
+            msgHashMap.put("mysid",fromsid);
+            msgHashMap.put("tosid",tosid);
+            msgHashMap.put("time",time);
+            msgHashMap.put("content",msgContent);
+            msgHashMap.put("type","addUser");
+        /*发送至服务器*/
+            this.client.sendMsg(gson.toJson(msgHashMap));
+            System.out.println(gson.toJson(msgHashMap));
+        }
+
 
     }
 
@@ -430,6 +446,8 @@ public class MainContentTalkController{
 
             //下线消息
         }else if(type.equals("offLine")){
+
+        }else if(type.equals("addUser")){
 
         }
         //TODO 其他消息类型

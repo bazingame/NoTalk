@@ -99,7 +99,7 @@ public class LoginController {
                 Desktop d = Desktop.getDesktop();
                 URI address = null;
                 try {
-                    address = new URI("https://www.hammerfood.cn");
+                    address = new URI("https://www.hammerfood.cn/NoTalk/register/register.html");
                     d.browse(address);
                 } catch (URISyntaxException e) {
                     e.printStackTrace();

@@ -283,6 +283,13 @@
 .contacts-add-label{
     -fx-font-size: 18px;
 }
+
+
+/*搜索结果展示*/
+.contacts-search-res{
+    -fx-background-image: url("../../../resources/images/themes/ColdNight/background.png");
+    -fx-background-size: cover;
+}
 /*------------------------------------联系人界面-------------------------------------*/
 
 /*------------------------------------功能界面-------------------------------------*/

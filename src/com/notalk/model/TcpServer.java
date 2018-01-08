@@ -206,6 +206,8 @@ public class TcpServer {
                         db.setOffline(Integer.parseInt(msg.getMysid()));
                         remove(sid);
                         socket.close();
+                    }else if(msg.getType().equals("addUser")){
+                        sendToSomeone(msg.getMysid(),msg.getTosid(),msg.getContent(),msg.getTime(),msgString);
                     }else{
                         //TODO
                     }

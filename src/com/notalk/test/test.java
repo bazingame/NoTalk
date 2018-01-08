@@ -43,9 +43,14 @@ public class test {
 //        if(hashMap.size()==0){
 //            System.out.println("null!");
 //        }
-        ResultSet resultSet = db.getOthersInfo(2016501308);
+        ResultSet resultSet = db.getOthersInfo(2016500008);
         resultSet.next();
-        System.out.println(resultSet.getString("head_img"));
+        if(resultSet.getRow()==0){
+            System.out.println("212");
+        }else{
+            System.out.println(resultSet.getString("head_img"));
+
+        }
 
 //        System.out.println(gson.toJson(hashMap));
 //        test test = new test();

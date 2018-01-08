@@ -171,6 +171,13 @@ public class RootLayoutController {
     }
 
     /**
+    * 发送消息从Contact调用Talk控制器中的方法
+    * */
+    public void sendMsg(String type,String fromsid,String tosid,String msgContent){
+        mainContentTalkController.sendMsg( type, fromsid, tosid, msgContent);
+    }
+
+    /**
     * 处理服务器消息
     * */
     public void handleMsg(String msgString) throws SQLException {
