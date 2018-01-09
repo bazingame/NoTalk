@@ -22,7 +22,7 @@
                 <Pane id="contacts-right-main" maxHeight="213.0" maxWidth="224.0" minHeight="213.0" minWidth="224.0" prefHeight="213.0" prefWidth="224.0" />
               </center>
             </BorderPane>
-            <BorderPane id="contactsaddUser" fx:id="contactsAddUserSearch" prefHeight="200.0" prefWidth="200.0" visible="true">
+            <BorderPane id="contactsaddUser" fx:id="contactsAddUserSearch" prefHeight="200.0" prefWidth="200.0" visible="false">
               <left>
                 <VBox prefHeight="192.0" prefWidth="330.0">
                   <children>

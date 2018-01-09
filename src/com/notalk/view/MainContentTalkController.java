@@ -10,10 +10,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -54,6 +51,18 @@ public class MainContentTalkController{
     @FXML
     private Label sidLabel;
 
+    @FXML private BorderPane talkHasTalk;
+
+    @FXML private BorderPane talkNoTalk;
+
+    @FXML private BorderPane talkSysInfo;
+
+    @FXML private HBox talkSysInfoList;
+
+    @FXML private VBox systemMsgVbox;
+
+    @FXML private Label systemMsgLabel;
+
     /**
     * 最近联系人的Vbox列表
     * */
@@ -82,12 +91,30 @@ public class MainContentTalkController{
         this.rootLayoutController = rootLayoutController;
     }
 
+
+    @FXML
+    public void initialize(){
+        //监听单击系统消息
+        talkSysInfoList.setOnMouseClicked(new EventHandler <MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                talkHasTalk.setVisible(false);
+                talkNoTalk.setVisible(false);
+                talkSysInfo.setVisible(true);
+            }
+        });
+    }
+
+
     /**
     * 初始化聊天界面
     * 包括右侧消息记录的加载和调用creatTalkList()方法更新左侧最近联系人
     * 如果是仅更新右侧则参数为 RIGHT 都更新为BOTH
     **/
     public void loadInfo(HashMap<String, String> info,String type) {
+        this.talkHasTalk.setVisible(true);
+        this.talkNoTalk.setVisible(false);
+        this.talkSysInfo.setVisible(false);
         Platform.runLater(() -> {
 
             nickName.setText(info.get("name"));
@@ -412,7 +439,8 @@ public class MainContentTalkController{
         String content = recMsg.getContent();
         String type = recMsg.getType();
         ResultSet friendInfo = this.db.getOthersInfo(Integer.parseInt(friendSid));
-        String nickName = db.getFriendNickName(MainApp.Mysid,Integer.parseInt(friendSid));
+        friendInfo.next();
+        String nickName = friendInfo.getString("nickname");
         //私人讯息
         if(type.equals("p2p")){
             //对应好友添加到最近联系人列表中(首位)
@@ -448,7 +476,94 @@ public class MainContentTalkController{
         }else if(type.equals("offLine")){
 
         }else if(type.equals("addUser")){
+            Platform.runLater(() -> {
 
+                systemMsgLabel.setText("系统消息[未读]");
+                HBox hBox = new HBox();
+                Label label = new Label();
+//                label.
+                label.setText(friendSid+"想要加你为好友          ");
+                Button agreeButton = new Button("同意");
+                agreeButton.setStyle("-fx-background-color: #12B7F5");
+                agreeButton.setTextFill(Color.WHITE);
+                Button disagreeBtn = new Button("拒绝");
+                agreeButton.setTextFill(Color.WHITE);
+
+
+                //右侧未读消息列表添加
+                hBox.getChildren().addAll(label,agreeButton,disagreeBtn);
+                systemMsgVbox.getChildren().addAll(hBox);
+
+                //监听同意按钮
+                agreeButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        //发送消息表示同意
+                        sendMsg("agreeAdd",Integer.toString(MainApp.Mysid),friendSid,"agreeAdd");
+
+//                        hBox.getChildren().removeAll();
+//                        ChoiceBox choiceBox = new ChoiceBox();
+                        //获取分组列表/加上该好友
+                        try {
+                            ResultSet resultSet = db.getOthersInfo(Integer.parseInt(friendSid));
+                            resultSet.next();
+                            String nickName = resultSet.getString("nickname");
+                            db.addFriend(MainApp.Mysid,Integer.parseInt(friendSid),nickName);
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+
+                        //更新联系人
+                        addTalkList(friendSid,nickName,"rec","");
+
+                        //未读去掉
+                        systemMsgLabel.setText("系统消息");
+
+                        //消息变更
+                        hBox.getChildren().removeAll();
+
+
+                    }
+                });
+
+                //监听拒绝按钮
+                disagreeBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        sendMsg("disagreeAdd",Integer.toString(MainApp.Mysid),friendSid,"disagreeAdd");
+                        //未读去掉
+                        systemMsgLabel.setText("系统消息");
+
+                        //消息变更
+                        hBox.getChildren().removeAll();
+                        //已拒绝
+                    }
+                });
+
+
+            });
+        }else if(type.equals("agreeAdd")){
+            Platform.runLater(() -> {
+                //TODO
+                //产生系统消息 已同意
+                systemMsgLabel.setText("系统消息[未读]");
+                HBox hBox = new HBox();
+                Label label = new Label();
+//                label.
+                label.setText(friendSid+"已同意你的好友请求");
+                //选择昵称和分组/加上该好友
+
+                try {
+                    db.addFriend(MainApp.Mysid,Integer.parseInt(friendSid),nickName);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+
+                //更新列表
+                addTalkList(friendSid,nickName,"rec","");
+
+            });
         }
         //TODO 其他消息类型
 

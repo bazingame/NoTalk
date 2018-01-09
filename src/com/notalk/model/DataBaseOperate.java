@@ -2,9 +2,11 @@ package com.notalk.model;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.notalk.MainApp;
 import com.notalk.util.Echo;
 import com.sun.org.apache.regexp.internal.RE;
 import com.sun.xml.internal.bind.v2.TODO;
+import sun.applet.Main;
 import sun.security.util.Resources_sv;
 
 import javax.xml.transform.Result;
@@ -17,8 +19,8 @@ public class DataBaseOperate {
 
     // JDBC 驱动名及数据库 URL
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://112.74.62.166:3306/notalk?useSSL=false";
-//    static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/notalk?useSSL=false";
+    static final String DB_URL = "jdbc:mysql://112.74.62.166:3306/notalk?useSSL=false&useUnicode=true&characterEncoding=utf-8";
+//    static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/notalk?useSSL=false&useUnicode=true&characterEncoding=utf-8";
 
     // 数据库的用户名与密码，需要根据自己的设置
 //    static final String USER = "root";
@@ -146,8 +148,43 @@ public class DataBaseOperate {
     /**
     *添加好友
     * */
-    public int addFriend(int my_sid,int friend_sid,String friend_nickname,int group_id) throws SQLException {
-        String sql = "INSERT INTO friends (my_sid,friend_sid,friend_nickname,group_id) VALUES ("+my_sid+","+friend_sid+",'"+friend_nickname+"',"+group_id+")";
+    public int addFriend(int my_sid,int friend_sid,String friend_nickname) throws SQLException {
+        //获取最大组id
+        class Group{
+            private String id;  //属性都定义成String类型，并且属性名要和Json数据中的键值对的键名完全一样
+            private String name;
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public String getId() {
+                return id;
+            }
+
+            public String getName() {
+                return name;
+            }
+        }
+        ResultSet resultSet = this.getUserInfo(MainApp.Mysid);
+        resultSet.next();
+        String group_list = resultSet.getString("friends_group_list");
+        Group group = gson.fromJson(group_list,Group.class);
+
+        Map<Integer,String> groupListMap = gson.fromJson(group_list,new TypeToken<HashMap<Integer,String>>(){}.getType());
+
+        Iterator iter = groupListMap.entrySet().iterator();
+
+        iter.hasNext();
+        Map.Entry entry = (Map.Entry) iter.next();
+        Object key = entry.getKey();
+        Object val = entry.getValue();
+
+        String sql = "INSERT INTO friends (my_sid,friend_sid,friend_nickname,group_id) VALUES ("+my_sid+","+friend_sid+",'"+friend_nickname+"',"+key+")";
         stmt = conn.createStatement();
         int res = stmt.executeUpdate(sql);
         return res;
@@ -252,6 +289,7 @@ public class DataBaseOperate {
         String res = resultSet.getString("friends_group_list");
         return res;
     }
+
 
     /**
     * 获取好友备注！
@@ -414,6 +452,8 @@ public class DataBaseOperate {
         String group_list_json = group_list.getString("group_list");
         return group_list;
     }
+
+
 
     /**
     * 获取群成员(仅账号)

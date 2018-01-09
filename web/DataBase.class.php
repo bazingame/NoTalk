@@ -340,7 +340,7 @@ class DataBase
      * @param  string  $fetch   标记返回结果数组的形式 assoc为关联数组 num为索引数组 both为二者都有
      * @return array            数组形式的返回结果
      * */
-    private function selectExec($sql, $fetch)
+    public function selectExec($sql, $fetch)
     {
         $res = $this->pdo->query($sql);
         switch ($fetch) {

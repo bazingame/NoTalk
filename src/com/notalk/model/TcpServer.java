@@ -208,9 +208,13 @@ public class TcpServer {
                         socket.close();
                     }else if(msg.getType().equals("addUser")){
                         sendToSomeone(msg.getMysid(),msg.getTosid(),msg.getContent(),msg.getTime(),msgString);
+                    }else if(msg.getType().equals("agreeAdd")){
+                        sendToSomeone(msg.getMysid(),msg.getTosid(),msg.getContent(),msg.getTime(),msgString);
+                    }else if(msg.getType().equals("disagreeAdd")){
+                        sendToSomeone(msg.getMysid(),msg.getTosid(),msg.getContent(),msg.getTime(),msgString);
                     }else{
-                        //TODO
-                    }
+                        sendToSomeone(msg.getMysid(),msg.getTosid(),msg.getContent(),msg.getTime(),msgString);
+                    }//TODO
                 }
             } catch (Exception e) {
                 // e.printStackTrace();

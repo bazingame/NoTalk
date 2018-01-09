@@ -51,6 +51,11 @@
     -fx-background-size: cover;
 }
 
+.talk-sysMsg{
+    -fx-background-image: url("../../../resources/images/Talk/systemMsg.png");
+    -fx-background-size: cover;
+}
+
 .talk-left-head-img{
     -fx-image: url("../../../resources/images/Menu/tempHead.png");
 }
