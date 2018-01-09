@@ -419,6 +419,32 @@ public class MainContentTalkController{
         /*发送至服务器*/
             this.client.sendMsg(gson.toJson(msgHashMap));
             System.out.println(gson.toJson(msgHashMap));
+        }else if(type.equals("agreeAdd")) {
+            Date date = new Date();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+            String time = format.format(date);
+            HashMap<String,String> msgHashMap = new HashMap<String,String>();
+            msgHashMap.put("mysid",fromsid);
+            msgHashMap.put("tosid",tosid);
+            msgHashMap.put("time",time);
+            msgHashMap.put("content",msgContent);
+            msgHashMap.put("type","agreeAdd");
+        /*发送至服务器*/
+            this.client.sendMsg(gson.toJson(msgHashMap));
+            System.out.println(gson.toJson(msgHashMap));
+        }else if(type.equals("disagreeAdd")) {
+            Date date = new Date();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+            String time = format.format(date);
+            HashMap<String,String> msgHashMap = new HashMap<String,String>();
+            msgHashMap.put("mysid",fromsid);
+            msgHashMap.put("tosid",tosid);
+            msgHashMap.put("time",time);
+            msgHashMap.put("content",msgContent);
+            msgHashMap.put("type","disagreeAdd");
+        /*发送至服务器*/
+            this.client.sendMsg(gson.toJson(msgHashMap));
+            System.out.println(gson.toJson(msgHashMap));
         }
 
 
@@ -500,7 +526,6 @@ public class MainContentTalkController{
                     public void handle(MouseEvent event) {
                         //发送消息表示同意
                         sendMsg("agreeAdd",Integer.toString(MainApp.Mysid),friendSid,"agreeAdd");
-
 //                        hBox.getChildren().removeAll();
 //                        ChoiceBox choiceBox = new ChoiceBox();
                         //获取分组列表/加上该好友
@@ -520,7 +545,7 @@ public class MainContentTalkController{
                         systemMsgLabel.setText("系统消息");
 
                         //消息变更
-                        hBox.getChildren().removeAll();
+                        systemMsgVbox.getChildren().clear();
 
 
                     }
@@ -535,7 +560,7 @@ public class MainContentTalkController{
                         systemMsgLabel.setText("系统消息");
 
                         //消息变更
-                        hBox.getChildren().removeAll();
+                        systemMsgVbox.getChildren().clear();
                         //已拒绝
                     }
                 });

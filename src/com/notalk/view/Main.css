@@ -1,13 +1,13 @@
 #loginAnchor{
-    -fx-background-image: url("../../../resources/images/themes/ColdNight/background.png");
-    /*-fx-fill: url("./../../../../resources/images/themes/ColdNight/background.png");*/
+    -fx-background-image: url("../../../resources/images/Themes/ColdNight/bg.png");
+    /*-fx-fill: url("./../../../../resources/images/Themes/ColdNight/bg.png");*/
     -fx-background-size: cover ;
     /*-fx-background-color: red;*/
 }
 
 #loginButton{
     /*-fx-background-color: red;*/
-    /*-fx-fill: url("../../../../resources/images/themes/ColdNight/background.png");*/
+    /*-fx-fill: url("../../../../resources/images/Themes/ColdNight/bg.png");*/
     /*-fx-fill:red;*/
     /*-fx-fill-image: url("../../../../resources/images/head/AppDefault.png");*/
 }
@@ -292,7 +292,7 @@
 
 /*搜索结果展示*/
 .contacts-search-res{
-    -fx-background-image: url("../../../resources/images/themes/ColdNight/background.png");
+    -fx-background-image: url("../../../resources/images/Themes/ColdNight/bg.png");
     -fx-background-size: cover;
 }
 /*------------------------------------联系人界面-------------------------------------*/
@@ -402,7 +402,7 @@
 
 /*-------我的资料-----*/
 #SetInfoPane{
-    -fx-background-image: url("../../../resources/images/themes/ColdNight/background.png");
+    -fx-background-image: url("../../../resources/images/Themes/ColdNight/bg.png");
     -fx-background-size: cover;
 }
 #SetInfoPaneHead{
